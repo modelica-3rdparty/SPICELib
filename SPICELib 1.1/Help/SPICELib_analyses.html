@@ -1,0 +1,395 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE analyses<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.analyses"></A><A HREF="SPICELib.html#SPICELib"
+>SPICELib</A>.analyses</H2>
+<B>Types of analyses supported by SPICELib</B>
+<P>
+<A HREF="SPICELib_analyses.html#SPICELib.analyses.OP"
+><IMG SRC="SPICELib.analyses.OPI.png" ALT="SPICELib.analyses.OP" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_analyses.html#SPICELib.analyses.AC"
+><IMG SRC="SPICELib.analyses.ACI.png" ALT="SPICELib.analyses.AC" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_analyses.html#SPICELib.analyses.TRAN"
+><IMG SRC="SPICELib.analyses.TRANI.png" ALT="SPICELib.analyses.TRAN" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center>Performing Circuit Analyses</H1><br><br>
+
+
+
+<p>Analysis types supported by <i>SPICE</i>Lib are shown in Table 1.
+Each analysis type is described in the corresponding class documentation.</p><br>
+
+<b>Table 1.</b> <i>SPICE</i>Lib analyses summary.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TH align=center><b>Package</b></TH>
+<TH align=center><b>Model</b></TH>
+<TH align=center><b>Analysis type</b></TH></TR>
+
+<TR><TD WIDTH=40>analyses</TD>
+<TD WIDTH=40>OP</TD>
+<TD>Bias point calculation.</TD></TR>
+
+<TR><TD WIDTH=40>analyses</TD>
+<TD WIDTH=40>AC</TD>
+<TD>AC sweep.</TD></TR>
+
+<TR><TD WIDTH=40>analyses</TD>
+<TD WIDTH=40>TRAN</TD>
+<TD>Transient (time) analysis.</TD></TR>
+</TABLE><br><br>
+
+<H2>Global parameters</H2><br>
+
+The value of two global parameters has to be defined (see Table 2).<br><br>
+
+<b>Table 2.</b> Global parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TD><b>TimeScale</b></TD>
+<TD>It is intended for providing an (rough) approximate
+value of the circuit time-constant.</TD></TR>
+
+<TR><TD><b>LogResults</b></TD>
+<TD>It determines the amount of information to be logged during the
+bias point calculation and the AC small-signal analysis.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Log of analysis results</H2><br>
+<i>SPICE</i>Lib logs the analysis results to the <i>dslog.txt</i> file (using Dymola's
+<i>LogVariable</i> function). Two parameters control this information log
+(see Table 3 and 4).<br><br>
+
+
+<b>Table 3.</b> Parameters controlling the results log.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TD><b>LogResults</b></TD>
+<TD>Global parameter.</TD></TR>
+
+<TR><TD><b>HIDDEN_COMPONENT</b></TD>
+<TD>Device-dependent parameter</TD></TR>
+</TABLE><br><br>
+
+<b>Table 4.</b> LogResults values producing the variable
+log as a function of HIDDEN_COMPONENT value.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TD><b> </b></TD>
+<TD>HIDDEN_COMPONENT = false</TD>
+<TD>HIDDEN_COMPONENT = true</TD></TR>
+
+<TR><TD><b>Voltage at resistor pines</b></TD>
+<TD>0, 1, 2</TD>
+<TD>2</TD></TR>
+
+<TR><TD><b>Current through independent voltage sources</b></TD>
+<TD>0, 1, 2</TD>
+<TD>2</TD></TR>
+
+<TR><TD><b>Total power dissipation</b></TD>
+<TD>0, 1, 2</TD>
+<TD>2</TD></TR>
+
+<TR><TD><b>Voltage drop at resistors</b></TD>
+<TD>1, 2</TD>
+<TD>2</TD></TR>
+
+<TR><TD><b>Current through resistors</b></TD>
+<TD>1, 2</TD>
+<TD>2</TD></TR>
+
+<TR><TD><b>Power dissipation at each independent voltage source</b></TD>
+<TD>1, 2</TD>
+<TD>2</TD></TR>
+
+</TABLE><br><br>
+
+The complex AC small-signal voltages and currents are logged in Cartesian
+and polar coordinates. In addition, the polar magnitude is also expressed
+in decibels (defined as 20*log10( )).<br><br>
+
+<H2>Setting the Stop Time</H2><br>
+<i>SPICE</i>Lib analysis models force the simulation end when they have completed their
+operations. Large simulation times should be selected in the modeling environment
+experiment definition (for example, "Simulation/Setup/Stop time" in Dymola)
+to avoid interfering with analysis execution.
+
+<pre>
+</PRE><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_analyses.html#SPICELib.analyses.OP"
+>OP</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_analyses.html#SPICELib.analyses.AC"
+>AC</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_analyses.html#SPICELib.analyses.TRAN"
+>TRAN</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE OP<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.analyses.OPI.png" ALT="SPICELib.analyses.OP" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.analyses.OP"></A><A HREF="SPICELib_analyses.html#SPICELib.analyses"
+>SPICELib.analyses</A>.OP</H2>
+<H3>Information</H3>
+<PRE></pre>
+
+<H2 align=center>OP - Bias point calculation</H2><br><br>
+To calculate the DC response of an analog circuit,
+<i>SPICE</i>Lib removes time from the circuit.
+This is done by treating all capacitors as open circuits,
+all inductors as shorts, and using only the DC values of voltage
+and current sources.<br><br>
+
+The bias point is calculated for any analysis.
+However, additional information is reported when the Bias Point
+analysis is made. The following information is reported to
+the <i>dslog.txt</i> file:
+<ul><li>a list of all analog node voltages
+<li>the currents of all voltage sources and their total power
+<li>a list of small-signal parameters for all devices</ul>
+
+Bias point calculation is the most problematic step from the numerical
+point of view. The nonlinear equations which describe the circuit's
+static behavior must be solved.
+<i>SPICE</i>Lib provides four alterative algorithms for solving the circuit
+static model (see Table 1). The SOLVE_STATIC parameter determines which
+of the four algorithms to use.<br><br>
+
+<b>Table 1.</b> Algorithms for solving the circuit static model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD>SOLVE_STATIC=0</TD>
+<TD><b>Static model iteration</b><br>
+The solution of the circuit static model is left in hands of the modeling
+environment (for instance, Dymola). <br><i>SPICE</i>Lib has two symbols to provide
+an initial guess for Newton-Raphson algorithm: NODESET1 and NODESET2.
+</TD></TR>
+
+<TR><TD>SOLVE_STATIC=1</TD>
+<TD><b>Static model ramping</b><br>
+The static value of the independent sources is ramped by
+<i>SPICE</i>Lib from zero up to their target values.
+The clamping voltages of the IC symbols and the capacitor IC
+property are also adequately ramped.
+The value of the parameter TIME_SCALE determines the time length
+of the ramping.  </TD></TR>
+
+<TR><TD>SOLVE_STATIC=2</TD>
+<TD><b>GMIN stepping</b><br>
+GMIN stepping attemps to find a solution for the static model
+(with power supplies at 100%) by starting with a large value of
+GMIN, initially 1e10 times the nominal value.
+If a solution is found at this setting, <i>SPICE</i>Lib reduces
+GMIN by a factor of 10 and tries again. This continues until either
+GMIN is back to the nominal value, or a repeating cycle fails to converge.
+</TD></TR>
+
+<TR><TD>SOLVE_STATIC=3</TD>
+<TD><b>Dynamic model ramping</b><br>
+The initial condition to iterate the static model is obtained by simulating
+the large-signal model. A transient analysis is performed: all sources are ramped
+up from zero to the desired initial value and this value is held
+for some time to allow the circuit to stabilise. Then, the
+voltage values calculated from this transient analysis are used as initial
+conditions for solving the static model.
+</TD></TR>
+</TABLE>
+
+<br><br><b>Note:</b><br>
+The algorithms <i>static model iteration</i>,
+<i>static model ramping</i>, and
+<i>GMIN stepping</i> are supported by PSpice.
+PSpice first tries to solve the static model of the circuit using the
+Newton-Raphson algorithm. If a solution is not found and <i>GMIN
+stepping</i> is enabled, then <i>GMIN algorithm</i> is applied. If it also
+fails or it is not enabled, then <i>"static model ramping"</i> is
+applied.<br>
+
+The algorithm <i>dynamic model ramping</i> is proposed in
+"Cellier F.E. (1991): <i>Continuous System Modeling</i>. Springer-Verlag".<br>
+
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> OP
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.OP"
+>src.ANALYSES.OP</A>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>OP;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE AC<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.analyses.ACI.png" ALT="SPICELib.analyses.AC" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.analyses.AC"></A><A HREF="SPICELib_analyses.html#SPICELib.analyses"
+>SPICELib.analyses</A>.AC</H2>
+<H3>Information</H3>
+<PRE></pre>
+
+<H2 align=center>AC sweep - Frequency response of the circuit</H2><br>
+
+AC sweep is a frequency response analysis. <i>SPICE</i>Lib calculates
+the small-signal response of the circuit to a combination of inputs
+by transforming it around the bias point and treating it as a linear
+circuit.
+<ul><li>Nonlinear devices are transformed to linear circuits about
+their bias point value before <i>SPICE</i>Lib runs the linear
+(small-signal) analysis.
+<li>Because AC sweep analysis is a linear analysis, it only considers
+the gain and the phase response of the circuit; it does not limit voltages
+or currents.</ul>
+
+The best way to use AC sweep analysis is to set the source magnitude to one.
+This way, the measured output equals the gain, relative to the input source,
+at that output.<br><br>
+
+<b>Setting up an AC analysis</b><br><br>
+To run an AC sweep analysis, you need to place and connect one or more
+independent sources and then set the AC magnitude and phase for each source.
+Each independent source in your circuit contains its own AC specification
+for magnitude and phase.<br><br>
+
+The parameters defining the frequency sweep are shown in Table 1.<br><br>
+
+<b>Table 1.</b> Parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD>TYPE_AC_SWEEP</TD>
+<TD>It defines the frequency sweep type:<br>
+<ul><li>TYPE_AC_SWEEP=0   -   Linear.
+    <li>TYPE_AC_SWEEP=1   -   Logarithmically by decades.</ul>
+</TD></TR>
+<TR><TD>POINTS_NUMBER</TD>
+<TD>Number of sweep points:<br>
+<ul><li>TYPE_AC_SWEEP=0   -   Total number of points.
+    <li>TYPE_AC_SWEEP=1   -   Total number of points per decade.</ul>
+</TD></TR>
+<TR><TD>START_FREQUENCY</TD>
+<TD>Starting frequency for the sweep.
+</TD></TR>
+<TR><TD>END_FREQUENCY</TD>
+<TD>Ending frequency for the sweep.
+</TD></TR>
+</TABLE>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+<TR><TD>TYPE_AC_SWEEP</TD><TD>&nbsp;</TD><TD>0: LIN; 1: DEC</TD></TR>
+<TR><TD>POINTS_NUMBER</TD><TD>&nbsp;</TD><TD>LIN: total. DEC: points/decade</TD></TR>
+<TR><TD>START_FREQUENCY</TD><TD>&nbsp;</TD><TD>[Hz]</TD></TR>
+<TR><TD>END_FREQUENCY</TD><TD>&nbsp;</TD><TD>[Hz]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> AC
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.AC"
+>src.ANALYSES.AC</A>;
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>AC;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TRAN<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.analyses.TRANI.png" ALT="SPICELib.analyses.TRAN" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.analyses.TRAN"></A><A HREF="SPICELib_analyses.html#SPICELib.analyses"
+>SPICELib.analyses</A>.TRAN</H2>
+<H3>Information</H3>
+<PRE></pre>
+
+<H2 align=center>TRAN - Transient analysis</H2><br>
+
+The Transient response analysis causes the response of the circuit
+to be calculated from <b>TIME</b>=0 to a specified time (see the
+note below). During a transient analysis, any or all of the independent
+sources may have time-varying values.<br><br>
+
+The parameters defining the transient analysis are shown in Table 1.<br><br>
+
+<b>Table 1.</br> Parameters
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TD><b>TSTOP</b></TD>
+<TD>Length of the transient simulation.</TD></TR>
+<TR><TD><b>SKIPBP</b></TD>
+<TD><b>SKIPBP=false</b><br>
+The transient analysis does its own calculation of a bias point to start
+with, using the same technique as described for Bias Point. This is necessary
+because the initial values of the sources can be different from their DC
+values.<br>
+Two equivalent procedures are provided to specify the analysis initial
+conditions: the IC symbols and the IC property.<br><br>
+
+<b>SKIPBP=true</b><br>
+The bias point calculation is skipped and the simulation proceeds directly
+with transient analysis at TIME=0.
+The large-signal circuit state is initialised to the IC-property corresponding
+values.
+Devices with IC property defined start
+with the specified voltage or current value; however, all other such devices
+have an initial voltage or current of zero. <i>IC symbols are ignored</i>.
+</TD></TR>
+
+
+</TABLE>
+
+<br><br><H3>Simulation time during transient analysis</H3>
+When the transient simulation is started, the value of Modelica
+variable <i>time</i> is different from zero. For this reason, a
+variable is defined to measure the transient simulation time:
+<b>TIME</b>.
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+<TR><TD>TSTOP</TD><TD>&nbsp;</TD><TD>Transient simulation end time [s]</TD></TR>
+<TR><TD>SKIPBP</TD><TD>false</TD><TD>Skip initial transient solution</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TRAN
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.TRAN"
+>src.ANALYSES.TRAN</A>;
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>TRAN;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:23 2003
+.
+</address></BODY>
+</HTML>

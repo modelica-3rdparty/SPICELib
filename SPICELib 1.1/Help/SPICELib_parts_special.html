@@ -1,0 +1,232 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE special<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.parts.special"></A><A HREF="SPICELib_parts.html#SPICELib.parts"
+>SPICELib.parts</A>.special</H2>
+<A HREF="SPICELib_parts_special.html#SPICELib.parts.special.IC1"
+><IMG SRC="SPICELib.parts.special.IC1I.png" ALT="SPICELib.parts.special.IC1" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_special.html#SPICELib.parts.special.IC2"
+><IMG SRC="SPICELib.parts.special.IC2I.png" ALT="SPICELib.parts.special.IC2" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>special</i> package</H1>
+
+<H2>IC symbols: IC1 and IC2</H2>
+IC symbols specify initial conditions for the bias point.<br>
+<b>They substitute the model initialization procedures of the
+modeling environment</b> (for instance, Dymola).<br>
+
+
+<IMG SRC=Fig.SPICELib.parts.special.IC.png WIDTH=320><br>
+<b>Figure 1.</b> IC symbols.<br><br>
+
+The example in Figure 1 includes
+<ul><li>a one-pin symbol (i.e., IC1) that allows setting the initial condition on a net
+for both small-signal and transient bias points, and
+<li>a two-pin symbol (i.e., IC2) that allows setting initial condition between two nets.</ul>
+
+<pre>
+</PRE><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_parts_special.html#SPICELib.parts.special.IC1"
+>IC1</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_special.html#SPICELib.parts.special.IC2"
+>IC2</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IC1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.special.IC1I.png" ALT="SPICELib.parts.special.IC1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.special.IC1"></A><A HREF="SPICELib_parts_special.html#SPICELib.parts.special"
+>SPICELib.parts.special</A>.IC1</H2>
+<IMG SRC="SPICELib.parts.special.IC1D.png" ALT="SPICELib.parts.special.IC1">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>IC1</i> pseudocomponent</H1>
+
+<IMG SRC=Fig.SPICELib.parts.special.IC1.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> IC1 pseudocomponent.<br><br>
+
+<H2>Node</H2><br>
+
+<b>Table 1.</b> Instantiation of <i>Pin</i> class
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD>Comment</TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+</TABLE><br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br>
+
+<H2>Parameters</H2><br>
+
+<b>Table 3.</b> IC1 symbol parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>IC</TD>
+<TD>Value of the initial voltage.</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+None.<br><br>
+
+<H2>Internal implementation</H2>
+<i>SPICE</i>Lib attaches a voltage source with a 0.0002 ohm series
+resistance to each net to which the IC symbol is connected (see Figure 2).
+The voltages are clamped this way for the entire bias point calculation.<br>
+
+<IMG SRC=Fig.SPICELib.parts.special.IC1.implementation.png WIDTH=300><br>
+<b>Figure 2.</b> IC1 symbol implementation.<br><br>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IC1
+  <font color="blue">extends </font><A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL.IC1"
+>src.SPECIAL.IC1</A>;
+<font color="blue">end </font>IC1;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IC2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.special.IC2I.png" ALT="SPICELib.parts.special.IC2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.special.IC2"></A><A HREF="SPICELib_parts_special.html#SPICELib.parts.special"
+>SPICELib.parts.special</A>.IC2</H2>
+<IMG SRC="SPICELib.parts.special.IC2D.png" ALT="SPICELib.parts.special.IC2">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>IC2</i> pseudocomponent</H1>
+
+<IMG SRC=Fig.SPICELib.parts.special.IC2.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> IC2 pseudocomponent.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 3.</b> IC2 symbol parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>IC</TD>
+<TD>Value of the initial voltage between two nodes.</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+None.<br><br>
+
+<H2>Internal implementation</H2>
+<i>SPICE</i>Lib attaches a voltage source with a 0.0002 ohm series
+resistance between the two nets to which the IC symbol is connected.
+The voltages are clamped this way for the entire bias point calculation.<br>
+
+<IMG SRC=Fig.SPICELib.parts.special.IC2.implementation.png WIDTH=300><br>
+<b>Figure 2.</b> IC2 symbol implementation.<br><br>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IC2
+  <font color="blue">extends </font><A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL.IC2"
+>src.SPECIAL.IC2</A>;
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>IC2;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:30 2003
+.
+</address></BODY>
+</HTML>

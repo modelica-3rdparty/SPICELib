@@ -1,0 +1,270 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE INTERFACE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.INTERFACE"></A><A HREF="SPICELib_src.html#SPICELib.src"
+>SPICELib.src</A>.INTERFACE</H2>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+><IMG SRC="SPICELib.src.INTERFACE.PowerDissipationI.png" ALT="SPICELib.src.INTERFACE.PowerDissipation" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+><IMG SRC="SPICELib.src.INTERFACE.PinI.png" ALT="SPICELib.src.INTERFACE.Pin" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePin"
+><IMG SRC="SPICELib.src.INTERFACE.OnePinI.png" ALT="SPICELib.src.INTERFACE.OnePin" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPin"
+><IMG SRC="SPICELib.src.INTERFACE.TwoPinI.png" ALT="SPICELib.src.INTERFACE.TwoPin" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.MOSFET"
+><IMG SRC="SPICELib.src.INTERFACE.MOSFETI.png" ALT="SPICELib.src.INTERFACE.MOSFET" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+><IMG SRC="SPICELib.src.INTERFACE.OnePortI.png" ALT="SPICELib.src.INTERFACE.OnePort" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPort"
+><IMG SRC="SPICELib.src.INTERFACE.TwoPortI.png" ALT="SPICELib.src.INTERFACE.TwoPort" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+>PowerDissipation</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePin"
+>OnePin</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPin"
+>TwoPin</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.MOSFET"
+>MOSFET</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+>OnePort</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPort"
+>TwoPort</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Pin<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.PinI.png" ALT="SPICELib.src.INTERFACE.Pin" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.Pin"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.Pin</H2>
+<IMG SRC="SPICELib.src.INTERFACE.PinD.png" ALT="SPICELib.src.INTERFACE.Pin">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">connector</font> Pin
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vDC <font color="darkgreen">&quot;DC potential at the pin&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vTran <font color="darkgreen">&quot;Transient/Small-signal potential at the pin&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Re <font color="darkgreen">&quot;Small-signal potential at the pin. Real part&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Im <font color="darkgreen">&quot;Small-signal potential at the pin. Imaginary part&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">flow </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iDC <font color="darkgreen">&quot;DC current flowing into the pin&quot;</font>;
+  <font color="blue">flow </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iTran <font color="darkgreen">&quot;Transient current flowing into the pin&quot;</font>;
+  <font color="blue">flow </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Re <font color="darkgreen">&quot;Small-signal current flowing into the pin. Real part&quot;</font>;
+  <font color="blue">flow </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Im <font color="darkgreen">
+    &quot;Small-signal current flowing into the pin. Imaginary part&quot;</font>;
+<font color="blue">end </font>Pin;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PowerDissipation<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.PowerDissipationI.png" ALT="SPICELib.src.INTERFACE.PowerDissipation" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.PowerDissipation"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.PowerDissipation</H2>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">connector</font> PowerDissipation
+  <font color="blue">flow </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Power"
+>SI.Power</A> dissipatedPower <font color="darkgreen">&quot;Dissipated power&quot;</font>;
+<font color="blue">end </font>PowerDissipation;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE OnePin<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.OnePinI.png" ALT="SPICELib.src.INTERFACE.OnePin" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.OnePin"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.OnePin</H2>
+<IMG SRC="SPICELib.src.INTERFACE.OnePinD.png" ALT="SPICELib.src.INTERFACE.OnePin">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> OnePin
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> p <font color="darkgreen">&quot;(+) node&quot;</font>;
+<font color="blue">end </font>OnePin;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TwoPin<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.TwoPinI.png" ALT="SPICELib.src.INTERFACE.TwoPin" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.TwoPin"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.TwoPin</H2>
+<IMG SRC="SPICELib.src.INTERFACE.TwoPinD.png" ALT="SPICELib.src.INTERFACE.TwoPin">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> TwoPin
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> p <font color="darkgreen">&quot;(+) node&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> n <font color="darkgreen">&quot;(-) node&quot;</font>;
+<font color="blue">end </font>TwoPin;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE MOSFET<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.MOSFETI.png" ALT="SPICELib.src.INTERFACE.MOSFET" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.MOSFET"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.MOSFET</H2>
+<IMG SRC="SPICELib.src.INTERFACE.MOSFETD.png" ALT="SPICELib.src.INTERFACE.MOSFET">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> MOSFET
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> d <font color="darkgreen">&quot;Drain&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> s <font color="darkgreen">&quot;Source&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> g <font color="darkgreen">&quot;Gate&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> b <font color="darkgreen">&quot;Bulk&quot;</font>;
+<font color="blue">end </font>MOSFET;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE OnePort<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.OnePortI.png" ALT="SPICELib.src.INTERFACE.OnePort" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.OnePort"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.OnePort</H2>
+<IMG SRC="SPICELib.src.INTERFACE.OnePortD.png" ALT="SPICELib.src.INTERFACE.OnePort">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> OnePort
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPin"
+>TwoPin</A>;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vDC <font color="darkgreen">&quot;DC voltage between pines&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vTran <font color="darkgreen">&quot;Transient voltage between pines&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Re <font color="darkgreen">&quot;Real part of AC small-signal voltage between pines&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Im <font color="darkgreen">
+    &quot;Imaginary part of AC small-signal voltage between pines&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iDC <font color="darkgreen">&quot;DC current&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iTran <font color="darkgreen">&quot;Transient/Small-signal current&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Re <font color="darkgreen">&quot;Small-signal current. Real part&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Im <font color="darkgreen">&quot;Small-signal current. Imaginary part&quot;</font>;
+<font color="blue">equation </font>
+  <font color="darkgreen">// i, v sign criterion: Positive current flows from </font>
+  <font color="darkgreen">// the (+) node through the part to the (-) node</font>
+  {iDC,iTran,iAC_Re,iAC_Im} = {p.iDC,p.iTran,p.iAC_Re,p.iAC_Im};
+  {iDC,iTran,iAC_Re,iAC_Im} = -{n.iDC,n.iTran,n.iAC_Re,n.iAC_Im};
+  {vDC,vTran,vAC_Re,vAC_Im} = {p.vDC,p.vTran,p.vAC_Re,p.vAC_Im} - {n.vDC,n.
+    vTran,n.vAC_Re,n.vAC_Im};
+<font color="blue">end </font>OnePort;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TwoPort<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.INTERFACE.TwoPortI.png" ALT="SPICELib.src.INTERFACE.TwoPort" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.INTERFACE.TwoPort"></A><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE"
+>SPICELib.src.INTERFACE</A>.TwoPort</H2>
+<IMG SRC="SPICELib.src.INTERFACE.TwoPortD.png" ALT="SPICELib.src.INTERFACE.TwoPort">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> TwoPort
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vDC1 <font color="darkgreen">&quot;DC Voltage drop over the left port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vTran1 <font color="darkgreen">&quot;Transient voltage drop over the left port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Re1 <font color="darkgreen">
+    &quot;Real part of AC small-signal voltage drop over the left port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Im1 <font color="darkgreen">
+    &quot;Imaginary part of AC small-signal voltage drop over the left port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iDC1 <font color="darkgreen">
+    &quot;DC current flowing from pos. to neg. pin of the left port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iTran1 <font color="darkgreen">
+    &quot;Transient/Small-signal current flowing from pos. to neg. pin of the left port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Re1 <font color="darkgreen">
+    &quot;Small-signal current flowing from pos. to neg. pin of the left port. Real part&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Im1 <font color="darkgreen">
+    &quot;Small-signal current flowing from pos. to neg. pin of the left port. Imaginary part&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vDC2 <font color="darkgreen">&quot;DC Voltage drop over the right port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vTran2 <font color="darkgreen">&quot;Transient voltage drop over the right port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Re2 <font color="darkgreen">
+    &quot;Real part of AC small-signal voltage drop over the right port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vAC_Im2 <font color="darkgreen">
+    &quot;Imaginary part of AC small-signal voltage drop over the right port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iDC2 <font color="darkgreen">
+    &quot;DC current flowing from pos. to neg. pin of the right port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iTran2 <font color="darkgreen">
+    &quot;Transient/Small-signal current flowing from pos. to neg. pin of the right port&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Re2 <font color="darkgreen">
+    &quot;Small-signal current flowing from pos. to neg. pin of the right port. Real part&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_Im2 <font color="darkgreen">
+    &quot;Small-signal current flowing from pos. to neg. pin of the right port. Imaginary part&quot;</font>;
+<font color="blue">public </font>
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> p1 <font color="darkgreen">&quot;Positive pin of the left port&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> n1 <font color="darkgreen">&quot;Negative pin of the left port&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> p2 <font color="darkgreen">&quot;Positive pin of the right port&quot;</font>;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.Pin"
+>Pin</A> n2 <font color="darkgreen">&quot;Negative pin of the right port&quot;</font>;
+<font color="blue">equation </font>
+  <font color="darkgreen">// i, v sign criterion: Positive current flows from </font>
+  <font color="darkgreen">// the (+) node through the part to the (-) node</font>
+  {iDC1,iTran1,iAC_Re1,iAC_Im1} = {p1.iDC,p1.iTran,p1.iAC_Re,p1.iAC_Im};
+  {iDC1,iTran1,iAC_Re1,iAC_Im1} = -{n1.iDC,n1.iTran,n1.iAC_Re,n1.iAC_Im};
+  {vDC1,vTran1,vAC_Re1,vAC_Im1} = {p1.vDC,p1.vTran,p1.vAC_Re,p1.vAC_Im} - {n1.
+    vDC,n1.vTran,n1.vAC_Re,n1.vAC_Im};
+  <font color="darkgreen"></font>
+  {iDC2,iTran2,iAC_Re2,iAC_Im2} = {p2.iDC,p2.iTran,p2.iAC_Re,p2.iAC_Im};
+  {iDC2,iTran2,iAC_Re2,iAC_Im2} = -{n2.iDC,n2.iTran,n2.iAC_Re,n2.iAC_Im};
+  {vDC2,vTran2,vAC_Re2,vAC_Im2} = {p2.vDC,p2.vTran,p2.vAC_Re,p2.vAC_Im} - {n2.
+    vDC,n2.vTran,n2.vAC_Re,n2.vAC_Im};
+<font color="blue">end </font>TwoPort;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:31 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,313 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE WAVEFORMS<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS"></A><A HREF="SPICELib_src.html#SPICELib.src"
+>SPICELib.src</A>.WAVEFORMS</H2>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL"
+>NULL</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP"
+>EXP</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE"
+>PULSE</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL"
+>PWL</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN"
+>SIN</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.CONST"
+>CONST</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE NULL<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS.NULL"></A><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS"
+>SPICELib.src.WAVEFORMS</A>.NULL</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> NULL
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">replaceable </font><font color="blue">type</font> SignalType = Real;
+<font color="blue">protected </font>
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL.SignalType"
+>SignalType</A> signal;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL.SignalType"
+>SignalType</A> TRANS_INITIAL=0;
+<font color="blue">equation </font>
+  signal = 0;
+<font color="blue">end </font>NULL;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE EXP<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS.EXP"></A><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS"
+>SPICELib.src.WAVEFORMS</A>.EXP</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+<TR><TD>S1</TD><TD>0</TD><TD>Initial signal</TD></TR>
+<TR><TD>S2</TD><TD>0</TD><TD>Peak signal</TD></TR>
+<TR><TD>TD1</TD><TD>0</TD><TD>Rise (fall) delay [s]</TD></TR>
+<TR><TD>TC1</TD><TD>0</TD><TD>Rise (fall) time constant [s]</TD></TR>
+<TR><TD>TD2</TD><TD>0</TD><TD>Fall (rise) delay [s]</TD></TR>
+<TR><TD>TC2</TD><TD>0</TD><TD>Fall (rise) time constant [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> EXP
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">replaceable </font><font color="blue">type</font> SignalType = Real;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP.SignalType"
+>SignalType</A> S1=0 <font color="darkgreen">&quot;Initial signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP.SignalType"
+>SignalType</A> S2=0 <font color="darkgreen">&quot;Peak signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD1(min=0) = 0 <font color="darkgreen">&quot;Rise (fall) delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TC1(min=0) = 0 <font color="darkgreen">&quot;Rise (fall) time constant&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD2(min=0) = 0 <font color="darkgreen">&quot;Fall (rise) delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TC2(min=0) = 0 <font color="darkgreen">&quot;Fall (rise) time constant&quot;</font>;
+<font color="blue">protected </font>
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP.SignalType"
+>SignalType</A> TRANS_INITIAL=S1;
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP.SignalType"
+>SignalType</A> signal;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartTran(start=-1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeTran;
+<font color="blue">equation </font>
+  <font color="blue">when </font>ctrl_Tran<font color="blue"> then</font>
+    timeStartTran = time;
+  <font color="blue">end when</font>;
+  timeTran = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>time - timeStartTran<font color="blue"> else </font>-1;
+  signal = <font color="blue">if </font>timeTran &lt; TD1<font color="blue"> then </font>S1<font color="blue"> else </font><font color="blue">if </font>timeTran &lt; TD2<font color="blue"> then </font>S1 + (S2 - S1)
+    *(1 - <font color="red">exp</font>(-(timeTran - TD1)/TC1))<font color="blue"> else </font>S1 + (S2 - S1)*((1 - <font color="red">exp</font>(-(timeTran
+     - TD1)/TC1)) - (1 - <font color="red">exp</font>(-(timeTran - TD2)/TC2)));
+<font color="blue">end </font>EXP;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PULSE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS.PULSE"></A><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS"
+>SPICELib.src.WAVEFORMS</A>.PULSE</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+<TR><TD>S1</TD><TD>0</TD><TD>Initial signal</TD></TR>
+<TR><TD>S2</TD><TD>0</TD><TD>Pulse signal</TD></TR>
+<TR><TD>TD</TD><TD>0</TD><TD>Delay [s]</TD></TR>
+<TR><TD>TF</TD><TD>0</TD><TD>Fall time [s]</TD></TR>
+<TR><TD>TR</TD><TD>0</TD><TD>Rise time [s]</TD></TR>
+<TR><TD>PW</TD><TD>0</TD><TD>Pulse width [s]</TD></TR>
+<TR><TD>PER</TD><TD>&nbsp;</TD><TD>Period [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> PULSE
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">replaceable </font><font color="blue">type</font> SignalType = Real;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE.SignalType"
+>SignalType</A> S1=0 <font color="darkgreen">&quot;Initial signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE.SignalType"
+>SignalType</A> S2=0 <font color="darkgreen">&quot;Pulse signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD(min=0) = 0 <font color="darkgreen">&quot;Delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TF(min=0) = 0 <font color="darkgreen">&quot;Fall time&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TR(min=0) = 0 <font color="darkgreen">&quot;Rise time&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> PW(min=0) = 0 <font color="darkgreen">&quot;Pulse width&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> PER(min=TR + PW + TF) <font color="darkgreen">&quot;Period&quot;</font>;
+<font color="blue">protected </font>
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE.SignalType"
+>SignalType</A> signal;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timePulse(start=0, fixed=true);
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE.SignalType"
+>SignalType</A> TRANS_INITIAL=S1;
+<font color="blue">equation </font>
+  <font color="blue">when </font>ctrl_Tran<font color="blue"> then</font>
+    <font color="red">reinit</font>(timePulse, -TD);
+  <font color="blue">end when</font>;
+  signal = <font color="blue">if </font>timePulse &lt; 0<font color="blue"> or </font>timePulse &gt; TR + PW + TF<font color="blue"> then </font>S1<font color="blue"> else </font><font color="blue">if </font>
+    timePulse &gt; TR + PW<font color="blue"> then </font>S2 + (S1 - S2)*(timePulse - TR - PW)/TF<font color="blue"> else </font><font color="blue">if </font>
+    timePulse &gt; TR<font color="blue"> then </font>S2<font color="blue"> else </font>S1 + (S2 - S1)*timePulse/TR;
+  <font color="red">der</font>(timePulse) = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  <font color="blue">when </font>timePulse &gt; PER<font color="blue"> then</font>
+    <font color="red">reinit</font>(timePulse, 0);
+  <font color="blue">end when</font>;
+<font color="blue">end </font>PULSE;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PWL<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS.PWL"></A><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS"
+>SPICELib.src.WAVEFORMS</A>.PWL</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+<TR><TD>signalCorners[:]</TD><TD>&nbsp;</TD><TD>Signal at corners</TD></TR>
+<TR><TD>timeCorners[:]</TD><TD>&nbsp;</TD><TD>Time at corners [s]</TD></TR>
+<TR><TD>N</TD><TD>size(signalCorners, 1)</TD><TD>Number of corner points</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> PWL
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">replaceable </font><font color="blue">type</font> SignalType = Real;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL.SignalType"
+>SignalType</A> signalCorners[:] <font color="darkgreen">&quot;Signal at corners&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeCorners[:] <font color="darkgreen">&quot;Time at corners&quot;</font>;
+  <font color="blue">parameter </font>Integer N=<font color="red">size</font>(signalCorners, 1) <font color="darkgreen">&quot;Number of corner points&quot;</font>;
+<font color="blue">protected </font>
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL.SignalType"
+>SignalType</A> signal;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL.SignalType"
+>SignalType</A> TRANS_INITIAL=signalCorners[1];
+  Real c[N];
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL.SignalType"
+>SignalType</A> f[N];
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeTran;
+<font color="blue">equation </font>
+  <font color="red">assert</font>(<font color="red">size</font>(signalCorners, 1) == <font color="red">size</font>(timeCorners, 1),
+    &quot;Invalid corner points&quot;);
+  <font color="red">assert</font>(timeCorners[1] == 0, &quot;First time corner must be zero&quot;);
+  <font color="blue">when </font>ctrl_Tran<font color="blue"> then</font>
+    timeStartTran = time;
+  <font color="blue">end when</font>;
+  timeTran = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>time - timeStartTran<font color="blue"> else </font>-1;
+  <font color="blue">for </font>i<font color="blue"> in </font>1:N - 1<font color="blue"> loop</font>
+    <font color="red">assert</font>(timeCorners[i] &lt; timeCorners[i + 1], &quot;Invalid time corners&quot;);
+    c[i] = <font color="blue">if </font><font color="blue">not </font>timeTran &lt; timeCorners[i]<font color="blue"> and </font>timeTran &lt; timeCorners[i + 1]<font color="blue">
+       then </font>1<font color="blue"> else </font>0;
+    f[i] = signalCorners[i] + (signalCorners[i + 1] - signalCorners[i])*(
+      timeTran - timeCorners[i])/(timeCorners[i + 1] - timeCorners[i]);
+  <font color="blue">end for</font>;
+  c[N] = <font color="blue">if </font><font color="blue">not </font>timeTran &lt; timeCorners[N]<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  f[N] = signalCorners[N];
+  signal = c*f;
+<font color="blue">end </font>PWL;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SIN<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS.SIN"></A><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS"
+>SPICELib.src.WAVEFORMS</A>.SIN</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+<TR><TD>OFF</TD><TD>0</TD><TD>DC signal</TD></TR>
+<TR><TD>AMPL</TD><TD>0</TD><TD>Amplitude</TD></TR>
+<TR><TD>FREQ</TD><TD>&nbsp;</TD><TD>Frequency [Hz]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> SIN
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">replaceable </font><font color="blue">type</font> SignalType = Real;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN.SignalType"
+>SignalType</A> OFF=0 <font color="darkgreen">&quot;DC signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN.SignalType"
+>SignalType</A> AMPL=0 <font color="darkgreen">&quot;Amplitude&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> FREQ(min=0) <font color="darkgreen">&quot;Frequency&quot;</font>;
+<font color="blue">protected </font>
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN.SignalType"
+>SignalType</A> TRANS_INITIAL=OFF;
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN.SignalType"
+>SignalType</A> signal;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartTran(start=-1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeTran;
+  <font color="blue">constant </font>Real pi=3.14159265358979;
+<font color="blue">equation </font>
+  <font color="blue">when </font>ctrl_Tran<font color="blue"> then</font>
+    timeStartTran = time;
+  <font color="blue">end when</font>;
+  timeTran = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>time - timeStartTran<font color="blue"> else </font>-1;
+  signal = OFF + AMPL*<font color="red">sin</font>(2*pi*FREQ*timeTran);
+  <font color="darkgreen"></font>
+<font color="blue">end </font>SIN;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE CONST<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.WAVEFORMS.CONST"></A><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS"
+>SPICELib.src.WAVEFORMS</A>.CONST</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+<TR><TD>OFF</TD><TD>0</TD><TD>Constant signal</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> CONST
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">replaceable </font><font color="blue">type</font> SignalType = Real;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.CONST.SignalType"
+>SignalType</A> OFF=0 <font color="darkgreen">&quot;Constant signal&quot;</font>;
+<font color="blue">protected </font>
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.CONST.SignalType"
+>SignalType</A> TRANS_INITIAL=OFF;
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.CONST.SignalType"
+>SignalType</A> signal;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartTran(start=-1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeTran;
+<font color="blue">equation </font>
+  <font color="blue">when </font>ctrl_Tran<font color="blue"> then</font>
+    timeStartTran = time;
+  <font color="blue">end when</font>;
+  timeTran = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>time - timeStartTran<font color="blue"> else </font>-1;
+  signal = OFF;
+<font color="blue">end </font>CONST;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:37 2003
+.
+</address></BODY>
+</HTML>

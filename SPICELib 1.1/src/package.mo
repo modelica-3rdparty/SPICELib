@@ -1,0 +1,703 @@
+package src "Source code of SPICELib"
+
+
+annotation (
+  Window(
+    x=0.03,
+    y=0.02,
+    width=0.24,
+    height=0.45,
+    library=1,
+    autolayout=1),
+  Documentation(info="<html>
+
+
+
+<H1 align=center>Library Designer Documentation</H1><br><br>
+
+<H2>1. ARCHITECTURE</H2><br>
+<ul><H3>1.1 CONTROLLER LEVEL: ANALYSIS MODELS</H3><br>
+<H3>1.2 CONTROLLED LEVEL: DEVICE MODELS</H3><br>
+<H3>1.3 INITIALISATION FILE</H3><br>
+<H3>1.4 GLOBAL PARAMETERS</H3><br></ul>
+<H2>2. DEVICE MODELS</H2><br>
+<ul><h3>2.1 LINEAR RESISTOR</h3><br>
+<h3>2.2 CAPACITOR</h3><br>
+<h3>2.3 INDUCTOR</h3><br>
+<h3>2.4 PN-JUNCTION DIODE</h3><br>
+<ul><h4>2.4.1 Voltage-dependent capacitor</h4><br>
+<h4>2.4.2 Voltage-controlled current source</h4><br></ul>
+<h3>2.5 LEVEL1 N-CHANNEL MOSFET</h3><br>
+<ul><h4>2.5.1 I<sub>DS</sub> current source</h4><br>
+<h4>2.5.2 Gate capacitances</h4><br></ul>
+<h3>2.6 LEVEL1 P-CHANNEL MOSFET</h3><br>
+<ul><h4>2.6.1 I<sub>DS</sub> current source</h4><br>
+<h4>2.6.2 Gate capacitances</h4><br></ul>
+<h3>2.7 INDEPENDENT SOURCES</h3><br>
+<ul><B>2.7.1 DC analysis</b><br><br>
+<b>2.7.2 Transient analysis</b><br><br>
+<b>2.7.3 AC small-signal analysis</b><br><br>
+<b>2.7.4 Model of the disabled formulations</b><br><br>
+<b>2.7.5 Total power dissipation</b><br><br></ul></ul>
+<H2>3. ANALYSES</H2><br>
+<ul><h3>3.1 BIAS POINT CALCULATION</h3><br>
+<ul><b>3.1.1 Static model iteration</b> (SOLVE_STATIC:=0)<br><br>
+<b>3.1.2 Static model ramping</b> (SOLVE_STATIC:=1)<br><br>
+<b>3.1.3 GMIN stepping</b> (SOLVE_STATIC:=2)<br><br>
+<b>3.1.4 Dynamic model ramping</b> (SOLVE_STATIC:=3)<br><br></ul>
+<h3>3.2 BIAS POINT ANALYSIS</h3><br>
+<h3>3.3 AC SWEEP ANALYSIS</h3><br>
+<h3>3.4 TRANSIENT ANALYSIS</h3><br>
+</ul>
+
+
+<H2>1. ARCHITECTURE</H2>
+
+A two-level <b>architecture</b> is proposed (see Figure 1):
+<ul><li>Upper (controller) level is composed of the analysis models.
+<li>Lower (controlled) level is composed of the device models.
+<li>Unidirectional <i>control signals</i> (arrow in Fig. 1)
+and <i>global variables</i> transmit the information from
+analysis models to device models.
+In addition, global parameters set properties common to both
+analysis and device models.</ul>
+
+The list of files and subpackages of package SPICELib.src is shown in
+Table 1.<br>
+
+<IMG SRC=Fig.SPICELib.src.architecture1.png WIDTH=750><br>
+<IMG SRC=Fig.SPICELib.src.architecture2.png WIDTH=400><br>
+<b>Figure 1.</b> Two-level architecture of <i>SPICE</i>Lib.<br><br><br>
+
+<b>Table 1.</b> Complete list of files and packages of SPICELib.src.
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD align=center WIDTH=60><b>File</b></TD>
+<TD align=center WIDTH=80><b>Package (SPICELib.src.)</b></TD></TR>
+
+<TR><TD align=center>analyses.mo</TD>
+<TD align=center>ANALYSES</TD></TR>
+
+<TR><TD align=center>breakout.mo</TD>
+<TD align=center>BREAKOUT</TD></TR>
+
+<TR><TD align=center>functions.mo</TD>
+<TD align=center> </TD></TR>
+
+<TR><TD align=center>init.mo</TD>
+<TD align=center>INIT</TD></TR>
+
+<TR><TD align=center>interface.mo</TD>
+<TD align=center>INTERFACE</TD></TR>
+
+<TR><TD align=center>source.mo</TD>
+<TD align=center>WAVEFORMS<BR>SOURCE</TD></TR>
+
+<TR><TD align=center>special.mo</TD>
+<TD align=center>SPECIAL</TD></TR>
+</TABLE><br><br>
+
+
+<H3>1.1 CONTROLLER LEVEL: ANALYSIS MODELS</H3>
+
+An important feature of <i>SPICE</i>Lib device models is their
+<i>variable structure</i> nature. A different device model is formulated
+for each analysis mode: static model (DC analysis), AC small-signal
+model (AC analysis), and large-signal model (transient analysis).
+The transitions among these three device formulations are carried out
+in simulation time.<br><br>
+
+A DC analysis
+<ul><li>can be performed prior to a transient analysis to determine
+the transient initial condition, and
+<li>it is automatically performed prior to an AC small-signal analysis
+to determine the linearized, small-signal models for the nonlinear
+devices.</ul>
+
+In addition, some bias point calculation algorithms require the combined use
+of the three device formulations. See Figure 2, where S.M.I., S.M.R., GMIN
+and D.M.R. stand for the four bias point calculation algorithms supported
+by <i>SPICE</i>Lib.
+
+<IMG SRC=Fig.SPICELib.src.formulationsTransitions.png WIDTH=500><br>
+<b>Figure 2.</b> Some analysis require the combined use of several device formulations.<br><br><br>
+
+ANALYSES package contains the OP, TRAN and AC models. Bias point calculation
+is a part of OP and AC analyses and it is an option of TRAN analysis.
+Therefore, the four bias point calculation algorithms are programmed in a
+separate partial model, called <i>BiasPointCalculation</i>, inherited
+by the analysis models (see Fig. 1).
+
+Device models have a variable structure and signals are defined to control the
+model structure transitions. Each analysis model consist on an ordered sequence
+of elementary operations implying changes in the device model structure.
+Analysis models set the control signals in order to accomplish the required
+device-model structure changes. Control signals and global variables, evaluated
+in the analysis models, are shown in Figure 3.
+
+<IMG SRC=Fig.SPICELib.src.signalsGlobalVars.png WIDTH=700><br>
+<b>Figure 3.</b> Control signals, global variables and global parameters.<br><br><br>
+
+<H3>1.2 CONTROLLED LEVEL: DEVICE MODELS</H3>
+
+Device models are grouped in three packages:
+<ul><li>BREAKOUT,
+<li>SOURCE, and
+<li>SPECIAL.</ul>
+The models of BREAKOUT and SOURCE packages allow the composition of
+user-defined circuits, while the SPECIAL's provide one way to specify
+the initial conditions. In addition, a fourth package containing the device
+model interfaces has been defined: INTERFACE.
+
+<H3>1.3 INITIALISATION FILE</H3>
+
+The initialisation file, <i>init.mo</i>, contains the INIT package.
+The control signals, the global variables and the global parameters (see Fig. 3)
+are defined in the INIT package. It contains two partial models:
+<ul><li><i>Analysis</i>, inherited by the analysis models.
+<li><i>Part</i>, inherited by the device models.</ul>
+The same set of control signals, variables and parameters are defined in both
+partial models: <i>Analysis</i> model variables are <b>inner</b> ones,
+while <i>Part</i> variables are <b>outer</b> ones.
+
+<H3>1.4 GLOBAL PARAMETERS</H3>
+
+Two global parameters have been defined (see Fig. 3).
+<b>TimeScale</b> parameter is used for setting the length of the source ramping processes
+of some bias point calculation algorithms. In addition, it is used for establishing
+the time elapsed between consecutive control signal transitions (conceptually
+similar to the system clock period). To this end, the integer constant
+<b>TIME_SLOT</b> constant is defined in the analysis models. It represents a porcentage (1 to 100).
+The time between consecutive events, <b>CLOCK</b>, is defined as shown in Fig. 3.<br>
+
+<H2>2. DEVICE MODELS</H2>
+
+<h3>2.1 LINEAR RESISTOR</h3>
+
+Resistor model is shown in Figure 4. The purpose of the static-model IC1-like circuits
+(switches, R_EPS resistors and voltage sources) is clamping the DC-formulation voltage
+at the resistor pins. The bias point claculation algorithm \"dynamic model ramping\"
+requires the following operation: clamping the DC formulation voltage to the instantaneous
+value of the large-signal formulation. The <i>ctrl_RBREAK_Tran2DC</i> signal controls
+this information transfer between formulations. When <i>ctrl_  RBREAK_Tran2DC</i> becomes
+true:
+<ul><li>The source voltages (<i>vDCclampP</i> and <i>vDCclampN</i>; see Fig. 4) are set
+to the instantaneous value of the transient voltage at the correspondent pin. Then source
+voltages are held constant.
+<li>The switches are closed (see Fig. 4). They remain closed only while the signal is true.</ul>
+
+
+<IMG SRC=Fig.SPICELib.src.resistor.png WIDTH=700><br>
+<b>Figure 4.</b> Resistor model.<br><br><br><br>
+
+<h3>2.2 CAPACITOR</h3>
+
+Linear and voltage-dependent capacitors have to be modelled. The partial model
+<i>Capacitor</i> (BREAKOUT package) describes all the capacitor behavior except
+its large-signal and AC small-signal capacitance. The <i>Capacitor1</i> model (linear
+capacitor) and semiconductor-device capacitors models extend the <i>Capacitor</i> model.
+<i>CBREAK</i> is a linear capacitor without high index problems. It consists
+of <i>Capacitor1</i> in series with a resistor.<br><br>
+
+Capacitor static formulation is shown in Figure 5. The implementation of the
+IC property requires the IC2-like circuit (switch, <i>R_EPS</i> resistor and <i>vClampDC</i>
+source).<br><br>
+
+Large-signal model is shown in Figure 5. IC2-like circuit is also included because
+the \"dynamic model ramping\" algorithm uses the large-signal formulation during
+the bias point calculation. The Boolean signals
+<ul><li><i>ctrl_IC_clampDC</i>, and
+<li><i>ctrl_IC_clampTran</i>.</ul>
+
+controls the static and large-signal model switches respectively.<br><br>
+
+The capacitor parameter <i>IC_ENABLED</i> enables or disables the IC property.
+It allows distinguishing between the cases when IC is intentionally set to
+zero and those cases when the IC property is not enabled.<br><br>
+
+The signal <i>ctrl_IC_mode</i> controls <i>vClampDC</i> and <i>vClampTran</i>
+voltages. Some bias point calculation algorithms need the independent source
+ramping from zero up to their nominal initial values. When implementing these
+algorithms, the voltage clamping sources of the IC symbols and the capacitor
+IC property need also be ramped from zero to their respective IC values.
+Two cases are distinguished:
+<ul><li><i>ctrl_IC_mode</i>=0, the clamping voltage (<i>vClampDC</i> or
+<i>vClampTran</i>) is constant and equal to the IC value.
+<li><i>ctrl_IC_mode</i>=1, the clamping voltage is ramped from zero up to
+its IC value.</ul>
+
+<IMG SRC=Fig.SPICELib.src.capacitor.png WIDTH=700><br>
+<b>Figure 5.</b> Capacitor model.<br><br><br>
+
+The model of the capacitor IC property depends on whether the bias point
+is calculated or the calculation is skipped (see Fig. 6):
+<ul><li>During the bias point calculation, the capacitor IC property is
+implemented using an IC2 symbol in parallel with the capacitor. The capacitor
+model contains this voltage-clamp circuit (see Fig. 5).
+<li>When the initial transient solution is skipped, the capacitor voltage
+is initialised to its IC value using a when clause (see Fig. 5).</ul>
+
+<IMG SRC=Fig.SPICELib.src.settingICs.png WIDTH=550><br>
+<b>Figure 6.</b> Implementation of the initial conditions.<br><br><br><br>
+
+<h3>2.3 INDUCTOR</h3>
+
+Linear inductors have to be modelled. The partial model <i>Inductor</i> (BREAKOUT package)
+describes all the inductor behavior except its large-signal and AC small-signal inductance.
+The <i>Lbreak</i> model (linear inductor) model extends the <i>Inductor</i>  model.
+
+Inductor static formulation is shown in Figure 7. The implementation of the
+IC property requires the circuit shown in figure 7 (switch, <i>R_BIG</i> resistor and <i>iClampDC</i>
+source).<br><br>
+
+Large-signal model is shown in Figure 7. The switch, <i>R_BIG</i> resistor and <i>iClampDC</i>
+source are also included because
+the \"dynamic model ramping\" algorithm uses the large-signal formulation during
+the bias point calculation. The Boolean signals
+<ul><li><i>ctrl_IC_clampDC</i>, and
+<li><i>ctrl_IC_clampTran</i>.</ul>
+
+controls the static and large-signal model switches respectively.<br><br>
+
+The inductor parameter <i>IC_ENABLED</i> enables or disables the IC property.
+It allows distinguishing between the cases when IC is intentionally set to
+zero and those cases when the IC property is not enabled.<br><br>
+
+The signal <i>ctrl_IC_mode</i> controls <i>iClampDC</i> and <i>iClampTran</i>
+voltages. Some bias point calculation algorithms need the independent source
+ramping from zero up to their nominal initial values. When implementing these
+algorithms, the voltage clamping sources of the IC symbols and the inductor and capacitor
+IC property need also be ramped from zero up to their respective IC values.
+Two cases are distinguished:
+<ul><li><i>ctrl_IC_mode</i>=0, the clamping current (<i>iClampDC</i> or
+<i>iClampTran</i>) is constant and equal to the IC value.
+<li><i>ctrl_IC_mode</i>=1, the clamping current is ramped from zero up to
+its IC value.</ul>
+
+<IMG SRC=Fig.SPICELib.src.inductor.png WIDTH=700><br>
+<b>Figure 7.</b> Inductor model.<br><br><br>
+
+The model of the inductor IC property depends on whether the bias point
+is calculated or the calculation is skipped (see Fig. 7):
+<ul><li>During the bias point calculation, the inductor IC property is
+implemented using the circuit dual to the IC2 symbol in parallel with the inductor. The inductor
+model contains this current-clamp circuit (see Fig. 7).
+<li>When the initial transient solution is skipped, the indutor current
+is initialised to its IC value using a when clause (see Fig. 7).</ul><br><br><br><br>
+
+<h3>2.4 PN-JUNCTION DIODE</h3>
+
+The PN-junction diode model is the PSpice model (see Massobrio, G. and Antognetti P.: Semiconductor
+Device Modeling with SPICE. McGraw-Hill 2 edition, 1998).<br>
+<i>SPICE</i>Lib diode model, PSPICE_diode, is composed of a linear resistor (of Rbreak class), a voltage
+dependent capacitor and a voltage controlled non linear current source (see Fig. 8).<br><br>
+
+<IMG SRC=Fig.SPICELib.src.diode.png WIDTH=400><br>
+<b>Figure 8.</b> Diode model.<br><br><br>
+
+<h4>2.4.1 Voltage-dependent capacitor</h4>
+It extends the partial model Capacitor, defining the large-signal and the AC small-signal capacitance.
+The mathematical relationship between the large-signal capacitance of the diode, C, and the large
+signal voltage drop across the capacitor, v, is a two-branches function, that can be conveniently
+described using the modelica expresion <i>if then else</i>:<br>
+<IMG SRC=Fig.SPICELib.src.diode-capacitor-formula.png WIDTH=250><br>
+C<sub>d</sub>(<i>v</i>) is a continuous, highly non-linear function of <i>v</i> (sum of several
+exponentila terms). In order to illustrate the shape of the C-V characteristic of the
+C-V characteristic, the C-V curve of D1N4002 diode is represented in Fig. 9.<br><br>
+<IMG SRC=Fig.SPICELib.src.diode-capacitor-characteristic.png WIDTH=500><br>
+<b>Figure 9.</b> C-V characteristic of D1N4002.<br><br><br>
+
+<h4>2.4.2 Voltage-controlled current source</h4>
+The static and large-signal constitutive relation of the source are:<br>
+<IMG SRC=Fig.SPICELib.src.diode-source-formula.png WIDTH=450><br>
+In Figure 10 the I-V characteristic of diode D1N4002 is shown.<br>
+<IMG SRC=Fig.SPICELib.src.diode.characteristic.png WIDTH=550><br>
+<b>Figure 10.</b> I-V characteristic of D1N4002.<br><br><br>
+
+<h3>2.5 LEVEL1 N-CHANNEL MOSFET</h3>
+<i>SPICE</i>Lib N-MOS model, SPICE2_MOS1, is composed of linear resistors (of Rbreak class),  voltage
+dependent capacitors and voltage controlled non linear current sources (see Fig. 11).<br><br>
+
+<IMG SRC=Fig.SPICELib.src.NMOS.png WIDTH=700><br>
+<b>Figure 11.</b> N-MOS model.<br><br><br>
+
+The drain-to-source current (I<sub>ds</sub>) and the gate capacitances (C<sub>GB</sub>,
+C<sub>GS</sub> and C<sub>GD</sub>) are function of the variables V<sub>DS</sub>, V<sub>GS</sub>
+and V<sub>BS</sub>. However, V<sub>GS</sub> and V<sub>BS</sub> cannot be calculated form the
+terminal variables of the I<sub>DS</sub>) source model (i. e., the voltage and current at their
+pins). Gate capacitors modeling presents a similar problem. This situation is solved in <i>SPICE</i>Lib
+defining the variables V<sub>DS</sub>, V<sub>GS</sub> and V<sub>BS</sub> as inner variables of the
+transistor model, and as outer variables of its components: the I<sub>DS</sub> current source and
+the gate capacitors.<br>
+The variables are defined as follows: <br>
+V<sub>DS</sub>=noEvent(abs(C<sub>GS</sub>.<i>v</i>-C<sub>GD</sub>.<i>v</i>))<br>
+V<sub>GS</sub>=max(C<sub>GS</sub>.<i>v</i>, C<sub>GD</sub>.<i>v</i>)<br>
+V<sub>BS</sub>=max(C<sub>BS</sub>.<i>v</i>, C<sub>BD</sub>.<i>v</i>)<br>
+C.<i>v</i> represents the voltage drop across the capacitor C. As all terms C.<i>v</i> are state-variables
+of the large signal MOSFET model, these definitions tear the computational-casuality loops of the MOSFET
+large-signal description.<br><br>
+
+<h4>2.5.1 I<sub>DS</sub> current source</h4>
+Drain-to source current is described by Eq. (1) when the transistor is in the linear region and
+by Eq. (2) when it is in the saturation region. Equations (1) y (2) are valid for V<sub>DS</sub>>0
+(normal mode). For V<sub>DS</sub> lower than 0 (inverted mode), <i>SPICE</i>Lib switches the source and drain in equations (1)
+ and (2).<br>
+<IMG SRC=Fig.SPICELib.src.NMOS-IDS-formula.png WIDTH=500><br>
+
+<h4>2.5.2 Gate capacitances</h4>
+The three gate capacitances (i.e. C<sub>GB</sub>, C<sub>GS</sub> and C<sub>GD</sub>) are nonlinear,
+continuous functions of V<sub>GS</sub>. In addition, C<sub>GS</sub> and C<sub>GD</sub> are
+functions of V<sub>DS</sub> when the transistor operates in the linear region.<br>
+For V<sub>DS</sub><0 (inverted mode), <i>SPICE</i>Lib switches the source and drain in the capacitance
+calculation. The transition between C<sub>GS</sub> and C<sub>GD</sub> at V<sub>DS</sub>=0 is
+discontinuous in the SPICE2 model. In <i>SPICE</i>Lib a continuous link between C<sub>GS</sub> and C<sub>GD</sub>
+in the vicinity of V<sub>DS</sub>=0 has been introduced. <br>
+
+<h3>2.6 LEVEL1 P-CHANNEL MOSFET</h3>
+<i>SPICE</i>Lib P-MOS model, SPICE2_MOS1P, is composed of linear resistors (of Rbreak class),  voltage
+dependent capacitors and voltage controlled non linear current sources (see Fig. 11).<br><br>
+
+<IMG SRC=Fig.SPICELib.src.PMOS.png WIDTH=700><br>
+<b>Figure 12.</b> P-MOS model.<br><br><br>
+
+The drain-to-source current (I<sub>ds</sub>) and the gate capacitances (C<sub>BG</sub>,
+C<sub>SG</sub> and C<sub>DG</sub>) are function of the variables V<sub>SD</sub>, V<sub>SG</sub>
+and V<sub>SB</sub>. However, V<sub>SG</sub> and V<sub>SB</sub> cannot be calculated form the
+terminal variables of the I<sub>SD</sub>) source model (i. e., the voltage and current at their
+pins). Gate capacitors modeling presents a similar problem. This situation is solved in <i>SPICE</i>Lib
+defining the variables V<sub>SD</sub>, V<sub>SG</sub> and V<sub>SB</sub> as inner variables of the
+transistor model, and as outer variables of its components: the I<sub>SD</sub> current source and
+the gate capacitors.<br>
+The variables are defined as follows: <br>
+V<sub>SS</sub>=noEvent(abs(C<sub>SG</sub>.<i>v</i>-C<sub>DG</sub>.<i>v</i>))<br>
+V<sub>SG</sub>=max(C<sub>SG</sub>.<i>v</i>, C<sub>DG</sub>.<i>v</i>)<br>
+V<sub>SB</sub>=max(C<sub>SB</sub>.<i>v</i>, C<sub>DB</sub>.<i>v</i>)<br>
+C.<i>v</i> represents the voltage drop across the capacitor C. As all terms C.<i>v</i> are state-variables
+of the large signal MOSFET model, these definitions tear the computational-casuality loops of the MOSFET
+large-signal description.<br><br>
+
+<h4>2.6.1 I<sub>SD</sub> current source</h4>
+Source-to-drain current is described by Eq. (3) when the transistor is in the linear region and
+by Eq. (4) when it is in the saturation region. Equations (3) y (4) are valid for V<sub>SD</sub>>0
+(normal mode). For V<sub>SD</sub> lower than 0 (inverted mode), <i>SPICE</i>Lib switches drain and source in equations (3)
+ and (4).<br>
+<IMG SRC=Fig.SPICELib.src.PMOS-IDS-formula.png WIDTH=500><br>
+
+<h4>2.6.2 Gate capacitances</h4>
+The three gate capacitances (i.e. C<sub>BG</sub>, C<sub>SG</sub> and C<sub>DG</sub>) are nonlinear,
+continuous functions of V<sub>SG</sub>. In addition, C<sub>SG</sub> and C<sub>DG</sub> are
+functions of V<sub>SD</sub> when the transistor operates in the linear region.<br>
+For V<sub>SD</sub><0 (inverted mode), <i>SPICE</i>Lib switches the drain and source in the capacitance
+calculation. The transition between C<sub>SG</sub> and C<sub>DG</sub> at V<sub>SD</sub>=0 is
+discontinuous in the SPICE2 model. In <i>SPICE</i>Lib a continuous link between C<sub>SG</sub> and C<sub>DG</sub>
+in the vicinity of V<sub>SD</sub>=0 has been introduced. <br><br><br>
+
+
+
+<h3>2.7 INDEPENDENT SOURCES</h3>
+
+There are a lot of similarities between the models of the voltage and the
+current independent sources:
+<ul><li>the interface,
+<li>the DC and transient analysis signals (i.e., the stimulus),
+<li>etc.</ul>
+
+The characteristics in common are defined in the partial model <i>Stimulus</i>
+(<i>SOURCE</i> package), and the source models (i.e., <i>VSource</i> and
+<i>ISource</i>) inherit it.<br><br>
+
+Source model parameters allow defining the DC and AC characteristics of the
+source: <i>DC_VALUE</i>, <i>AC_MAG</i> and <i>AC_PHASE</i>. Time-dependent
+waveforms used in the transient analyses are defined in the WAVEFORM package:
+EXP, PULSE, PWL, CONST and SIN. The <i>Stimulus</i> model inherits the waveform model as
+a replaceable model. Therefore, the waveform model can be redeclared when
+instantiating the source model (no waveform is selected by default).
+Some examples are provided in Table 2.<br><br>
+
+
+<b>Table 2.</b> Examples of source instantiations.
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=2>
+
+<TR><TD><b>DC and AC specifications</b></TD>
+<TD>SOURCE.VSource  V1(   DC_VALUE=3, AC_MAG=10, AC_PHASE=45 );</TD></TR>
+
+<TR><TD><b>EXP waveform</b></TD>
+<TD>SOURCE.VSource  V1(   DC_VALUE=3, AC_MAG=10, AC_PHASE=45,<br>
+redeclare model    TransientSpecification =
+WAVEFORMS.EXP( S1=1,S2=2,TD1=1,TC1=1,
+TD2=3,TC2=1 ));</TD></TR>
+
+<TR><TD><b>PULSE waveform</b></TD>
+<TD>SOURCE.VSource  V1(   DC_VALUE=3, AC_MAG=10,<br>
+redeclare model    TransientSpecification =
+WAVEFORMS.PULSE( S1=1,S2=2, TD=1,TR=1,
+PW=3,TF=1, PER=8 ));</TD></TR>
+
+<TR><TD><b>PWL waveform</b></TD>
+<TD>SOURCE.VSource  V1(   DC_VALUE=3, AC_MAG=10,
+AC_PHASE=30, <br>
+redeclare model    TransientSpecification =
+WAVEFORMS.PWL(
+signalCorners = { 1, 2, 4, 8, 16 },
+timeCorners   = { 0, 1, 2, 3, 4 } ));</TD></TR>
+
+</TABLE><br><br>
+
+
+<B>2.7.1 DC analysis</b><br><br>
+The control signal <i>ctrl_DC</i> enables or disables the DC model (see Fig. 6):
+<ul>
+<li>While <i>ctrl_DC</i>==false, the DC value of all the independent sources of the circuit is zero.
+<li>While <i>ctrl_DC</i>==true, the DC value of the sources is determined by the integer parameters:
+<ul><li><i>ctrl_OP_mode</i>, and
+<li><i>ctrl_OP_value</i>.</ul></ul>
+
+<IMG SRC=Fig.SPICELib.src.SourceStatic.png WIDTH=500><br>
+<b>Figure 8.</b> Independent sources. Static model.<br><br><br>
+
+
+In order to set the source value when calculating the initial transient condition,
+a parameter is associated to each waveform model: <i>TRANS_INITIAL</i>.
+This parameter coincides with the waveform initial value.<br><br>
+
+The parameter <i>ctrl_OP_value</i> determines the source value during
+the static model solution:
+<ul><li><i>ctrl_OP_value</i>==0: source value is <i>DC_VALUE</i>.
+<li><i>ctrl_OP_value==1</i>: value is <i>TRANS_INITIAL</i>.</ul>
+The parameter <i>ctrl_OP_mode</i> determines the mode of reaching the previous value:
+<ul><li><i>ctrl_OP_mode</i>==0: the source is hold constant to the value.
+<li><i>ctrl_OP_mode</i>==1: the source value is increased linearly from zero with
+a slope equal to the value divided by <i>TimeScale</i>.</ul>
+The \"dynamic model ramping\" algorithm requires the cancellation of
+the independent sources. The control signal <i>ctrl_IS_inhibit</i> allows this operation
+(see Fig. 7).
+While it is true:
+<ul><li>voltage independent sources are substituted by opens (current=0), and
+<li>current independent sources by shorts (voltage=0).</ul>
+
+<IMG SRC=Fig.SPICELib.src.SourceCancel.png WIDTH=500><br>
+<b>Figure 8.</b> Independent sources. Device models.<br><br><br>
+
+
+<b>2.7.2 Transient analysis</b><br><br>
+
+The control signal <i>ctrl_Tran</i> determines (see Fig. 8):
+<ul><li>whether the transient analysis is enabled, and the source signal
+is calculated of its associated waveform (<i>ctrl_Tran</i>==true),
+<li>or the static bias point calculation is enabled (<i>ctrl_Tran</i>==false).
+The algorithm \"dynamic model ramping\" requires the circuit large-signal
+model simulation in order to calculate a \"good\" initial value for static
+model iteration.</ul>
+
+While <i>ctrl_Tran</i>==false, the source value is determined by the parameter
+<i>ctrl_IS_TranOP</i>:
+<ul><li>While ctrl_IS_TranOP==false, the value is zero.
+<li>While <i>ctrl_IS_TranOP</i>==true, the value depends on the parameters <i>ctrl_OP_mode</i>,
+and <i>ctrl_OP_value</i>. The response associated to these parameters is the same than
+the previously discussed for the static formulation.</ul>
+
+<IMG SRC=Fig.SPICELib.src.SourceLargeSignal.png WIDTH=500><br>
+<b>Figure 9.</b> Independent sources. Large-signal model.<br><br><br>
+
+
+<b>2.7.3 AC small-signal analysis</b><br><br>
+
+While the control signal <i>ctrl_AC</i> is true, the AC small-signal value of
+the source is set according to the source parameters <i>AC_MAG</i> and <i>AC_PHASE</i>.
+Otherwise, the value is zero. <br><br>
+
+<b>2.7.4 Model of the disabled formulations</b><br><br>
+
+It is important to notice that while a model formulation is not enabled,
+the correspondent values of the independent sources are zero.
+In this situation, the circuit node voltages are trivially calculated
+and the simulation computational effort is not unnecessarily increased.
+The control signals that enable each of the three formulations are:
+<ul><li><i>ctrl_DC</i>,
+<li><i>ctrl_Tran</i>, and
+<li><i>ctrl_AC</i>.</ul>
+
+<b>2.7.5 Total power dissipation</b><br><br>
+
+The bias point calculation includes the evaluation of the total power dissipation.
+It is calculated adding the contribution of all the independent voltage sources.
+
+The calculation is implemented thanks to the Modelica capability of describing
+\"physical fields\". The <i>PowerDisipation</i> connector is defined.
+The model of the voltage source contains:
+<ul><li>an instantiation of this connector,
+<li>the declaration of an outer connector of this type,
+<li>the connection between them.</ul>
+The \"environment\" (inner) connector is defined in the <i>BiasPointCalculation</i> model.
+
+
+<H2>3. ANALYSES</H2>
+
+
+<h3>3.1 BIAS POINT CALCULATION</h3>
+
+
+<i>SPICE</i>Lib provides four alternative algorithms for solving the circuit static model:
+<ul><li>static model iteration,
+<li>static model ramping,
+<li>GMIN stepping, and
+<li>dynamic model ramping.</ul>
+
+The <i>SOLVE_STATIC</i> parameter determines which of the four algorithms to use. <br><br>
+
+Two control signals, internal to the analysis models, are defined to synchronize
+the bias point calculation with other analysis operations:
+<ul><li><i>biasPoint</i>. Its transition from false to true indicates
+that the static-model solution must start.
+<li><i>biasPointCalculated</i>. When the static-model solution is just
+finished, it becomes true.</ul>
+
+The <i>BiasPointCalculation</i> model reads the value of <i>biasPoint</i> signal
+and writes <i>biasPointCalculated</i>.<br><br>
+Next, the four algorithms are briefly discussed.
+The control signal transitions required for algorithm completion are shown,
+but for the sake of clarity, their cause-effect relationships are omitted.
+Two additional comments:
+<ul><li><i>ctrl_OP_value</i> signal is not written by the bias point calculation algorithms.
+<li>Control signals evaluated at bias point calculation and hold
+to false during the whole algorithm, are omitted.</ul>
+
+<b>3.1.1 Static model iteration</b> (SOLVE_STATIC:=0)<br><br>
+The solution of the static problem is left in hands of the modelling environment.
+<i>SPICE</i>Lib has two symbols to provide an initial guess for Newton-Raphson
+algorithm: NODESET1 and NODESET2.
+The implementation of the algorithm is shown in Fig. 9.<br>
+
+<IMG SRC=Fig.SPICELib.src.BiasPoint_smi.png WIDTH=500><br>
+<b>Figure 10</b>. Static model iteration algorithm.<br><br>
+
+<b>3.1.2 Static model ramping</b> (SOLVE_STATIC:=1)<br><br>
+
+
+This algorithm consists in ramping the
+static-formulation value of the independent sources from zero up
+to their target values. The clamping voltages of the IC symbols and
+the capacitor IC property are also adequately ramped. The value of the
+parameter TimeScale determines the length of the ramping. The algorithm
+is implemented by means of the signal transitions shown in Fig. 10.<br>
+
+<IMG SRC=Fig.SPICELib.src.BiasPoint_smr.png WIDTH=500><br>
+<b>Figure 11</b>. Static model ramping algorithm.<br><br>
+
+<b>3.1.3 GMIN stepping</b> (SOLVE_STATIC:=2)<br><br>
+GMIN stepping attempts to find a solution for the static model
+(with power supplies at 100%) by starting with a large value of GMIN,
+initially 1.0e10 times the nominal value.
+If a solution is found at this setting, <i>SPICE</i>Lib reduces GMIN
+by a factor of 10 and tries again. This continues until either GMIN
+is back to the nominal value, or a repeating cycle fails to converge.
+This algorithm makes heavy use of equation continuity with respect
+to GMIN model parameters.
+The implementation of this algorithm is shown in Fig. 11.<br>
+
+<IMG SRC=Fig.SPICELib.src.BiasPoint_GMIN.png WIDTH=500><br>
+<b>Figure 12</b>. GMIN stepping algorithm.<br><br>
+
+
+<b>3.1.4 Dynamic model ramping</b> (SOLVE_STATIC:=3)<br><br>
+
+The initial condition to iterate the static model is obtained
+by simulating the large-signal model. A transient analysis is performed:
+all sources are ramped up from zero to the desired initial value for
+the simulation and this value is held for some time to allow the
+circuit to stabilise. Then the large-signal formulation voltages
+are transferred to the static model (using <i>ctrl_RBREAK_Tran2DC</i> and
+<i>ctrl_IS_inhibit</i>). This static-circuit setting is held for a clock cycle.
+Then, the power supplies are connected to the circuit, the resistor
+voltage-clamping circuits are disconnected, and the static model is solved.
+The implementation of the algorithm is shown in Fig. 12.<br>
+
+<IMG SRC=Fig.SPICELib.src.BiasPoint_dmr.png WIDTH=500><br>
+<b>Figure 13</b>. Dynamic model ramping algorithm.<br><br>
+
+<h3>3.2 BIAS POINT ANALYSIS</h3>
+
+The OP analysis (see Fig. 13):
+<ul><li>forces the <i>biasPoint</i> signal to become true,
+<li>sets <i>ctrl_OP_value</i> signal to zero, and
+<li>finish the simulation one clock cycle after the
+<i>biasPointCalculated</i> signal becomes true.</ul>
+
+
+<IMG SRC=Fig.SPICELib.src.BiasPointAnalysis.png WIDTH=500><br>
+<b>Figure 14</b>. OP analysis signals.<br><br>
+
+
+<h3>3.3 AC SWEEP ANALYSIS</h3>
+
+The <i>TYPE_AC_SWEEP</i> parameter defines the frequency sweep type:
+<ul><li><i>TYPE_AC_SWEEP</i>==0: frequency linear sweep.
+<li><i>TYPE_AC_SWEEP</i>==1: the frequency is swept logarithmically by decades.</ul>
+AC small-signal analysis (see Fig. 14):
+<ul><li>forces the <i>biasPoint</i> signal to become true, and
+<li>sets <i>ctrl_OP_value</i> signal to zero.</ul>
+When biasPointCalculated becomes true, the AC analysis:
+<ul><li>forces <i>ctrl_AC</i> to become true, enabling the AC model.
+<li>Starts the frequency sweep. The frequency variation in time
+depends on the sweep type. In both cases, the required log frequencies
+are spaced at regular time-intervals of length 2*CLOCK.
+Therefore, the <i>ctrl_log_AC</i> signal is a pulse train of period 2*CLOCK.</ul>
+
+The simulation is finished one clock cycle after the frequency reaches
+<i>END_FREQUENCY</i>.
+
+<IMG SRC=Fig.SPICELib.src.ACsweepAnalysis.png WIDTH=500><br>
+<b>Figure 15</b>. AC analysis signals.<br><br>
+
+<h3>3.4 TRANSIENT ANALYSIS</h3>
+
+
+When the transient simulation is started,
+the value of the time variable is different of zero.
+For this reason, a variable is defined to measure the transient simulation time:
+<i>TIME</i>. The length of the transient simulation is set by the <i>TSTOP</i> parameter.<br><br>
+The transient analysis depends on the SKIP_INITIAL_TRAN_SOLUTION parameter (see Table 3).
+<br><br>
+
+
+
+<b>Table 3.</b> Transient analysis with and w/o initial calculation.
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=5>
+
+<TR><TD><b>SKIP_INITIAL_TRAN_SOLUTION:=false</b></TD>
+<TD>
+When biasPointCalculated becomes true, the circuit static model
+contains the transient initial solution. Then (see Fig. 15):
+<ul><li><i>ctrl_CBREAK_Tran2DC</i> becomes true.
+The large-signal circuit state is initialised to the static-circuit voltage values.
+<li><i>ctrl_Tran</i> becomes true. The large-signal device models are enabled.</ul>
+The simulation terminates when timeTran reaches the value TRAN_STOP_TIME.
+</TD></TR>
+
+<TR><TD><b>SKIP_INITIAL_TRAN_SOLUTION:=true</b></TD>
+<TD>
+At initial time (see Fig. 16):
+<ul><li><i>ctrl_CBREAK_Tran2IC</i> becomes true.
+The large-signal circuit state is initialised to the IC-property correspondent values.
+<li>ctrl_Tran becomes true. The large-signal device models are enabled.</ul>
+
+</TD></TR>
+
+</TABLE><br><br>
+
+
+<IMG SRC=Fig.SPICELib.src.TransientAnalysiswIC.png WIDTH=500><br>
+<b>Figure 16</b>. Transient analysis with initial calculation.<br><br>
+
+
+<IMG SRC=Fig.SPICELib.src.TransientAnalysisw_oIC.png WIDTH=500><br>
+<b>Figure 17</b>. Transient analysis without initial calculation.<br><br>
+
+
+
+
+</HTML>
+"),
+  Icon(Rectangle(extent=[-80, 60; 80, -60], style(color=43, thickness=2)), Text
+      (extent=[-58, 34; 54, -26], string="src")));
+end src;

@@ -1,0 +1,342 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE DIODE_PSPICE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.BREAKOUT.DIODE_PSPICE"></A><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT"
+>SPICELib.src.BREAKOUT</A>.DIODE_PSPICE</H2>
+<A HREF="SPICELib_src_BREAKOUT_DIODE_PSPICE.html#SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODE"
+><IMG SRC="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODEI.png" ALT="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODE" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_BREAKOUT_DIODE_PSPICE.html#SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODE"
+><IMG SRC="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODEI.png" ALT="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODE" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_DIODE_PSPICE.html#SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODE"
+>I_DIODE</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_DIODE_PSPICE.html#SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODE"
+>C_DIODE</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE I_DIODE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODEI.png" ALT="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODE" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODE"></A><A HREF="SPICELib_src_BREAKOUT_DIODE_PSPICE.html#SPICELib.src.BREAKOUT.DIODE_PSPICE"
+>SPICELib.src.BREAKOUT.DIODE_PSPICE</A>.I_DIODE</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODED.png" ALT="SPICELib.src.BREAKOUT.DIODE_PSPICE.I_DIODE">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IS</TD><TD>&nbsp;</TD><TD>Reverse saturation current at 300K [A]</TD></TR>
+<TR><TD>BV</TD><TD>&nbsp;</TD><TD>Reverse breakdown voltage (positive number) [V]</TD></TR>
+<TR><TD>N</TD><TD>&nbsp;</TD><TD>Emission coefficient</TD></TR>
+<TR><TD>IKF</TD><TD>&nbsp;</TD><TD>High injection knee current [A]</TD></TR>
+<TR><TD>ISR</TD><TD>&nbsp;</TD><TD>Recombination current [A]</TD></TR>
+<TR><TD>NR</TD><TD>&nbsp;</TD><TD>Emission coefficient for ISR</TD></TR>
+<TR><TD>IBV</TD><TD>&nbsp;</TD><TD>Reverse breakdown current (positive number) [A]</TD></TR>
+<TR><TD>M</TD><TD>&nbsp;</TD><TD>Grading coefficient</TD></TR>
+<TR><TD>VJ</TD><TD>&nbsp;</TD><TD>Junction potencial [V]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> I_DIODE
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+>INTERFACE.OnePort</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IS <font color="darkgreen">&quot;Reverse saturation current at 300K&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">
+    //  parameter SI.Conductance GMIN &quot;Conductance in parallel with the pn-junction&quot;;</font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> BV <font color="darkgreen">&quot;Reverse breakdown voltage (positive number)&quot;</font>;
+  <font color="blue">parameter </font>Real N <font color="darkgreen">&quot;Emission coefficient&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IKF <font color="darkgreen">&quot;High injection knee current&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> ISR <font color="darkgreen">&quot;Recombination current&quot;</font>;
+  <font color="blue">parameter </font>Real NR <font color="darkgreen">&quot;Emission coefficient for ISR&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IBV <font color="darkgreen">&quot;Reverse breakdown current (positive number)&quot;</font>;
+  <font color="darkgreen">//  SI.Current IBV &quot;Reverse breakdown current (positive number)&quot;;</font>
+  <font color="blue">parameter </font>Real M <font color="darkgreen">&quot;Grading coefficient&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> VJ <font color="darkgreen">&quot;Junction potencial&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vDiodeTran <font color="darkgreen">&quot;Voltage drop across the current source&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gAC(start=1) <font color="darkgreen">&quot;AC small-signal conductance&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> thermalVolt <font color="darkgreen">&quot;Thermal voltage&quot;</font>;
+  Real KhliDC;
+  Real KgenDC;
+  Real KhliDCs(start=1);
+  Real KgenDCs(start=1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IFDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IRDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IFDCs(start=1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IRDCs(start=1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IREVDC;
+  Real KhliTran;
+  Real KgenTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IFTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IRTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IREVTran;
+  Real derKhli;
+  Real derKgen;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIF;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIR;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIREV;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Thermal voltage: kT/q</font>
+  thermalVolt = temp/11600;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------</font>
+  <font color="darkgreen">// Static Model</font>
+  <font color="darkgreen">// ------------</font>
+  <font color="darkgreen"></font>
+  KhliDC = <font color="blue">if </font>(IKF &gt; IS<font color="blue"> and </font>ctrl_DC)<font color="blue"> then </font><font color="red">sqrt</font>(IKF/(IKF + IFDC))<font color="blue"> else </font>1;
+  <font color="darkgreen"></font>
+  KgenDC = <font color="blue">if </font>(ctrl_DC)<font color="blue"> then </font><font color="red">sqrt</font>(((1 - vDC/VJ)^2 + 0.005)^M)<font color="blue"> else </font>1;
+  <font color="darkgreen"></font>
+  IFDC = <font color="blue">if </font>(ctrl_DC)<font color="blue"> then </font>IS*(<font color="red">exp</font>(vDC/thermalVolt/N) - 1)<font color="blue"> else </font>0;
+  <font color="darkgreen"></font>
+  IRDC = <font color="blue">if </font>(ctrl_DC)<font color="blue"> then </font>ISR*(<font color="red">exp</font>(vDC/thermalVolt/NR) - 1)<font color="blue"> else </font>0;
+  <font color="darkgreen"></font>
+  IREVDC = <font color="blue">if </font>(ctrl_DC)<font color="blue"> then </font>IBV*<font color="red">exp</font>(-(BV + vDC)/thermalVolt)<font color="blue"> else </font>0;
+  0 = <font color="blue">if </font>(ctrl_DC)<font color="blue"> then </font>-iDC + KhliDC*IFDC + KgenDC*IRDC - IREVDC + vDC*GMIN*
+    scaleGMIN<font color="blue"> else </font>vDC;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen">// Large-signal Model</font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen"></font>
+  KhliTran = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font><font color="red">sqrt</font>(IKF/(IKF + IFTran))<font color="blue"> else </font>1;
+  <font color="darkgreen"></font>
+  KgenTran = <font color="red">sqrt</font>(((1 - vDiodeTran/VJ)^2 + 0.005)^M);
+  <font color="darkgreen"></font>
+  IFTran = IS*(<font color="red">exp</font>(vDiodeTran/thermalVolt/N) - 1);
+  <font color="darkgreen"></font>
+  IRTran = ISR*(<font color="red">exp</font>(vDiodeTran/thermalVolt/NR) - 1);
+  <font color="darkgreen"></font>
+  IREVTran = IBV*<font color="red">exp</font>(-(BV + vDiodeTran)/thermalVolt);
+  <font color="darkgreen"></font>
+  iTran = KhliTran*IFTran + KgenTran*IRTran - IREVTran + vTran*GMIN;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ---------------------</font>
+  <font color="darkgreen">// AC Small Signal Model</font>
+  <font color="darkgreen">// ---------------------</font>
+  <font color="darkgreen"></font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    <font color="darkgreen"></font>
+    derIF = IS/thermalVolt/N*<font color="red">exp</font>(vDC/thermalVolt/N);
+    <font color="darkgreen"></font>
+    derIR = ISR/thermalVolt/NR*<font color="red">exp</font>(vDC/thermalVolt/NR);
+    <font color="darkgreen"></font>
+    derIREV = -IBV/thermalVolt*<font color="red">exp</font>(-(BV + vDC)/thermalVolt);
+    <font color="darkgreen"></font>
+    IFDCs = IS*(<font color="red">exp</font>(vDC/thermalVolt/N) - 1);
+    <font color="darkgreen"></font>
+    IRDCs = ISR*(<font color="red">exp</font>(vDC/thermalVolt/NR) - 1);
+    <font color="darkgreen"></font>
+    derKhli = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font>-0.5/<font color="red">sqrt</font>(IKF/(IKF + IFDCs))*derIF*IKF/(IKF +
+      IFDCs)^2<font color="blue"> else </font>0;
+    <font color="darkgreen"></font>
+    derKgen = -M/VJ*(1 - vDC/VJ)*((1 - vDC/VJ)^2 + 0.005)^(M/2 - 1);
+    <font color="darkgreen"></font>
+    KhliDCs = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font><font color="red">sqrt</font>(IKF/(IKF + IFDCs))<font color="blue"> else </font>1;
+    <font color="darkgreen"></font>
+    KgenDCs = <font color="red">sqrt</font>(((1 - vDC/VJ)^2 + 0.005)^M);
+    <font color="darkgreen"></font>
+    gAC = derKhli*IFDCs + derIF*KhliDCs + derKgen*IRDCs + KgenDCs*derIR +
+      derIREV + GMIN;
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+  {iAC_Re,iAC_Im} = gAC*{vAC_Re,vAC_Im};
+  <font color="darkgreen"></font>
+<font color="blue">end </font>I_DIODE;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE C_DIODE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODEI.png" ALT="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODE" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODE"></A><A HREF="SPICELib_src_BREAKOUT_DIODE_PSPICE.html#SPICELib.src.BREAKOUT.DIODE_PSPICE"
+>SPICELib.src.BREAKOUT.DIODE_PSPICE</A>.C_DIODE</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODED.png" ALT="SPICELib.src.BREAKOUT.DIODE_PSPICE.C_DIODE">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>0</TD><TD>Initial voltage [V]</TD></TR>
+<TR><TD>IC_ENABLED</TD><TD>false</TD><TD>IC enabled</TD></TR>
+<TR><TD>CJ0</TD><TD>&nbsp;</TD><TD>Zero-bias junction capacitance [F]</TD></TR>
+<TR><TD>TT</TD><TD>&nbsp;</TD><TD>Transit time [s]</TD></TR>
+<TR><TD>M</TD><TD>&nbsp;</TD><TD>Grading coefficient</TD></TR>
+<TR><TD>FC</TD><TD>&nbsp;</TD><TD>Coefficient for forward-bias depletion capacitance formula</TD></TR>
+<TR><TD>VJ</TD><TD>&nbsp;</TD><TD>Junction potencial [V]</TD></TR>
+<TR><TD>IS</TD><TD>&nbsp;</TD><TD>Reverse saturation current at 300K [A]</TD></TR>
+<TR><TD>BV</TD><TD>&nbsp;</TD><TD>Reverse breakdown voltage (positive number) [V]</TD></TR>
+<TR><TD>N</TD><TD>&nbsp;</TD><TD>Emission coefficient</TD></TR>
+<TR><TD>IKF</TD><TD>&nbsp;</TD><TD>High injection knee current [A]</TD></TR>
+<TR><TD>ISR</TD><TD>&nbsp;</TD><TD>Recombination current [A]</TD></TR>
+<TR><TD>NR</TD><TD>&nbsp;</TD><TD>Emission coefficient for ISR</TD></TR>
+<TR><TD>IBV</TD><TD>&nbsp;</TD><TD>Reverse breakdown current (positive number) [A]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> C_DIODE
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Capacitor"
+>src.BREAKOUT.Capacitor</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">parameter </font>Real CJ0 <font color="darkgreen">&quot;Zero-bias junction capacitance [F]&quot;</font>;
+  <font color="blue">parameter </font>Real TT <font color="darkgreen">&quot;Transit time [s]&quot;</font>;
+  <font color="blue">parameter </font>Real M <font color="darkgreen">&quot;Grading coefficient&quot;</font>;
+  <font color="blue">parameter </font>Real FC <font color="darkgreen">
+    &quot;Coefficient for forward-bias depletion capacitance formula&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> VJ <font color="darkgreen">&quot;Junction potencial&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IS <font color="darkgreen">&quot;Reverse saturation current at 300K&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> BV <font color="darkgreen">&quot;Reverse breakdown voltage (positive number)&quot;</font>;
+  <font color="blue">parameter </font>Real N <font color="darkgreen">&quot;Emission coefficient&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IKF <font color="darkgreen">&quot;High injection knee current&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> ISR <font color="darkgreen">&quot;Recombination current&quot;</font>;
+  <font color="blue">parameter </font>Real NR <font color="darkgreen">&quot;Emission coefficient for ISR&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IBV <font color="darkgreen">&quot;Reverse breakdown current (positive number)&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <font color="blue">parameter </font>Real F2=(1 - FC)^(1 + M);
+  <font color="blue">parameter </font>Real F3=1 - FC*(1 + M);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gAC(start=1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gTran(start=1);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> thermalVolt <font color="darkgreen">&quot;Thermal voltage&quot;</font>;
+  Real KhliDC;
+  Real KgenDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IFDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IRDC;
+  Real KhliTran;
+  Real KgenTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IFTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IRTran;
+  Real derKhliDC;
+  Real derKgenDC;
+  Real derKhliTran;
+  Real derKgenTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIFDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIRDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIREVDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIFTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIRTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> derIREVTran;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Thermal voltage: kT/q</font>
+  thermalVolt = temp/11600;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen">// Large-signal capacitance</font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen"></font>
+  Cvar*<font color="red">der</font>(vTran) = iTran;
+  <font color="darkgreen"></font>
+  derIFTran = IS/thermalVolt/N*<font color="red">exp</font>(vTran/thermalVolt/N);
+  <font color="darkgreen"></font>
+  derIRTran = ISR/thermalVolt/NR*<font color="red">exp</font>(vTran/thermalVolt/NR);
+  <font color="darkgreen"></font>
+  derIREVTran = -IBV/thermalVolt*<font color="red">exp</font>(-(BV + vTran)/thermalVolt);
+  <font color="darkgreen"></font>
+  IFTran = IS*(<font color="red">exp</font>(vTran/thermalVolt/N) - 1);
+  <font color="darkgreen"></font>
+  IRTran = ISR*(<font color="red">exp</font>(vTran/thermalVolt/NR) - 1);
+  <font color="darkgreen"></font>
+  derKhliTran = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font>-0.5/<font color="red">sqrt</font>(IKF/(IKF + IFTran))*derIFTran*IKF/
+    (IKF + IFTran)^2<font color="blue"> else </font>0;
+  <font color="darkgreen"></font>
+  derKgenTran = -M/VJ*(1 - vTran/VJ)*((1 - vTran/VJ)^2 + 0.005)^(M/2 - 1);
+  <font color="darkgreen"></font>
+  KhliTran = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font><font color="red">sqrt</font>(IKF/(IKF + IFTran))<font color="blue"> else </font>1;
+  <font color="darkgreen"></font>
+  KgenTran = <font color="red">sqrt</font>(((1 - vTran/VJ)^2 + 0.005)^M);
+  <font color="darkgreen"></font>
+  gTran = derKhliTran*IFTran + derIFTran*KhliTran + derKgenTran*IRTran +
+    KgenTran*derIRTran - derIREVTran + GMIN;
+  <font color="darkgreen"></font>
+  Cvar = <font color="blue">if </font><font color="red">noEvent</font>(vTran &lt; FC*VJ)<font color="blue"> then </font>TT*gTran + CJ0*(1 - vTran/VJ)^(-M)<font color="blue">
+     else </font>TT*gTran + CJ0/F2*(F3 + M*vTran/VJ);
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="darkgreen">// AC small-signal capacitance</font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="darkgreen"></font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    <font color="darkgreen"></font>
+    derIFDC = IS/thermalVolt/N*<font color="red">exp</font>(vDC/thermalVolt/N);
+    <font color="darkgreen"></font>
+    derIRDC = ISR/thermalVolt/NR*<font color="red">exp</font>(vDC/thermalVolt/NR);
+    <font color="darkgreen"></font>
+    derIREVDC = -IBV/thermalVolt*<font color="red">exp</font>(-(BV + vDC)/thermalVolt);
+    <font color="darkgreen"></font>
+    IFDC = IS*(<font color="red">exp</font>(vDC/thermalVolt/N) - 1);
+    <font color="darkgreen"></font>
+    IRDC = ISR*(<font color="red">exp</font>(vDC/thermalVolt/NR) - 1);
+    <font color="darkgreen"></font>
+    derKhliDC = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font>-0.5/<font color="red">sqrt</font>(IKF/(IKF + IFDC))*derIFDC*IKF/(IKF
+       + IFDC)^2<font color="blue"> else </font>0;
+    <font color="darkgreen"></font>
+    derKgenDC = -M/VJ*(1 - vDC/VJ)*((1 - vDC/VJ)^2 + 0.005)^(M/2 - 1);
+    <font color="darkgreen"></font>
+    KhliDC = <font color="blue">if </font>(IKF &gt; IS)<font color="blue"> then </font><font color="red">sqrt</font>(IKF/(IKF + IFDC))<font color="blue"> else </font>1;
+    <font color="darkgreen"></font>
+    KgenDC = <font color="red">sqrt</font>(((1 - vDC/VJ)^2 + 0.005)^M);
+    <font color="darkgreen"></font>
+    gAC = derKhliDC*IFDC + derIFDC*KhliDC + derKgenDC*IRDC + KgenDC*derIRDC +
+      derIREVDC + GMIN;
+    <font color="darkgreen"></font>
+    CvarAC = <font color="blue">if </font>(vDC &lt; FC*VJ)<font color="blue"> then </font>TT*gAC + CJ0*(1 - vDC/VJ)^(-M)<font color="blue"> else </font>TT*gAC
+       + CJ0/F2*(F3 + M*vDC/VJ);
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+<font color="blue">end </font>C_DIODE;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:45 2003
+.
+</address></BODY>
+</HTML>

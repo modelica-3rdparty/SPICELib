@@ -1,0 +1,306 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE nandcmos<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.tutorial.nandcmos"></A><A HREF="SPICELib_tutorial.html#SPICELib.tutorial"
+>SPICELib.tutorial</A>.nandcmos</H2>
+<B>Nand gate</B>
+<P>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center>NAND CMOS</H1>
+The modeling and transient analysis of the CMOS nand gate shown in Figure 1 is discussed. <br>
+The transient analysis plots are shown.<br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.Layout.png WIDTH=600><br>
+<b>Figure 1.</b> CMOS Nand gate.<br><br>
+<H2>Circuit modeling</H2>
+<ul>
+<li>Start Dymola with Modelica modeling language.
+<li>In order to open <i>SPICE</i>Lib library, select in the Dymola window File/Open
+and open the file SPICELib/package.mo
+<li>Create a new package (select in the Dymola window File/New/Package): <i>nandcmos</i>.<br>
+It is going to include the circuit and the analysis models.
+<li>Create the circuit model (select in the Dymola window File/New/Model) as follows:<br>
+<ul>Name of new model: <i>schematic</i><br>
+Description: Circuit model<br>
+Partial model<br>
+Insert in package: nandcmos<br></ul>
+Dymola model window now contains an empty <i>schematic</i> model.<br>
+The model circuit is built up using components from the SPICELib.parts package.
+The model components for n-channel MOS, p-channel MOS and ground can be found in
+SPICELib.parts.breakout. The model component for a independent voltage source
+can be found in SPICELib.parts.source. Drag and drop the part models.
+<ul><li>SPICELib.parts.breakout.Ground
+<li>SPICELib.parts.breakout.Spice2MOS1
+<li>SPICELib.parts.breakout.Spice2MOS1P
+<li>SPICELib.parts.source.VPULSE
+<li>SPICELib.parts.source.VCONST</ul>
+<li>Connect the circuit parts as shown in Figure 1.
+<li>Enter the parameter values of the circuit components. See Figures 2-6.
+N1 and N2 have the same parameters. P1 and P2 also have the same parameters.<br>
+The Boolean parameter HIDDEN_COMPONENT controls the log of the device
+variables (see <i>SPICELib.analyses</i> package documentation).
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.VDDparams.png WIDTH=450><br>
+<b>Figure 2.</b> VDD parameters.<br><br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.V1params.png WIDTH=450><br>
+<b>Figure 3.</b> V1 parameters.<br><br><br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.V2params.png WIDTH=450><br>
+<b>Figure 4.</b> V2 parameters.<br><br><br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.NMOSparams.png WIDTH=750><br>
+<b>Figure 5.</b> NMOS parameters.<br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.PMOSparams.png WIDTH=750><br>
+<b>Figure 6.</b> PMOS parameters.<br><br><br>
+<li>Save the <i>Schematic</i> model.
+</ul>
+<H2>Transient (time) analysis (TRAN)</H2>
+<ul>
+<li>Create a new model, <i>TRAN</i>, and insert it in <i>nandcmos</i> package
+(see Figure 7).
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.createTRAN.png WIDTH=450><br>
+<b>Figure 7.</b> Inserting <i>TRAN</i> in <i>nandcmos</i> package.<br><br>
+<li>Drag an <i>SPICELib.analyses.TRAN</i> model into the <i>TRAN</i> model
+(see Figure 8).
+<IMG SRC=Fig.SPICELib.tutorial.nandmos.TRANDiagram.png WIDTH=650><br>
+<b>Figure 8.</b> Inserting <i>TRAN</i> in <i>nandcmos</i> package.<br><br>
+<li>Enter the TRAN analysis parameters (see Figure 9). The meaning of the
+analysis parameters is discussed in the SPICELib.analyses.TRAN model documentation.
+The <i>SKIPBP</i> parameter determines whether skip or not the bias point calculation.
+<br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.TRANParams.png WIDTH=550><br>
+<b>Figure 9.</b> TRAN analysis parameters.<br><br>
+</ul>
+<h3>TRANSIENT ANALYSIS</h3>
+Figure 10 shows the input stimuli. Figure 11 shows the results obtaines with SPICELib
+and ORCAD PSPICE and in Figure 12 the difference between the results obtained with
+<i>SPICE</i>Lib and ORCAD PSpice is presented.<br><br>
+<u1>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.inputTRAN.png WIDTH=450><br>
+<b>Figure 10.</b> Input stimuli.<br><br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.TRAN.png WIDTH=450><br>
+<b>Figure 11.</b> Results obtained with SPICELib and ORCAD PSpice.<br><br>
+<IMG SRC=Fig.SPICELib.tutorial.nandcmos.errorTRAN.png WIDTH=450><br>
+<b>Figure 12.</b> Difference between the results obtained with SPICELib and ORCAD.<br><br>
+</ul>
+
+<pre>
+</PRE><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_tutorial_nandcmos.html#SPICELib.tutorial.nandcmos.schematic"
+>schematic</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_tutorial_nandcmos.html#SPICELib.tutorial.nandcmos.TRAN"
+>TRAN</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE schematic<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.tutorial.nandcmos.schematic"></A><A HREF="SPICELib_tutorial_nandcmos.html#SPICELib.tutorial.nandcmos"
+>SPICELib.tutorial.nandcmos</A>.schematic</H2>
+<IMG SRC="SPICELib.tutorial.nandcmos.schematicD.png" ALT="SPICELib.tutorial.nandcmos.schematic">
+<H3>Information</H3>
+<PRE>        </pre>
+	Please, see SPICELib.tutorial.nandcmos documentation
+	<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> schematic
+  <font color="darkgreen"></font>
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground1;
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground2;
+  <A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPULSE"
+>parts.source.VPULSE</A> V1(
+    PW=500e-9,
+    AC_MAG=0,
+    DC_VALUE=5,
+    S2=0,
+    S1=5,
+    TD=0e-9,
+    PER=1040e-9,
+    TF=20e-9,
+    TR=20e-9);
+  <A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPULSE"
+>parts.source.VPULSE</A> V2(
+    AC_MAG=0,
+    TD=0e-9,
+    DC_VALUE=5,
+    S2=0,
+    S1=5,
+    PW=1000e-9,
+    PER=2040e-9,
+    TF=20e-9,
+    TR=20e-9);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground3;
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1"
+>parts.breakout.Spice2MOS1</A> N1(
+    L=2e-6,
+    W=4e-6,
+    CJ=0.0003002,
+    LAMBDA=0.01302,
+    LD=1.526e-7,
+    MJ=0.5,
+    MJSW=0.5,
+    PB=0.7365,
+    TOX=1.6e-8,
+    RS=10,
+    RB=10,
+    CJSW=1.376e-15,
+    GAMMA=0.37,
+    KP=40e-6,
+    PHI=0.6,
+    VTO=1,
+    CGBO=2e-8,
+    CGDO=3.227e-8,
+    CGSO=3.227e-8,
+    AD=1e-12,
+    AS=1e-12,
+    PD=1e-6,
+    PS=1e-6);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1P"
+>parts.breakout.Spice2MOS1P</A> P1(
+    CJ=0.0004138,
+    L=2e-6,
+    LAMBDA=0.01525,
+    LD=1.063e-7,
+    MJSW=0.5,
+    PB=0.7485,
+    TOX=1.6e-8,
+    W=20e-6,
+    GAMMA=0.4,
+    KP=16e-6,
+    PHI=0.6,
+    VTO=-1,
+    CGBO=2e-8,
+    CGDO=2.248e-8,
+    CGSO=2.28e-8,
+    CJSW=1.004e-8,
+    FC=0.5,
+    IS=1e-14,
+    MJ=0.5,
+    RD=10,
+    RS=10,
+    RB=10,
+    RG=10,
+    AD=1e-12,
+    AS=1e-12,
+    PD=1e-6,
+    PS=1e-6);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1"
+>parts.breakout.Spice2MOS1</A> N2(
+    L=2e-6,
+    W=4e-6,
+    CJ=0.0003002,
+    LAMBDA=0.01302,
+    LD=1.526e-7,
+    MJ=0.5,
+    MJSW=0.5,
+    PB=0.7365,
+    TOX=1.6e-8,
+    RS=10,
+    RB=10,
+    CJSW=1.376e-15,
+    GAMMA=0.37,
+    KP=40e-6,
+    PHI=0.6,
+    VTO=1,
+    CGBO=2e-8,
+    CGDO=3.227e-8,
+    CGSO=3.227e-8,
+    FC=0.5,
+    IS=1e-14,
+    RD=10,
+    RG=10,
+    AD=1e-12,
+    AS=1e-12,
+    PD=1e-6,
+    PS=1e-6);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1P"
+>parts.breakout.Spice2MOS1P</A> P2(
+    CJ=0.0004138,
+    L=2e-6,
+    LAMBDA=0.01525,
+    LD=1.063e-7,
+    MJSW=0.5,
+    PB=0.7485,
+    TOX=1.6e-8,
+    W=20e-6,
+    GAMMA=0.4,
+    KP=16e-6,
+    PHI=0.6,
+    VTO=-1,
+    CGBO=2e-8,
+    CGDO=2.248e-8,
+    CGSO=2.28e-8,
+    CJSW=1.004e-8,
+    AD=1e-12,
+    AS=1e-12,
+    PD=1e-6,
+    PS=1e-6);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground4;
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground5;
+  <A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VCONST"
+>parts.source.VCONST</A> VDD(
+    OFF=5,
+    DC_VALUE=5,
+    AC_MAG=0);
+<font color="blue">equation </font>
+  <font color="red">connect</font>(V1.p, N1.g);
+  <font color="red">connect</font>(V2.n, Ground2.p);
+  <font color="red">connect</font>(N1.d, N2.s);
+  <font color="red">connect</font>(N1.s, N1.b);
+  <font color="red">connect</font>(P2.d, N2.d);
+  <font color="red">connect</font>(P1.s, P2.s);
+  <font color="red">connect</font>(P1.s, P1.b);
+  <font color="red">connect</font>(P2.s, P2.b);
+  <font color="red">connect</font>(P2.g, N2.g);
+  <font color="red">connect</font>(P1.g, N1.g);
+  <font color="red">connect</font>(N1.s, Ground1.p);
+  <font color="red">connect</font>(P1.d, P2.d);
+  <font color="red">connect</font>(V2.p, N2.g);
+  <font color="red">connect</font>(V1.n, Ground3.p);
+  <font color="red">connect</font>(N2.b, Ground5.p);
+  <font color="red">connect</font>(VDD.n, Ground4.p);
+  <font color="red">connect</font>(VDD.p, P2.s);
+<font color="blue">end </font>schematic;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TRAN<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.tutorial.nandcmos.TRAN"></A><A HREF="SPICELib_tutorial_nandcmos.html#SPICELib.tutorial.nandcmos"
+>SPICELib.tutorial.nandcmos</A>.TRAN</H2>
+<IMG SRC="SPICELib.tutorial.nandcmos.TRAND.png" ALT="SPICELib.tutorial.nandcmos.TRAN">
+<H3>Information</H3>
+<PRE>        </pre>
+	Please, see SPICELib.tutorial.nandcmos documentation
+	<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TRAN
+  <A HREF="SPICELib_analyses.html#SPICELib.analyses.TRAN"
+>analyses.TRAN</A> TRAN1(
+    LogResults=0,
+    <font color="blue">redeclare </font><font color="blue">model</font> Circuit = <A HREF="SPICELib_tutorial_nandcmos.html#SPICELib.tutorial.nandcmos.schematic"
+>schematic</A>,
+    TimeScale=1e-7,
+    SKIPBP=false,
+    TSTOP=2e-6);
+<font color="blue">end </font>TRAN;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:42 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,1628 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE breakout<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.parts.breakout"></A><A HREF="SPICELib_parts.html#SPICELib.parts"
+>SPICELib.parts</A>.breakout</H2>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+><IMG SRC="SPICELib.parts.breakout.GroundI.png" ALT="SPICELib.parts.breakout.Ground" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Rbreak"
+><IMG SRC="SPICELib.parts.breakout.RbreakI.png" ALT="SPICELib.parts.breakout.Rbreak" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Cbreak"
+><IMG SRC="SPICELib.parts.breakout.CbreakI.png" ALT="SPICELib.parts.breakout.Cbreak" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Lbreak"
+><IMG SRC="SPICELib.parts.breakout.LbreakI.png" ALT="SPICELib.parts.breakout.Lbreak" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.PSPICE_diode"
+><IMG SRC="SPICELib.parts.breakout.PSPICE_diodeI.png" ALT="SPICELib.parts.breakout.PSPICE_diode" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1"
+><IMG SRC="SPICELib.parts.breakout.Spice2MOS1I.png" ALT="SPICELib.parts.breakout.Spice2MOS1" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1P"
+><IMG SRC="SPICELib.parts.breakout.Spice2MOS1PI.png" ALT="SPICELib.parts.breakout.Spice2MOS1P" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>breakout</i> package</H1><br><br>
+
+<p>The following summary table lists all the device types of <i>breakout</i> package.
+Each device type is described in detail in the model documentation.</p><br>
+
+<b>Table 1.</b> <i>breakout</i> package devices.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TH align=center><b>Model</b></TH>
+<TH align=center><b>Device type</b></TH></TR>
+
+<TR><TD WIDTH=40>Ground</TD>
+<TD>'0' ground</TD></TR>
+
+<TR><TD WIDTH=40>Rbreak</TD>
+<TD>Resistor</TD></TR>
+
+<TR><TD WIDTH=40>Cbreak</TD>
+<TD>Capacitor</TD></TR>
+
+<TR><TD WIDTH=40>Lbreak</TD>
+<TD>Capacitor</TD></TR>
+
+<TR><TD WIDTH=40>PSPICE_diode</TD>
+<TD>PSPICE diode</TD></TR>
+
+<TR><TD WIDTH=40>Spice2MOS1</TD>
+<TD>SPICE2 level1 n-channel MOSFET</TD></TR>
+
+<TR><TD WIDTH=40>Spice2MOS1P</TD>
+<TD>SPICE2 level1 p-channel MOSFET</TD></TR>
+</TABLE><br><br>
+
+<pre>
+</PRE><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>Ground</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Rbreak"
+>Rbreak</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Cbreak"
+>Cbreak</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Lbreak"
+>Lbreak</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.PSPICE_diode"
+>PSPICE_diode</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1"
+>Spice2MOS1</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1P"
+>Spice2MOS1P</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Ground<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.GroundI.png" ALT="SPICELib.parts.breakout.Ground" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.Ground"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.Ground</H2>
+<IMG SRC="SPICELib.parts.breakout.GroundD.png" ALT="SPICELib.parts.breakout.Ground">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>Ground</i> model</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.Ground.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Ground.<br><br>
+
+<H2>Node</H2><br>
+
+<b>Table 1.</b> Instantiation of <i>Pin</i> class
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD>Comment</TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+</TABLE><br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<H2>Parameters</H2><br>
+None.<br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+None.<br><br>
+
+<H2>Constitutive relations</H2><br>
+<b>Table 3.</b> Model formulations.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Static</b></TD>
+<TD>p.vDC=0</TD></TR>
+<TR><TD><b>AC small-signal</b></TD>
+<TD>p.vAC_Re=0<br>p.vAC_Im=0</TD></TR>
+<TR><TD><b>Large signal</b></TD>
+<TD>p.vTran=0</TD></TR>
+</TABLE><br><br>
+
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Ground
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Ground"
+>src.BREAKOUT.Ground</A>;
+<font color="blue">end </font>Ground;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Rbreak<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.RbreakI.png" ALT="SPICELib.parts.breakout.Rbreak" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.Rbreak"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.Rbreak</H2>
+<IMG SRC="SPICELib.parts.breakout.RbreakD.png" ALT="SPICELib.parts.breakout.Rbreak">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>Rbreak</i> - Linear resistor</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.Rbreak.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Resistor.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+
+(+) and (-) nodes define the polarity when the resistor has a
+positive voltage across it. The voltage across the component
+is therefore defined as the (+) node voltage minus the
+(-) node voltage.<br><br>
+Positive current flows from the (+) node through the resistor
+to the (-) node.<br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+<TR><TD>pinP_vAC_mag</TD>
+<TD>AC small-signal voltage. Magnitude.</TD></TR>
+
+<TR><TD>pinP_vAC_mag_dB</TD>
+<TD>AC small-signal voltage. Magnitude (dB).</TD></TR>
+
+<TR><TD>pinP_vAC_phase</TD>
+<TD>AC small-signal voltage. Phase (deg).</TD></TR>
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+<TR><TD>pinN_vAC_mag</TD>
+<TD>AC small-signal voltage. Magnitude.</TD></TR>
+
+<TR><TD>pinN_vAC_mag_dB</TD>
+<TD>AC small-signal voltage. Magnitude (dB).</TD></TR>
+
+<TR><TD>pinN_vAC_phase</TD>
+<TD>AC small-signal voltage. Phase (deg).</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 4.</b> Resistor parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Default</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>R</TD>
+<TD>SI.Resistance</TD>
+<TD>1000</TD>
+<TD>Resistance value</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>false</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+
+
+<b>Table 5.</b> Voltage across the resistor.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+<TR><TD>vAC_mag</TD>
+<TD>AC small-signal voltage. Magnitude.</TD></TR>
+
+<TR><TD>vAC_mag_dB</TD>
+<TD>AC small-signal voltage. Magnitude (dB).</TD></TR>
+
+<TR><TD>vAC_phase</TD>
+<TD>AC small-signal voltage. Phase (deg).</TD></TR>
+</TABLE><br><br>
+
+<b>Table 6.</b> Current flowing through the resistor.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+
+</TABLE><br><br>
+
+<H2>Constitutive relations</H2><br>
+<b>Table 7.</b> Model formulations.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Static</b></TD>
+<TD>vDC = R * iDC</TD></TR>
+<TR><TD><b>AC small-signal</b></TD>
+<TD>vAC_Re  = R * iAC_Re<br>
+vAC_Im = R * iAC_Im</TD></TR>
+<TR><TD><b>Large signal</b></TD>
+<TD>vTran = R * iTran</TD></TR>
+</TABLE><br><br>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+<TR><TD>R</TD><TD>1000</TD><TD>Resistance [Ohm]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Rbreak
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Rbreak"
+>src.BREAKOUT.Rbreak</A>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>Rbreak;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Cbreak<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.CbreakI.png" ALT="SPICELib.parts.breakout.Cbreak" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.Cbreak"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.Cbreak</H2>
+<IMG SRC="SPICELib.parts.breakout.CbreakD.png" ALT="SPICELib.parts.breakout.Cbreak">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>Cbreak</i> - Linear capacitor</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.Cbreak.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Capacitor.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+
+(+) and (-) nodes define the polarity when the capacitor has a
+positive voltage across it. The voltage across the component
+is therefore defined as the (+) node voltage minus the
+(-) node voltage.<br><br>
+Positive current flows from the (+) node through the capacitor
+to the (-) node.<br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 4.</b> Capacitor parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Default</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>C</TD>
+<TD>SI.Capacitance</TD>
+<TD>1e-9</TD>
+<TD>Capacitance value</TD></TR>
+<TR><TD>IC</TD>
+<TD>SI.Voltage</TD>
+<TD>0</TD>
+<TD>Initial voltage across the capacitor during the bias point
+calculation (see analyses.OP model documentation).<br>
+<b>Note:</b> the initial voltage across the capacitor can also be set
+by using the IC1 part if the capacitor is connected to ground
+or by using the IC2 part for setting the initial conditions
+between two nodes (these parts can be found in <i>special</i>
+package). </TD></TR>
+<TR><TD>IC_ENABLED</TD>
+<TD>Boolean</TD>
+<TD>false</TD>
+<TD>The capacitor parameter IC_ENABLED enables or disables
+the IC property. It allows distinguishing between the cases
+when IC is intentionally set to zero and those cases when the
+IC property is not enabled.</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+
+
+<b>Table 5.</b> Voltage across the capacitor.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 6.</b> Current flowing through the capacitor.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 7.</b> Global variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>freq</TD>
+<TD>AC small-signal frequency.</TD></TR>
+</TABLE><br><br>
+
+<H2>Constitutive relations</H2><br>
+<b>Table 8.</b> Model formulations.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Static</b></TD>
+<TD>iDC = 0</TD></TR>
+<TR><TD><b>AC small-signal</b></TD>
+<TD>vAC_Re =  iAC_Im / 2 * pi * freq * C<br>
+vAC_Im = - iAC_Re / 2 * pi * freq * C</TD></TR>
+<TR><TD><b>Large signal</b></TD>
+<TD>C * der(vTran) = iTran</TD></TR>
+</TABLE><br><br>
+
+
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>C</TD><TD>1E-9</TD><TD>Capacitance [F]</TD></TR>
+<TR><TD>IC_ENABLED</TD><TD>false</TD><TD>IC enabled</TD></TR>
+<TR><TD>IC</TD><TD>0</TD><TD>Initial voltage [V]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Cbreak
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Cbreak"
+>src.BREAKOUT.Cbreak</A>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>Cbreak;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Lbreak<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.LbreakI.png" ALT="SPICELib.parts.breakout.Lbreak" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.Lbreak"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.Lbreak</H2>
+<IMG SRC="SPICELib.parts.breakout.LbreakD.png" ALT="SPICELib.parts.breakout.Lbreak">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>Lbreak</i> - Linear inductor</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.Lbreak.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Inductor.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+
+(+) and (-) nodes define the polarity when the inductor has a
+positive voltage across it. The voltage across the component
+is therefore defined as the (+) node voltage minus the
+(-) node voltage.<br><br>
+Positive current flows from the (+) node through the inductor
+to the (-) node.<br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 4.</b> Inductor parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Default</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>L</TD>
+<TD>SI.Inductance</TD>
+<TD>1e-9</TD>
+<TD>Inductance value</TD></TR>
+<TR><TD>IC</TD>
+<TD>SI.Current</TD>
+<TD>0</TD>
+<TD>Initial current across the inductor during the bias point
+calculation (see analyses.OP model documentation).<br>
+</TD></TR>
+<TR><TD>IC_ENABLED</TD>
+<TD>Boolean</TD>
+<TD>false</TD>
+<TD>The inductor parameter IC_ENABLED enables or disables
+the IC property. It allows distinguishing between the cases
+when IC is intentionally set to zero and those cases when the
+IC property is not enabled.</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+
+
+<b>Table 5.</b> Voltage across the inductor.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 6.</b> Current flowing through the inductor.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 7.</b> Global variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>freq</TD>
+<TD>AC small-signal frequency.</TD></TR>
+</TABLE><br><br>
+
+<H2>Constitutive relations</H2><br>
+<b>Table 8.</b> Model formulations.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Static</b></TD>
+<TD>vDC = 0</TD></TR>
+<TR><TD><b>AC small-signal</b></TD>
+<TD>vAC_Re =  iAC_Im * 2 * pi * freq * L<br>
+vAC_Im = - iAC_Re * 2 * pi * freq * L</TD></TR>
+<TR><TD><b>Large signal</b></TD>
+<TD>L * der(iTran) = vTran</TD></TR>
+</TABLE><br><br>
+
+
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>0</TD><TD>Initial current [V]</TD></TR>
+<TR><TD>IC_ENABLED</TD><TD>false</TD><TD>IC enabled</TD></TR>
+<TR><TD>L</TD><TD>1E-5</TD><TD>Inductance [H]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Lbreak
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Lbreak"
+>src.BREAKOUT.Lbreak</A>;
+<font color="blue">end </font>Lbreak;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE PSPICE_diode<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.PSPICE_diodeI.png" ALT="SPICELib.parts.breakout.PSPICE_diode" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.PSPICE_diode"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.PSPICE_diode</H2>
+<IMG SRC="SPICELib.parts.breakout.PSPICE_diodeD.png" ALT="SPICELib.parts.breakout.PSPICE_diode">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>PSPICE_diode</i> - Pspice diode</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.PSPICE_diode.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Diode.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+
+(+) and (-) nodes define the polarity when the diode has a
+positive voltage across it. The voltage across the component
+is therefore defined as the (+) node voltage minus the
+(-) node voltage.<br><br>
+Positive current flows from the (+) node through the diode
+to the (-) node.<br><br>
+
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 4.</b> Diode parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Default<b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>IS</TD>
+<TD>SI.Current</TD>
+<TD>1e-14</TD>
+<TD>Saturation current.<br>
+</TD></TR>
+<TR><TD>RS</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Ohmic Resistance.</TD></TR>
+<TR><TD>N</TD>
+<TD>Real</TD>
+<TD>1</TD>
+<TD>Emission coefficient.</TD></TR>
+<TR><TD>TT</TD>
+<TD>SI.Time</TD>
+<TD>0</TD>
+<TD>Transit time.</TD></TR>
+<TR><TD>CJ0</TD>
+<TD>SI.Capacitance</TD>
+<TD>1e-6</TD>
+<TD>Zero-bias junction capacitance.</TD></TR>
+<TR><TD>VJ</TD>
+<TD>SI.Voltage</TD>
+<TD>1</TD>
+<TD>Junction potential.</TD></TR>
+<TR><TD>M</TD>
+<TD>Real</TD>
+<TD>0.5</TD>
+<TD>Grading coefficient.</TD></TR>
+<TR><TD>FC</TD>
+<TD>Real</TD>
+<TD>0.5</TD>
+<TD>Coefficient for forward-bias depletion capacitance formula.</TD></TR>
+<TR><TD>BV</TD>
+<TD>SI.Voltage</TD>
+<TD>1e40</TD>
+<TD>Reverse breakdown voltage (positive number).</TD></TR>
+<TR><TD>IKF</TD>
+<TD>SI.Current</TD>
+<TD>-1</TD>
+<TD>High injection knee current.</TD></TR>
+<TR><TD>ISR</TD>
+<TD>SI.Current</TD>
+<TD>1e-14</TD>
+<TD>Recombination current.</TD></TR>
+<TR><TD>NR</TD>
+<TD>Real</TD>
+<TD>1</TD>
+<TD>Emission coefficient for ISR.</TD></TR>
+<TR><TD>IBV</TD>
+<TD>SI.Current</TD>
+<TD>1e-3</TD>
+<TD>Reverse breakdown current (positive number).</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+
+
+<b>Table 5.</b> Voltage across the diode.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 6.</b> Current flowing through the diode.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 7.</b> Global variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>scaleGMIN</TD>
+<TD>Scale factor of the GMIN stepping algorithm for bias point calculation.</TD></TR>
+<TR><TD>GMIN</TD>
+<TD>Conductance in parallel with the pn junction.</TD></TR>
+<TR><TD>freq</TD>
+<TD>AC small-signal frequency.</TD></TR>
+</TABLE><br><br>
+
+<H2>References</H2><br>
+Massobrio, G. and Antognetti, P. (1993): <i>Semiconductor Device Modeling with SPICE.</i>
+McGraw-Hill, Inc.<br>
+Model's equations can be found in src package documentation.<br><br>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+<TR><TD>IS</TD><TD>1e-14</TD><TD>Saturation current [A]</TD></TR>
+<TR><TD>RS</TD><TD>10</TD><TD>Ohmic Resistance [Ohm]</TD></TR>
+<TR><TD>N</TD><TD>1</TD><TD>Emission coefficient</TD></TR>
+<TR><TD>TT</TD><TD>0</TD><TD>Transit time [s]</TD></TR>
+<TR><TD>CJ0</TD><TD>1e-6</TD><TD>zero-bias junction capacitance [F]</TD></TR>
+<TR><TD>VJ</TD><TD>1</TD><TD>Junction potential [V]</TD></TR>
+<TR><TD>M</TD><TD>0.5</TD><TD>grading coefficient</TD></TR>
+<TR><TD>FC</TD><TD>0.5</TD><TD>Coefficient for forward-bias depletion capacitance formula</TD></TR>
+<TR><TD>BV</TD><TD>1e40</TD><TD>reverse breakdown voltage (positive number) [V]</TD></TR>
+<TR><TD>IKF</TD><TD>-1</TD><TD>High injection knee current [A]</TD></TR>
+<TR><TD>ISR</TD><TD>1e-14</TD><TD>Recombination current [A]</TD></TR>
+<TR><TD>NR</TD><TD>1</TD><TD>Emission coefficient for ISR</TD></TR>
+<TR><TD>IBV</TD><TD>1e-3</TD><TD>Reverse breakdown current (positive number) [A]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> PSPICE_diode
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.PSPICE_diode"
+>src.BREAKOUT.PSPICE_diode</A>;
+<font color="blue">end </font>PSPICE_diode;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Spice2MOS1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.Spice2MOS1I.png" ALT="SPICELib.parts.breakout.Spice2MOS1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.Spice2MOS1"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.Spice2MOS1</H2>
+<IMG SRC="SPICELib.parts.breakout.Spice2MOS1D.png" ALT="SPICELib.parts.breakout.Spice2MOS1">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>Spice2MOS1</i> - SPICE2 Level1 n-channel MOSFET</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.Spice2MOS1.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> n-channel MOSFET.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>d</TD>
+<TD>drain node</TD></TR>
+<TR><TD>s</TD>
+<TD>source node</TD></TR>
+<TR><TD>g</TD>
+<TD>gate node</TD></TR>
+<TR><TD>b</TD>
+<TD>bulk node</TD></TR>
+</TABLE><br><br>
+
+
+<b>Table 2.</b> drain node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>d.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>d.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>d.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>d.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) source node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>s.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>s.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>s.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>s.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 4.</b> (-) gate node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>g.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>g.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>g.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>g.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 5.</b> (-) bulk node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>b.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>b.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>b.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>b.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 6.</b> p-channel MOSFET parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Default</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>AD</TD>
+<TD>SI.Area</TD>
+<TD>1e-8</TD>
+<TD>Drain junction area.</TD></TR>
+<TR><TD>AS</TD>
+<TD>SI.Area</TD>
+<TD>1e-8</TD>
+<TD>Source junction area.</TD></TR>
+<TR><TD>CGB0</TD>
+<TD>Real</TD>
+<TD>2e-10</TD>
+<TD>Gate-bulk overlap capacitance perimeter (farad/meter).</TD></TR>
+<TR><TD>CGD0</TD>
+<TD>Real</TD>
+<TD>4e-11</TD>
+<TD>Gate-drain overlap capacitance perimeter (farad/meter).</TD></TR>
+<TR><TD>CGS0</TD>
+<TD>Real</TD>
+<TD>4e-11</TD>
+<TD>Gate-source overlap capacitance perimeter (farad/meter).</TD></TR>
+<TR><TD>CJ</TD>
+<TD>Real</TD>
+<TD>2e-4</TD>
+<TD>Capacitance at zero-bias voltage per square meter of area (farad/meter<sup>2</sup>).</TD></TR>
+<TR><TD>CJSW</TD>
+<TD>Real</TD>
+<TD>1e-9</TD>
+<TD>Capacitance at zero-bias voltage per meter of perimeter (farad/meter).</TD></TR>
+<TR><TD>FC</TD>
+<TD>Real</TD>
+<TD>0.5</TD>
+<TD>Substrate-junction forward-bias coefficient.</TD></TR>
+<TR><TD>GAMMA</TD>
+<TD>Real</TD>
+<TD>0.526</TD>
+<TD>Body-effect parameter.</TD></TR>
+<TR><TD>IS</TD>
+<TD>SI.Current</TD>
+<TD>1e-14</TD>
+<TD>Reverse saturation current at 300K.</TD></TR>
+<TR><TD>KP</TD>
+<TD>Real</TD>
+<TD>27.6e-6</TD>
+<TD>Transconductance parameter (A/V<sup>2</sup>).</TD></TR>
+<TR><TD>L</TD>
+<TD>SI.Length</TD>
+<TD>100e-6</TD>
+<TD>Gate length.</TD></TR>
+<TR><TD>LAMBDA</TD>
+<TD>Real</TD>
+<TD>0</TD>
+<TD>Channel length modulation (V<sup>-1</sup>).</TD></TR>
+<TR><TD>LD</TD>
+<TD>SI.Length</TD>
+<TD>0.8e-6</TD>
+<TD>Lateral diffusion.</TD></TR>
+<TR><TD>MJ</TD>
+<TD>Real</TD>
+<TD>0.5</TD>
+<TD>Bulk junction capacitance grading coefficient.</TD></TR>
+<TR><TD>MJSW</TD>
+<TD>Real</TD>
+<TD>0.33</TD>
+<TD>Perimeter capacitance grading coefficient.</TD></TR>
+<TR><TD>PB</TD>
+<TD>SI.Voltage</TD>
+<TD>0.75</TD>
+<TD>Surface inversion potential.</TD></TR>
+<TR><TD>PD</TD>
+<TD>SI.Length</TD>
+<TD>4e-4</TD>
+<TD>Drain junction perimeter.</TD></TR>
+<TR><TD>PS</TD>
+<TD>SI.Length</TD>
+<TD>4e-4</TD>
+<TD>Source junction perimeter.</TD></TR>
+<TR><TD>RD</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Drain ohmic resistance.</TD></TR>
+<TR><TD>RS</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Source ohmic resistance.</TD></TR>
+<TR><TD>RB</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Bulk ohmic resistance.</TD></TR>
+<TR><TD>RG</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Gate ohmic resistance.</TD></TR>
+<TR><TD>TOX</TD>
+<TD>SI.Length</TD>
+<TD>1e-7</TD>
+<TD>Gate oxide thickness.</TD></TR>
+<TR><TD>VT0</TD>
+<TD>SI.Voltage</TD>
+<TD>1</TD>
+<TD>Zero-bias threshold voltage.</TD></TR>
+<TR><TD>W</TD>
+<TD>SI.Length</TD>
+<TD>100e-6</TD>
+<TD>Gate width.</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+
+
+<b>Table 7.</b> Static Model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vthDC</TD>
+<TD>Threshold voltage.</TD></TR>
+
+<TR><TD>vdsDC</TD>
+<TD>Drain to source voltage.</TD></TR>
+
+<TR><TD>vgsDC</TD>
+<TD>Gate to source voltage.</TD></TR>
+
+<TR><TD>vbsDC</TD>
+<TD>Bulk to source voltage.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 8.</b> Large-signal model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vthTran</TD>
+<TD>Threshold voltage.</TD></TR>
+
+<TR><TD>vdsTran</TD>
+<TD>Drain to source voltage.</TD></TR>
+
+<TR><TD>vgsTran</TD>
+<TD>Gate to source voltage.</TD></TR>
+
+<TR><TD>vbsTran</TD>
+<TD>Bulk to source voltage.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 9.</b> Small-signal model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>gate_vAC_Re</TD>
+<TD>Gate voltage. Real part.</TD></TR>
+
+<TR><TD>gate_vAC_Im</TD>
+<TD>Gate voltage. Imaginary part.</TD></TR>
+
+<TR><TD>bulk_vAC_Re</TD>
+<TD>Bulk voltage. Real part.</TD></TR>
+
+<TR><TD>bulk_vAC_Im</TD>
+<TD>Bulk voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 10.</b> Global variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>scaleGMIN</TD>
+<TD>Scale factor of the GMIN stepping algorithm for bias point calculation.</TD></TR>
+<TR><TD>GMIN</TD>
+<TD>Conductance in parallel with the pn junction.</TD></TR>
+<TR><TD>freq</TD>
+<TD>AC small-signal frequency.</TD></TR>
+<TR><TD>Temp</TD>
+<TD>Temperature.</TD></TR>
+</TABLE><br><br>
+
+<H2>References</H2><br>
+Massobrio, G. and Antognetti, P. (1993): <i>Semiconductor Device Modeling with SPICE.</i>
+McGraw-Hill, Inc.<br>
+Model's equations can be found in src package documentation.<br><br>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+<TR><TD>AD</TD><TD>1e-8</TD><TD>drain difussion area [m2]</TD></TR>
+<TR><TD>AS</TD><TD>1e-8</TD><TD>Source difussion area [m2]</TD></TR>
+<TR><TD>CGBO</TD><TD>2e-10</TD><TD>Gate-bulk overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CGDO</TD><TD>4e-11</TD><TD>Gate-drain overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CGSO</TD><TD>4e-11</TD><TD>Gate-source overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CJ</TD><TD>2e-4</TD><TD>Capacitance at zero-bias voltage per square meter of area [F/m2]</TD></TR>
+<TR><TD>CJSW</TD><TD>1e-9</TD><TD>Capacitance at zero-bias voltage per meter of perimeter [F/m]</TD></TR>
+<TR><TD>FC</TD><TD>0.5</TD><TD>Substrate-junction forward-bias coefficient</TD></TR>
+<TR><TD>GAMMA</TD><TD>0.526</TD><TD>Body-effect parameter [V0.5]</TD></TR>
+<TR><TD>IS</TD><TD>1e-14</TD><TD>Reverse saturation current at 300K [A]</TD></TR>
+<TR><TD>KP</TD><TD>27.6e-6</TD><TD>Transconductance parameter [A/V2]</TD></TR>
+<TR><TD>L</TD><TD>100e-6</TD><TD>Gate length [m]</TD></TR>
+<TR><TD>LAMBDA</TD><TD>0.00</TD><TD>Channel-length modulation [V-1]</TD></TR>
+<TR><TD>LD</TD><TD>0.8e-6</TD><TD>Lateral diffusion [m]</TD></TR>
+<TR><TD>MJ</TD><TD>0.5</TD><TD>Bulk junction capacitnce grading coefficient</TD></TR>
+<TR><TD>MJSW</TD><TD>0.33</TD><TD>Perimeter capacitance grading coefficient</TD></TR>
+<TR><TD>PD</TD><TD>4e-4</TD><TD>drain difussion perimeter [m]</TD></TR>
+<TR><TD>PS</TD><TD>4e-4</TD><TD>source difussion perimeter [m]</TD></TR>
+<TR><TD>PB</TD><TD>0.75</TD><TD>Junction potencial [V]</TD></TR>
+<TR><TD>PHI</TD><TD>0.65</TD><TD>Surface inversion potencial [V]</TD></TR>
+<TR><TD>RD</TD><TD>10</TD><TD>Drain ohmic resistance [Ohm]</TD></TR>
+<TR><TD>RS</TD><TD>10</TD><TD>Source ohmic resistance [Ohm]</TD></TR>
+<TR><TD>RB</TD><TD>10</TD><TD>Bulk ohmic resistance [Ohm]</TD></TR>
+<TR><TD>RG</TD><TD>10</TD><TD>Gate ohmic resistance [Ohm]</TD></TR>
+<TR><TD>TOX</TD><TD>1e-7</TD><TD>Gate oxide thickness [m]</TD></TR>
+<TR><TD>VTO</TD><TD>1</TD><TD>Zero-bias threshold voltage [V]</TD></TR>
+<TR><TD>W</TD><TD>100e-6</TD><TD>Gate width [m]</TD></TR>
+<TR><TD>RSB</TD><TD>1e-4</TD><TD>Source-Bulk junction resistance [Ohm]</TD></TR>
+<TR><TD>RDB</TD><TD>1e-4</TD><TD>Drain-Bulk junction resistance [Ohm]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Spice2MOS1
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Spice2MOS1"
+>src.BREAKOUT.Spice2MOS1</A>;
+<font color="blue">end </font>Spice2MOS1;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Spice2MOS1P<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.breakout.Spice2MOS1PI.png" ALT="SPICELib.parts.breakout.Spice2MOS1P" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.breakout.Spice2MOS1P"></A><A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout"
+>SPICELib.parts.breakout</A>.Spice2MOS1P</H2>
+<IMG SRC="SPICELib.parts.breakout.Spice2MOS1PD.png" ALT="SPICELib.parts.breakout.Spice2MOS1P">
+<H3>Information</H3>
+<PRE></pre>
+
+<H1 align=center><i>Spice2MOS1P</i> - SPICE2 Level1 p-channel MOSFET</H1>
+
+<IMG SRC=Fig.SPICELib.parts.breakout.Spice2MOS1P.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> p-channel MOSFET.<br><br>
+
+<H2>Nodes</H2><br>
+
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>d</TD>
+<TD>drain node</TD></TR>
+<TR><TD>s</TD>
+<TD>source node</TD></TR>
+<TR><TD>g</TD>
+<TD>gate node</TD></TR>
+<TR><TD>b</TD>
+<TD>bulk node</TD></TR>
+</TABLE><br><br>
+
+
+<b>Table 2.</b> drain node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>d.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>d.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>d.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>d.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) source node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>s.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>s.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>s.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>s.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 4.</b> (-) gate node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>g.vDC</TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>g.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>g.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>g.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 5.</b> (-) bulk node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>b.vDC</b></TD>
+<TD>Static model.</TD></TR>
+
+<TR><TD>b.vTran</TD>
+<TD>Large-signal voltage.</TD></TR>
+
+<TR><TD>b.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+
+<TR><TD>b.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Parameters</H2><br>
+
+<b>Table 6.</b> p-channel MOSFET parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Default</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>AD</TD>
+<TD>SI.Area</TD>
+<TD>1e-8</TD>
+<TD>Drain junction area.</TD></TR>
+<TR><TD>AS</TD>
+<TD>SI.Area</TD>
+<TD>1e-8</TD>
+<TD>Source junction area.</TD></TR>
+<TR><TD>CGB0</TD>
+<TD>Real</TD>
+<TD>2e-10</TD>
+<TD>Gate-bulk overlap capacitance perimeter (farad/meter).</TD></TR>
+<TR><TD>CGD0</TD>
+<TD>Real</TD>
+<TD>4e-11</TD>
+<TD>Gate-drain overlap capacitance perimeter (farad/meter).</TD></TR>
+<TR><TD>CGS0</TD>
+<TD>Real</TD>
+<TD>4e-11</TD>
+<TD>Gate-source overlap capacitance perimeter (farad/meter).</TD></TR>
+<TR><TD>CJ</TD>
+<TD>Real</TD>
+<TD>2e-4</TD>
+<TD>Capacitance at zero-bias voltage per square meter of area (farad/meter<sup>2</sup>).</TD></TR>
+<TR><TD>CJSW</TD>
+<TD>Real</TD>
+<TD>1e-9</TD>
+<TD>Capacitance at zero-bias voltage per meter of perimeter (farad/meter).</TD></TR>
+<TR><TD>FC</TD>
+<TD>Real</TD>
+<TD>0.5</TD>
+<TD>Substrate-junction forward-bias coefficient.</TD></TR>
+<TR><TD>GAMMA</TD>
+<TD>Real</TD>
+<TD>0.526</TD>
+<TD>Body-effect parameter.</TD></TR>
+<TR><TD>IS</TD>
+<TD>SI.Current</TD>
+<TD>1e-14</TD>
+<TD>Reverse saturation current at 300K.</TD></TR>
+<TR><TD>KP</TD>
+<TD>Real</TD>
+<TD>27.6e-6</TD>
+<TD>Transconductance parameter (A/V<sup>2</sup>).</TD></TR>
+<TR><TD>L</TD>
+<TD>SI.Length</TD>
+<TD>100e-6</TD>
+<TD>Gate length.</TD></TR>
+<TR><TD>LAMBDA</TD>
+<TD>Real</TD>
+<TD>0</TD>
+<TD>Channel length modulation (V<sup>-1</sup>).</TD></TR>
+<TR><TD>LD</TD>
+<TD>SI.Length</TD>
+<TD>0.8e-6</TD>
+<TD>Lateral diffusion.</TD></TR>
+<TR><TD>MJ</TD>
+<TD>Real</TD>
+<TD>0.5</TD>
+<TD>Bulk junction capacitance grading coefficient.</TD></TR>
+<TR><TD>MJSW</TD>
+<TD>Real</TD>
+<TD>0.33</TD>
+<TD>Perimeter capacitance grading coefficient.</TD></TR>
+<TR><TD>PB</TD>
+<TD>SI.Voltage</TD>
+<TD>0.75</TD>
+<TD>Surface inversion potential.</TD></TR>
+<TR><TD>PD</TD>
+<TD>SI.Length</TD>
+<TD>4e-4</TD>
+<TD>Drain junction perimeter.</TD></TR>
+<TR><TD>PS</TD>
+<TD>SI.Length</TD>
+<TD>4e-4</TD>
+<TD>Source junction perimeter.</TD></TR>
+<TR><TD>RD</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Drain ohmic resistance.</TD></TR>
+<TR><TD>RS</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Source ohmic resistance.</TD></TR>
+<TR><TD>RB</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Bulk ohmic resistance.</TD></TR>
+<TR><TD>RG</TD>
+<TD>SI.Resistance</TD>
+<TD>10</TD>
+<TD>Gate ohmic resistance.</TD></TR>
+<TR><TD>TOX</TD>
+<TD>SI.Length</TD>
+<TD>1e-7</TD>
+<TD>Gate oxide thickness.</TD></TR>
+<TR><TD>VT0</TD>
+<TD>SI.Voltage</TD>
+<TD>-1</TD>
+<TD>Zero-bias threshold voltage.</TD></TR>
+<TR><TD>W</TD>
+<TD>SI.Length</TD>
+<TD>100e-6</TD>
+<TD>Gate width.</TD></TR>
+</TABLE><br><br>
+
+
+<H2>Variables of interest to the library user</H2><br>
+
+
+<b>Table 7.</b> Static Model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vthDC</TD>
+<TD>Threshold voltage.</TD></TR>
+
+<TR><TD>vsdDC</TD>
+<TD>Source to drain voltage.</TD></TR>
+
+<TR><TD>vsgDC</TD>
+<TD>Source to gate voltage.</TD></TR>
+
+<TR><TD>vsbDC</TD>
+<TD>Source to bulk voltage.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 8.</b> Large-signal model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+
+<TR><TD>vthTran</TD>
+<TD>Threshold voltage.</TD></TR>
+
+<TR><TD>vsdTran</TD>
+<TD>Source to drain voltage.</TD></TR>
+
+<TR><TD>vsgTran</TD>
+<TD>Source to gate voltage.</TD></TR>
+
+<TR><TD>vsbTran</TD>
+<TD>Source to bulk voltage.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 9.</b> Small-signal model.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+
+<TR><TD>gate_vAC_Re</TD>
+<TD>Gate voltage. Real part.</TD></TR>
+
+<TR><TD>gate_vAC_Im</TD>
+<TD>Gate voltage. Imaginary part.</TD></TR>
+
+<TR><TD>bulk_vAC_Re</TD>
+<TD>Bulk voltage. Real part.</TD></TR>
+
+<TR><TD>bulk_vAC_Im</TD>
+<TD>Bulk voltage. Imaginary part.</TD></TR>
+
+</TABLE><br><br>
+
+<b>Table 10.</b> Global variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>scaleGMIN</TD>
+<TD>Scale factor of the GMIN stepping algorithm for bias point calculation.</TD></TR>
+<TR><TD>GMIN</TD>
+<TD>Conductance in parallel with the pn junction.</TD></TR>
+<TR><TD>freq</TD>
+<TD>AC small-signal frequency.</TD></TR>
+<TR><TD>Temp</TD>
+<TD>Temperature.</TD></TR>
+</TABLE><br><br>
+
+<H2>References</H2><br>
+Massobrio, G. and Antognetti, P. (1993): <i>Semiconductor Device Modeling with SPICE.</i>
+McGraw-Hill, Inc.<br>
+Model's equations can be found in src package documentation.<br><br>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+<TR><TD>AD</TD><TD>1e-8</TD><TD>drain difussion area [m2]</TD></TR>
+<TR><TD>AS</TD><TD>1e-8</TD><TD>Source difussion area [m2]</TD></TR>
+<TR><TD>CGBO</TD><TD>2e-10</TD><TD>Gate-bulk overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CGDO</TD><TD>4e-11</TD><TD>Gate-drain overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CGSO</TD><TD>4e-11</TD><TD>Gate-source overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CJ</TD><TD>2e-4</TD><TD>Capacitance at zero-bias voltage per squere meter of area [F/m2]</TD></TR>
+<TR><TD>CJSW</TD><TD>1e-9</TD><TD>Capacitance at zero-bias voltage per meter of perimeter [F/m]</TD></TR>
+<TR><TD>FC</TD><TD>0.5</TD><TD>Substrate-junction forward-bias coefficient</TD></TR>
+<TR><TD>GAMMA</TD><TD>0.526</TD><TD>Body-effect parameter [V0.5]</TD></TR>
+<TR><TD>IS</TD><TD>1e-14</TD><TD>Reverse saturation current at 300K [A]</TD></TR>
+<TR><TD>KP</TD><TD>27.6e-6</TD><TD>Transconductance parameter [A/V2]</TD></TR>
+<TR><TD>L</TD><TD>100e-6</TD><TD>Gate length [m]</TD></TR>
+<TR><TD>LAMBDA</TD><TD>0.00</TD><TD>Channel-length modulation [V-1]</TD></TR>
+<TR><TD>LD</TD><TD>0.8e-6</TD><TD>Lateral diffusion [m]</TD></TR>
+<TR><TD>MJ</TD><TD>0.5</TD><TD>Bulk junction capacitnce grading coefficient</TD></TR>
+<TR><TD>MJSW</TD><TD>0.33</TD><TD>Perimeter capacitance grading coefficient</TD></TR>
+<TR><TD>PD</TD><TD>4e-4</TD><TD>drain difussion perimeter [m]</TD></TR>
+<TR><TD>PS</TD><TD>4e-4</TD><TD>source difussion perimeter [m]</TD></TR>
+<TR><TD>PB</TD><TD>0.75</TD><TD>Junction potencial [V]</TD></TR>
+<TR><TD>PHI</TD><TD>0.65</TD><TD>Surface inversion potencial [V]</TD></TR>
+<TR><TD>RD</TD><TD>10</TD><TD>Drain ohmic resistance [Ohm]</TD></TR>
+<TR><TD>RS</TD><TD>10</TD><TD>Source ohmic resistance [Ohm]</TD></TR>
+<TR><TD>RB</TD><TD>10</TD><TD>Bulk ohmic resistance [Ohm]</TD></TR>
+<TR><TD>RG</TD><TD>10</TD><TD>Gate ohmic resistance [Ohm]</TD></TR>
+<TR><TD>TOX</TD><TD>1e-7</TD><TD>Gate oxide thickness [m]</TD></TR>
+<TR><TD>VTO</TD><TD>-1</TD><TD>Zero-bias threshold voltage [V]</TD></TR>
+<TR><TD>W</TD><TD>100e-6</TD><TD>Gate width [m]</TD></TR>
+<TR><TD>RSB</TD><TD>1e-4</TD><TD>Source-Bulk junction resistance [Ohm]</TD></TR>
+<TR><TD>RDB</TD><TD>1e-4</TD><TD>Drain-Bulk junction resistance [Ohm]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Spice2MOS1P
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Spice2MOS1P"
+>src.BREAKOUT.Spice2MOS1P</A>;
+<font color="blue">end </font>Spice2MOS1P;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:29 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,575 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SPICE2_MOS1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.BREAKOUT.SPICE2_MOS1"></A><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT"
+>SPICELib.src.BREAKOUT</A>.SPICE2_MOS1</H2>
+<A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Idiode"
+><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.IdiodeI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Idiode" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Ids"
+><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.IdsI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Ids" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Cdiode"
+><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CdiodeI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cdiode" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgb"
+><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CgbI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgb" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgd"
+><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CgdI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgd" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Idiode"
+>Idiode</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Ids"
+>Ids</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Cdiode"
+>Cdiode</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgb"
+>Cgb</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgd"
+>Cgd</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Ids<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.IdsI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Ids" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.SPICE2_MOS1.Ids"></A><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1"
+>SPICELib.src.BREAKOUT.SPICE2_MOS1</A>.Ids</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.IdsD.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Ids">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>VTO</TD><TD>&nbsp;</TD><TD>Zero-bias threshold voltage [V]</TD></TR>
+<TR><TD>GAMMA</TD><TD>&nbsp;</TD><TD>Body-effect parameter [V0.5]</TD></TR>
+<TR><TD>PHI</TD><TD>&nbsp;</TD><TD>Surface inversion potencial [V]</TD></TR>
+<TR><TD>KP</TD><TD>&nbsp;</TD><TD>Transconductance parameter [A/V2]</TD></TR>
+<TR><TD>W</TD><TD>&nbsp;</TD><TD>Gate width [m]</TD></TR>
+<TR><TD>L</TD><TD>&nbsp;</TD><TD>Gate length [m]</TD></TR>
+<TR><TD>LD</TD><TD>&nbsp;</TD><TD>Lateral diffusion [m]</TD></TR>
+<TR><TD>LAMBDA</TD><TD>&nbsp;</TD><TD>Channel-length modulation [V-1]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Ids
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+>INTERFACE.OnePort</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vthDC <font color="darkgreen">&quot;Threshold voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsDC <font color="darkgreen">&quot;Gate to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vbsDC <font color="darkgreen">&quot;Bulk to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsDC <font color="darkgreen">&quot;Drain to source voltage&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vthTran <font color="darkgreen">&quot;Threshold voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsTran <font color="darkgreen">&quot;Gate to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vbsTran <font color="darkgreen">&quot;Bulk to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsTran <font color="darkgreen">&quot;Drain to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsTranSgn <font color="darkgreen">&quot;Drain-pin to source-pin voltage&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> gate_vAC_Re;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> gate_vAC_Im;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> bulk_vAC_Re;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> bulk_vAC_Im;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> VTO <font color="darkgreen">&quot;Zero-bias threshold voltage&quot;</font>;
+  <font color="blue">parameter </font>Real GAMMA <font color="darkgreen">&quot;Body-effect parameter [V0.5]&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> PHI <font color="darkgreen">&quot;Surface inversion potencial&quot;</font>;
+  <font color="blue">parameter </font>Real KP <font color="darkgreen">&quot;Transconductance parameter [A/V2]&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> W <font color="darkgreen">&quot;Gate width&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> L <font color="darkgreen">&quot;Gate length&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> LD <font color="darkgreen">&quot;Lateral diffusion&quot;</font>;
+  <font color="blue">parameter </font>Real LAMBDA <font color="darkgreen">&quot;Channel-length modulation [V-1]&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <font color="blue">parameter </font>Real beta=KP*W/(L - 2*LD);
+  <font color="darkgreen"></font>
+  Boolean pinNisSourceAC(start=true);
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> idsDC <font color="darkgreen">&quot;Drain to source current&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> idsTran <font color="darkgreen">&quot;Drain to source current&quot;</font>;
+  <font color="darkgreen"></font>
+  Real ARG(start=0);
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gdsAC <font color="darkgreen">&quot;dIds/dVds&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gmbsAC <font color="darkgreen">&quot;dIds/dVbs&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gmAC <font color="darkgreen">&quot;dIds/dVgs&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsAC_Re;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsAC_Im;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsAC_Re;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsAC_Im;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vbsAC_Re;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vbsAC_Im;
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> idsAC_Re;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> idsAC_Im;
+<font color="blue">equation </font>
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------</font>
+  <font color="darkgreen">// Static model</font>
+  <font color="darkgreen">// ------------</font>
+  <font color="darkgreen"></font>
+  iDC = <font color="red">noEvent</font>(<font color="blue">if </font>vDC &gt; 0<font color="blue"> then </font>idsDC<font color="blue"> else </font>-idsDC);
+  <font color="darkgreen"></font>
+  idsDC = <font color="blue">if </font>vgsDC &lt;= vthDC<font color="blue"> then </font>0<font color="blue"> else </font><font color="red">noEvent</font>(<font color="blue">if </font>vdsDC &lt; vgsDC - vthDC<font color="blue"> then </font>
+    beta*(vgsDC - vthDC - 0.5*vdsDC)*vdsDC*(1 + LAMBDA*vdsDC)<font color="blue"> else </font>0.5*beta*(
+    vgsDC - vthDC)^2*(1 + LAMBDA*vdsDC));
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen">// Large-signal model</font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen"></font>
+  iTran = <font color="blue">if </font><font color="red">noEvent</font>(vdsTranSgn &gt;= 0)<font color="blue"> then </font>idsTran<font color="blue"> else </font>-idsTran;
+  <font color="darkgreen"></font>
+  idsTran = <font color="blue">if </font>vgsTran &lt;= vthTran<font color="blue"> then </font>0<font color="blue"> else </font><font color="blue">if </font><font color="red">noEvent</font>(vdsTran &lt; vgsTran -
+    vthTran)<font color="blue"> then </font>beta*(vgsTran - vthTran - 0.5*vdsTran)*vdsTran*(1 + LAMBDA*
+    vdsTran)<font color="blue"> else </font>0.5*beta*(vgsTran - vthTran)^2*(1 + LAMBDA*vdsTran);
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ---------------------</font>
+  <font color="darkgreen">// AC small-signal model</font>
+  <font color="darkgreen">// ---------------------</font>
+  <font color="darkgreen"></font>
+  {vdsAC_Re,vdsAC_Im} = <font color="blue">if </font>pinNisSourceAC<font color="blue"> then </font>{vAC_Re,vAC_Im}<font color="blue"> else </font>-{vAC_Re,
+    vAC_Im};
+  {vgsAC_Re,vgsAC_Im} = <font color="blue">if </font>pinNisSourceAC<font color="blue"> then </font>{gate_vAC_Re - n.vAC_Re,
+    gate_vAC_Im - n.vAC_Im}<font color="blue"> else </font>{gate_vAC_Re - p.vAC_Re,gate_vAC_Im - p.vAC_Im};
+  {vbsAC_Re,vbsAC_Im} = <font color="blue">if </font>pinNisSourceAC<font color="blue"> then </font>{bulk_vAC_Re - n.vAC_Re,
+    bulk_vAC_Im - n.vAC_Im}<font color="blue"> else </font>{bulk_vAC_Re - p.vAC_Re,bulk_vAC_Im - p.vAC_Im};
+  {idsAC_Re,idsAC_Im} = gdsAC*{vdsAC_Re,vdsAC_Im} + gmbsAC*{vbsAC_Re,vbsAC_Im}
+     + gmAC*{vgsAC_Re,vgsAC_Im};
+  {iAC_Re,iAC_Im} = <font color="blue">if </font>pinNisSourceAC<font color="blue"> then </font>{idsAC_Re,idsAC_Im}<font color="blue"> else </font>-{idsAC_Re,
+    idsAC_Im};
+  <font color="darkgreen"></font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    pinNisSourceAC = (vDC &gt;= 0);
+    <font color="darkgreen"></font>
+    gdsAC = <font color="blue">if </font>(vgsDC &lt;= vthDC)<font color="blue"> then </font>0<font color="blue"> else </font><font color="blue">if </font>(vdsDC &lt; vgsDC - vthDC)<font color="blue"> then </font>
+      beta*(vgsDC - vthDC - vdsDC)*(1 + LAMBDA*vdsDC) + beta*(vgsDC - vthDC -
+      0.5*vdsDC)*LAMBDA*vdsDC<font color="blue"> else </font>0.5*beta*(vgsDC - vthDC)^2*LAMBDA;
+    <font color="darkgreen"></font>
+    gmbsAC = gmAC*ARG;
+    <font color="darkgreen"></font>
+    ARG = <font color="blue">if </font>vbsDC &gt; 0<font color="blue"> then </font>0.5*GAMMA/(<font color="red">sqrt</font>(PHI) - 0.5*vbsDC/<font color="red">sqrt</font>(PHI))<font color="blue"> else </font>
+      0.5*GAMMA/<font color="red">sqrt</font>(PHI - vbsDC);
+    <font color="darkgreen"></font>
+    gmAC = <font color="blue">if </font>(vgsDC &lt;= vthDC)<font color="blue"> then </font>0<font color="blue"> else </font><font color="blue">if </font>(vdsDC &lt; vgsDC - vthDC)<font color="blue"> then </font>beta
+      *vdsDC*(1 + LAMBDA*vdsDC)<font color="blue"> else </font>beta*(vgsDC - vthDC)*(1 + LAMBDA*vdsDC);
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>Ids;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Idiode<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.IdiodeI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Idiode" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.SPICE2_MOS1.Idiode"></A><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1"
+>SPICELib.src.BREAKOUT.SPICE2_MOS1</A>.Idiode</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.IdiodeD.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Idiode">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IS</TD><TD>&nbsp;</TD><TD>Reverse saturation current at 300K [A]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Idiode
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+>INTERFACE.OnePort</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> IS <font color="darkgreen">&quot;Reverse saturation current at 300K&quot;</font>;
+  <font color="darkgreen">// Boolean forwardDC &quot;Operation region&quot;;</font>
+  <font color="darkgreen">// Boolean forwardTran;</font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vDiodeTran <font color="darkgreen">&quot;Voltage drop across the diode&quot;</font>;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> gAC(start=1) <font color="darkgreen">&quot;AC small-signal conductance&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> thermalVolt <font color="darkgreen">&quot;Thermal voltage&quot;</font>;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Thermal voltage: kT/q</font>
+  thermalVolt = temp/11600;
+  <font color="darkgreen"></font>
+  iDC = IS*(<font color="red">exp</font>(vDC/thermalVolt) - 1) + vDC*scaleGMIN*GMIN;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// -------------</font>
+  <font color="darkgreen">// Dynamic model</font>
+  <font color="darkgreen">// -------------</font>
+  <font color="darkgreen"></font>
+  iTran = <font color="blue">if </font><font color="red">noEvent</font>(vDiodeTran &gt; 0)<font color="blue"> then </font>IS*(<font color="red">exp</font>(vDiodeTran/thermalVolt) - 1)
+     + vDiodeTran*GMIN<font color="blue"> else </font>(IS/thermalVolt + GMIN)*vDiodeTran;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen">// Small-signal model</font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    gAC = <font color="blue">if </font>(vDC &gt; 0)<font color="blue"> then </font>IS/thermalVolt*<font color="red">exp</font>(vDC/thermalVolt) + GMIN<font color="blue"> else </font>IS/
+      thermalVolt + GMIN;
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+  {iAC_Re,iAC_Im} = gAC*{vAC_Re,vAC_Im};
+  <font color="darkgreen"></font>
+<font color="blue">end </font>Idiode;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Cdiode<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CdiodeI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cdiode" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cdiode"></A><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1"
+>SPICELib.src.BREAKOUT.SPICE2_MOS1</A>.Cdiode</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CdiodeD.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cdiode">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>0</TD><TD>Initial voltage [V]</TD></TR>
+<TR><TD>IC_ENABLED</TD><TD>false</TD><TD>IC enabled</TD></TR>
+<TR><TD>CJ</TD><TD>&nbsp;</TD><TD>Capacitance at zero-bias voltage per squere meter of area [F/m2]</TD></TR>
+<TR><TD>CJSW</TD><TD>&nbsp;</TD><TD>Capacitance at zero-bias voltage per meter of perimeter [F/m]</TD></TR>
+<TR><TD>MJ</TD><TD>&nbsp;</TD><TD>Bulk junction capacitnce grading coefficient</TD></TR>
+<TR><TD>MJSW</TD><TD>&nbsp;</TD><TD>Perimeter capacitance grading coefficient</TD></TR>
+<TR><TD>FC</TD><TD>&nbsp;</TD><TD>Substrate-junction forward-bias coefficient</TD></TR>
+<TR><TD>PB</TD><TD>&nbsp;</TD><TD>Junction potencial [V]</TD></TR>
+<TR><TD>P</TD><TD>&nbsp;</TD><TD>Junction perimeter [m]</TD></TR>
+<TR><TD>A</TD><TD>&nbsp;</TD><TD>Junction area [m2]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Cdiode
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Capacitor"
+>BREAKOUT.Capacitor</A>;
+  <font color="blue">parameter </font>Real CJ <font color="darkgreen">
+    &quot;Capacitance at zero-bias voltage per squere meter of area [F/m2]&quot;</font>;
+  <font color="blue">parameter </font>Real CJSW <font color="darkgreen">
+    &quot;Capacitance at zero-bias voltage per meter of perimeter [F/m]&quot;</font>;
+  <font color="blue">parameter </font>Real MJ <font color="darkgreen">&quot;Bulk junction capacitnce grading coefficient&quot;</font>;
+  <font color="blue">parameter </font>Real MJSW <font color="darkgreen">&quot;Perimeter capacitance grading coefficient&quot;</font>;
+  <font color="blue">parameter </font>Real FC <font color="darkgreen">&quot;Substrate-junction forward-bias coefficient&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> PB <font color="darkgreen">&quot;Junction potencial&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> P <font color="darkgreen">&quot;Junction perimeter&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Area"
+>SI.Area</A> A <font color="darkgreen">&quot;Junction area&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <font color="blue">parameter </font>Real F2=(1 - FC)^(1 + MJ);
+  <font color="blue">parameter </font>Real F3=1 - FC*(1 + MJ);
+  <font color="blue">parameter </font>Real FCtimesPB=FC*PB;
+  <font color="blue">parameter </font>Real CJtimesA=CJ*A;
+  <font color="blue">parameter </font>Real CJSWtimesP=CJSW*P;
+  <font color="blue">parameter </font>Real coef1=F3*(CJtimesA/F2 + CJSW*P/F2);
+  <font color="blue">parameter </font>Real coef2=(CJtimesA*MJ/F2 + CJSW*P*MJSW/F2)/PB;
+  <font color="blue">parameter </font>Real invPB=1/PB;
+<font color="blue">equation </font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen">// Large-signal capacitance</font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen"></font>
+  Cvar*<font color="red">der</font>(vTran) = iTran;
+  <font color="darkgreen"></font>
+  Cvar = <font color="blue">if </font><font color="red">noEvent</font>(vTran &lt; FCtimesPB)<font color="blue"> then </font>CJtimesA/(1 - invPB*vTran)^MJ +
+    CJSWtimesP/(1 - invPB*vTran)^MJSW<font color="blue"> else </font>coef1 + coef2*vTran;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="darkgreen">// AC small-signal capacitance</font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    <font color="darkgreen"></font>
+    CvarAC = <font color="blue">if </font>(vDC &lt; FCtimesPB)<font color="blue"> then </font>CJtimesA/(1 - invPB*vDC)^MJ + CJSWtimesP
+      /(1 - invPB*vDC)^MJSW<font color="blue"> else </font>coef1 + coef2*vDC;
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+<font color="blue">end </font>Cdiode;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Cgd<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CgdI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgd" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgd"></A><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1"
+>SPICELib.src.BREAKOUT.SPICE2_MOS1</A>.Cgd</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CgdD.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgd">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>0</TD><TD>Initial voltage [V]</TD></TR>
+<TR><TD>IC_ENABLED</TD><TD>false</TD><TD>IC enabled</TD></TR>
+<TR><TD>PHI</TD><TD>&nbsp;</TD><TD>Surface inversion potencial [V]</TD></TR>
+<TR><TD>LD</TD><TD>&nbsp;</TD><TD>Lateral diffusion [m]</TD></TR>
+<TR><TD>W</TD><TD>&nbsp;</TD><TD>Gate width [m]</TD></TR>
+<TR><TD>L</TD><TD>&nbsp;</TD><TD>Gate length [m]</TD></TR>
+<TR><TD>TOX</TD><TD>&nbsp;</TD><TD>Gate oxide thickness [m]</TD></TR>
+<TR><TD>EPSR</TD><TD>&nbsp;</TD><TD>Dielectric constant of the oxide</TD></TR>
+<TR><TD>CGDO</TD><TD>&nbsp;</TD><TD>Gate-drain overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>CGSO</TD><TD>&nbsp;</TD><TD>Gate-source overlap capacitance per meter [F/m]</TD></TR>
+<TR><TD>gateSourcePinsC</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Cgd
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Capacitor"
+>BREAKOUT.Capacitor</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vthDC <font color="darkgreen">&quot;Threshold voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsDC <font color="darkgreen">&quot;Drain to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsDCSgn <font color="darkgreen">&quot;Drain-pin to source-pin voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsDC <font color="darkgreen">&quot;Gate to source voltage&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vthTran <font color="darkgreen">&quot;Threshold voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsTran <font color="darkgreen">&quot;Drain to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsTranSgn <font color="darkgreen">&quot;Drain-pin to source-pin voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsTran <font color="darkgreen">&quot;Gate to source voltage&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> PHI <font color="darkgreen">&quot;Surface inversion potencial&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> LD <font color="darkgreen">&quot;Lateral diffusion&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> W <font color="darkgreen">&quot;Gate width&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> L <font color="darkgreen">&quot;Gate length&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> TOX <font color="darkgreen">&quot;Gate oxide thickness&quot;</font>;
+  <font color="blue">parameter </font>Real EPSR <font color="darkgreen">&quot;Dielectric constant of the oxide&quot;</font>;
+  <font color="blue">parameter </font>Real CGDO <font color="darkgreen">&quot;Gate-drain overlap capacitance per meter [F/m]&quot;</font>;
+  <font color="blue">parameter </font>Real CGSO <font color="darkgreen">&quot;Gate-source overlap capacitance per meter [F/m]&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font>Boolean gateSourcePinsC;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> LEFF=L + 2*LD <font color="darkgreen">&quot;Effective length&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Capacitance"
+>SI.Capacitance</A> COX=EPS0*EPSR*W*LEFF/TOX <font color="darkgreen">&quot;Gate oxide capacitance&quot;</font>;
+  <font color="blue">constant </font>Real EPS0=8.85e-12 <font color="darkgreen">&quot;Permittivity of free space [F/m]&quot;</font>;
+  <font color="blue">parameter </font>Real CGSOtimesW=CGSO*W;
+  <font color="blue">parameter </font>Real CGDOtimesW=CGDO*W;
+  <font color="blue">parameter </font>Real twoThirdsCOX=2/3*COX;
+  <font color="blue">parameter </font>Real threeFourthsCOX=3*COX/4;
+  <font color="blue">parameter </font>Real halfCOX=0.5*COX;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsTranEPS=1e-4;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsDCEPS=1e-4;
+  <font color="darkgreen"></font>
+  Real Cgs;
+  Real Cgd;
+  Real CgsAC;
+  Real CgdAC;
+  Real CpinsGS;
+  Real CpinsGD;
+  Real CpinsGSAC;
+  Real CpinsGDAC;
+<font color="blue">equation </font>
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen">// Large-signal capacitance</font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen"></font>
+  Cvar*<font color="red">der</font>(vTran) = iTran;
+  <font color="darkgreen"></font>
+  Cvar = <font color="blue">if </font>gateSourcePinsC<font color="blue"> then </font>CpinsGS<font color="blue"> else </font>CpinsGD;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//Gate-pin to Source-pin capacity</font>
+  <font color="darkgreen"></font>
+  CpinsGS = <font color="blue">if </font><font color="red">noEvent</font>(vdsTranSgn &lt; -vdsTranEPS)<font color="blue"> then </font>Cgd<font color="blue"> else </font><font color="blue">if </font><font color="red">noEvent</font>(
+    vdsTranSgn &lt; vdsTranEPS)<font color="blue"> then </font>0.5*(Cgs - Cgd)*vdsTranSgn/vdsTranEPS + 0.5*(
+    Cgs + Cgd)<font color="blue"> else </font>Cgs;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// Gate-pin to Drain-pin capacity</font>
+  <font color="darkgreen"></font>
+  CpinsGD = <font color="blue">if </font><font color="red">noEvent</font>(vdsTranSgn &lt; -vdsTranEPS)<font color="blue"> then </font>Cgs<font color="blue"> else </font><font color="blue">if </font><font color="red">noEvent</font>(
+    vdsTranSgn &lt; vdsTranEPS)<font color="blue"> then </font>0.5*(Cgd - Cgs)*vdsTranSgn/vdsTranEPS + 0.5*(
+    Cgs + Cgd)<font color="blue"> else </font>Cgd;
+  <font color="darkgreen"></font>
+  Cgs - CGSOtimesW = <font color="blue">if </font><font color="red">noEvent</font>(vgsTran &lt;= vthTran - PHI)<font color="blue"> then </font>0<font color="blue"> else </font><font color="blue">if </font><font color="red">
+    noEvent</font>(vgsTran &lt;= vthTran)<font color="blue"> then </font>twoThirdsCOX*((-vthTran + vgsTran)/PHI + 1)<font color="blue">
+     else </font><font color="blue">if </font><font color="red">noEvent</font>(vgsTran &lt;= vthTran + vdsTran)<font color="blue"> then </font>twoThirdsCOX<font color="blue"> else </font><font color="blue">if </font><font color="red">
+    noEvent</font>(vdsTran &lt;= 2*vdsTranEPS)<font color="blue"> then </font>halfCOX<font color="blue"> else </font>twoThirdsCOX*(1 - ((
+    vgsTran - vdsTran - vthTran)/(2*(vgsTran - vthTran) - vdsTran))^2);
+  <font color="darkgreen"></font>
+  Cgd - CGDOtimesW = <font color="blue">if </font><font color="red">noEvent</font>(vgsTran &lt;= vthTran + vdsTran)<font color="blue"> then </font>0<font color="blue"> else </font><font color="blue">if </font><font color="red">
+    noEvent</font>(vdsTran &lt;= 2*vdsTranEPS)<font color="blue"> then </font>threeFourthsCOX<font color="blue"> else </font>COX*(1 - ((
+    vgsTran - vthTran)/(2*(vgsTran - vthTran) - vdsTran))^2);
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------------------------------------</font>
+  <font color="darkgreen">// AC small-signal capacitance and operation region</font>
+  <font color="darkgreen">// ------------------------------------------------</font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    <font color="darkgreen"></font>
+    CvarAC = <font color="blue">if </font>gateSourcePinsC<font color="blue"> then </font>CpinsGSAC<font color="blue"> else </font>CpinsGDAC;
+    <font color="darkgreen"></font>
+    <font color="darkgreen">// Gate-pin to Source-pin capacity</font>
+    <font color="darkgreen"></font>
+    CpinsGSAC = <font color="blue">if </font><font color="red">noEvent</font>(vdsDCSgn &lt; -vdsDCEPS)<font color="blue"> then </font>CgdAC<font color="blue"> else </font><font color="blue">if </font><font color="red">noEvent</font>(
+      vdsDCSgn &lt; vdsDCEPS)<font color="blue"> then </font>0.5*(CgsAC - CgdAC)*vdsDCSgn/vdsDCEPS + 0.5*(
+      CgsAC + CgdAC)<font color="blue"> else </font>CgsAC;
+    <font color="darkgreen"></font>
+    <font color="darkgreen">// Gate-pin to Drain-pin capacity</font>
+    <font color="darkgreen"></font>
+    CpinsGDAC = <font color="blue">if </font><font color="red">noEvent</font>(vdsDCSgn &lt; -vdsDCEPS)<font color="blue"> then </font>CgsAC<font color="blue"> else </font><font color="blue">if </font><font color="red">noEvent</font>(
+      vdsDCSgn &lt; vdsDCEPS)<font color="blue"> then </font>0.5*(CgdAC - CgsAC)*vdsDCSgn/vdsDCEPS + 0.5*(
+      CgsAC + CgdAC)<font color="blue"> else </font>CgdAC;
+    <font color="darkgreen"></font>
+    <font color="darkgreen">// ********</font>
+    <font color="darkgreen"></font>
+    CgsAC = <font color="blue">if </font>(vgsDC &lt;= vthDC - PHI)<font color="blue"> then </font>CGSOtimesW<font color="blue"> else </font><font color="blue">if </font>(vgsDC &lt;= vthDC)<font color="blue">
+       then </font>twoThirdsCOX*((-vthDC + vgsDC)/PHI + 1) + CGSOtimesW<font color="blue"> else </font><font color="blue">if </font>(vgsDC
+       &lt;= vthDC + vdsDC)<font color="blue"> then </font>twoThirdsCOX + CGSOtimesW<font color="blue"> else </font><font color="blue">if </font>(vdsDC &lt;= 2*
+      vdsDCEPS)<font color="blue"> then </font>halfCOX + CGSOtimesW<font color="blue"> else </font>twoThirdsCOX*(1 - ((vgsDC -
+      vdsDC - vthDC)/(2*(vgsDC - vthDC) - vdsDC))^2) + CGSOtimesW;
+    <font color="darkgreen"></font>
+    CgdAC = <font color="blue">if </font>(vgsDC &lt;= vthDC + vdsDC)<font color="blue"> then </font>CGDOtimesW<font color="blue"> else </font><font color="blue">if </font>(vdsDC &lt;= 2*
+      vdsDCEPS)<font color="blue"> then </font>threeFourthsCOX + CGDOtimesW<font color="blue"> else </font>COX*(1 - ((vgsDC - vthDC)
+      /(2*(vgsDC - vthDC) - vdsDC))^2) + CGDOtimesW;
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>Cgd;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Cgb<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CgbI.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgb" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgb"></A><A HREF="SPICELib_src_BREAKOUT_SPICE2_MOS1.html#SPICELib.src.BREAKOUT.SPICE2_MOS1"
+>SPICELib.src.BREAKOUT.SPICE2_MOS1</A>.Cgb</H2>
+<IMG SRC="SPICELib.src.BREAKOUT.SPICE2_MOS1.CgbD.png" ALT="SPICELib.src.BREAKOUT.SPICE2_MOS1.Cgb">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>0</TD><TD>Initial voltage [V]</TD></TR>
+<TR><TD>IC_ENABLED</TD><TD>false</TD><TD>IC enabled</TD></TR>
+<TR><TD>PHI</TD><TD>&nbsp;</TD><TD>Surface inversion potencial [V]</TD></TR>
+<TR><TD>LD</TD><TD>&nbsp;</TD><TD>Lateral diffusion [m]</TD></TR>
+<TR><TD>W</TD><TD>&nbsp;</TD><TD>Gate width [m]</TD></TR>
+<TR><TD>L</TD><TD>&nbsp;</TD><TD>Gate length [m]</TD></TR>
+<TR><TD>TOX</TD><TD>&nbsp;</TD><TD>Gate oxide thickness [m]</TD></TR>
+<TR><TD>EPSR</TD><TD>&nbsp;</TD><TD>Dielectric constant of the oxide</TD></TR>
+<TR><TD>CGBO</TD><TD>&nbsp;</TD><TD>Gate-bulk overlap capacitance per meter [F/m]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Cgb
+  <font color="blue">extends </font><A HREF="SPICELib_src_BREAKOUT.html#SPICELib.src.BREAKOUT.Capacitor"
+>BREAKOUT.Capacitor</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vthDC <font color="darkgreen">&quot;Threshold voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsDC <font color="darkgreen">&quot;Drain to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsDC <font color="darkgreen">&quot;Gate to source voltage&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vthTran <font color="darkgreen">&quot;Threshold voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vdsTran <font color="darkgreen">&quot;Drain to source voltage&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vgsTran <font color="darkgreen">&quot;Gate to source voltage&quot;</font>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> PHI <font color="darkgreen">&quot;Surface inversion potencial&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> LD <font color="darkgreen">&quot;Lateral diffusion&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> W <font color="darkgreen">&quot;Gate width&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> L <font color="darkgreen">&quot;Gate length&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> TOX <font color="darkgreen">&quot;Gate oxide thickness&quot;</font>;
+  <font color="blue">parameter </font>Real EPSR <font color="darkgreen">&quot;Dielectric constant of the oxide&quot;</font>;
+  <font color="blue">parameter </font>Real CGBO <font color="darkgreen">&quot;Gate-bulk overlap capacitance per meter [F/m]&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> LEFF=L + 2*LD <font color="darkgreen">&quot;Effective length&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Capacitance"
+>SI.Capacitance</A> COX=EPS0*EPSR*W*LEFF/TOX <font color="darkgreen">&quot;Gate oxide capacitance&quot;</font>;
+  <font color="blue">parameter </font>Real CGBOtimesLEFF=CGBO*LEFF;
+  <font color="blue">parameter </font>Real COXtimesinvPHI=COX/PHI;
+  <font color="darkgreen"></font>
+  <font color="blue">constant </font>Real EPS0=8.85e-12 <font color="darkgreen">&quot;Permittivity of free space [F/m]&quot;</font>;
+<font color="blue">equation </font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen">// Large-signal capacitance</font>
+  <font color="darkgreen">// ------------------------</font>
+  <font color="darkgreen"></font>
+  Cvar*<font color="red">der</font>(vTran) = iTran;
+  <font color="darkgreen"></font>
+  Cvar - CGBOtimesLEFF = <font color="blue">if </font><font color="red">noEvent</font>(vgsTran &lt; vthTran - PHI)<font color="blue"> then </font>COX<font color="blue"> else </font><font color="blue">if </font><font color="red">
+    noEvent</font>(vgsTran &lt; vthTran)<font color="blue"> then </font>COXtimesinvPHI*(vthTran - vgsTran)<font color="blue"> else </font>0;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ------------------------------------------------</font>
+  <font color="darkgreen">// AC small-signal capacitance and operation region</font>
+  <font color="darkgreen">// ------------------------------------------------</font>
+  <font color="blue">when </font>ctrl_AC<font color="blue"> then</font>
+    <font color="darkgreen"></font>
+    CvarAC = <font color="blue">if </font>(vgsDC &lt; vthDC - PHI)<font color="blue"> then </font>COX + CGBOtimesLEFF<font color="blue"> else </font><font color="blue">if </font>(vgsDC
+       &lt; vthDC)<font color="blue"> then </font>COXtimesinvPHI*(vthDC - vgsDC) + CGBOtimesLEFF<font color="blue"> else </font>
+      CGBOtimesLEFF;
+    <font color="darkgreen"></font>
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>Cgb;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:45 2003
+.
+</address></BODY>
+</HTML>

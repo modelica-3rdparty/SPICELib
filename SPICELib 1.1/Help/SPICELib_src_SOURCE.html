@@ -1,0 +1,385 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SOURCE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.SOURCE"></A><A HREF="SPICELib_src.html#SPICELib.src"
+>SPICELib.src</A>.SOURCE</H2>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.Stimulus"
+><IMG SRC="SPICELib.src.SOURCE.StimulusI.png" ALT="SPICELib.src.SOURCE.Stimulus" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+><IMG SRC="SPICELib.src.SOURCE.VSourceI.png" ALT="SPICELib.src.SOURCE.VSource" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+><IMG SRC="SPICELib.src.SOURCE.ISourceI.png" ALT="SPICELib.src.SOURCE.ISource" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.E"
+><IMG SRC="SPICELib.src.SOURCE.EI.png" ALT="SPICELib.src.SOURCE.E" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.F"
+><IMG SRC="SPICELib.src.SOURCE.FI.png" ALT="SPICELib.src.SOURCE.F" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.G"
+><IMG SRC="SPICELib.src.SOURCE.GI.png" ALT="SPICELib.src.SOURCE.G" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.H"
+><IMG SRC="SPICELib.src.SOURCE.HI.png" ALT="SPICELib.src.SOURCE.H" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.Stimulus"
+>Stimulus</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>VSource</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>ISource</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.E"
+>E</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.F"
+>F</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.G"
+>G</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.H"
+>H</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE VSource<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.VSourceI.png" ALT="SPICELib.src.SOURCE.VSource" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.VSource"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.VSource</H2>
+<IMG SRC="SPICELib.src.SOURCE.VSourceD.png" ALT="SPICELib.src.SOURCE.VSource">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable model TransientSpecification</TD><TD> WAVEFORMS.NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>0</TD><TD>DC value</TD></TR>
+<TR><TD>AC_MAG</TD><TD>0</TD><TD>AC magnitude value</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> VSource
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.Stimulus"
+>Stimulus</A>(<font color="blue">redeclare </font><font color="blue">type</font> SignalType = <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A>);
+  <font color="darkgreen">// Contribution to the total power dissipation</font>
+  <font color="blue">outer </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+>INTERFACE.PowerDissipation</A> TotalPowerDissipation;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+>INTERFACE.PowerDissipation</A> powerDissipation;
+  <font color="blue">parameter </font>Boolean HIDDEN_COMPONENT=false <font color="darkgreen">&quot;Enable or disable log&quot;</font>;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_mag(start=0) <font color="darkgreen">&quot;Magnitude of AC small-signal current&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> iAC_mag_dB(start=0) <font color="darkgreen">&quot;Magnitude (dB) of AC small-signal current&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits_Conversions_NonSIunits.html#Modelica.SIunits.Conversions.NonSIunits.Angle_deg"
+>nonSI.Angle_deg</A> iAC_phase(start=0) <font color="darkgreen">
+    &quot;Phase (deg) of AC small-signal current&quot;</font>;
+<font color="blue">equation </font>
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// DC contitutive relation</font>
+  0 = <font color="blue">if </font>ctrl_IS_inhibit<font color="blue"> then </font>iDC<font color="blue"> else </font>vDC - DCvalue;
+  <font color="darkgreen">// Transient constitutive relation</font>
+  vTran = signalTran;
+  <font color="darkgreen">// AC small-signal constitutive relation</font>
+  {vAC_Re,vAC_Im} = <font color="blue">if </font>ctrl_AC<font color="blue"> then </font>{AC_MAG*<font color="red">cos</font>(<font color="red">Deg2Rad</font>(AC_PHASE)),AC_MAG*<font color="red">sin</font>(<font color="red">
+    Deg2Rad</font>(AC_PHASE))}<font color="blue"> else </font><font color="red">zeros</font>(2);
+  (iAC_mag,iAC_phase) = <font color="red">Rect2Polar</font>({iAC_Re,iAC_Im});
+  iAC_mag_dB = <font color="red">Decibels</font>(iAC_mag);
+  <font color="darkgreen">// Contribution to the total power disipation</font>
+  <font color="blue">when </font>ctrl_log_DC<font color="blue"> then</font>
+    powerDissipation.dissipatedPower = vDC*(-iDC);
+  <font color="blue">end when</font>;
+  <font color="red">connect</font>(powerDissipation, TotalPowerDissipation);
+  <font color="darkgreen">// Log static analysis results</font>
+  <font color="blue">when </font>ctrl_log_DC<font color="blue"> and </font>(HIDDEN_COMPONENT == false<font color="blue"> or </font>LOG_RESULTS == 2<font color="blue"> and </font>
+      HIDDEN_COMPONENT == true)<font color="blue"> then</font>
+    <font color="red">LogVariable</font>(iDC);
+  <font color="blue">end when</font>;
+  <font color="blue">when </font>ctrl_log_DC<font color="blue"> and </font>(HIDDEN_COMPONENT == false<font color="blue"> and </font>LOG_RESULTS &gt; 0<font color="blue"> or </font>
+      HIDDEN_COMPONENT == true<font color="blue"> and </font>LOG_RESULTS == 2)<font color="blue"> then</font>
+    <font color="red">LogVariable</font>(powerDissipation.dissipatedPower);
+  <font color="blue">end when</font>;
+  <font color="darkgreen">// AC small-signal results</font>
+  <font color="blue">when </font>ctrl_log_AC<font color="blue"> and </font>(HIDDEN_COMPONENT == false<font color="blue"> or </font>LOG_RESULTS == 2<font color="blue"> and </font>
+      HIDDEN_COMPONENT == true)<font color="blue"> then</font>
+    <font color="red">LogVariable</font>(iAC_mag);
+    <font color="red">LogVariable</font>(iAC_mag_dB);
+    <font color="red">LogVariable</font>(iAC_phase);
+  <font color="blue">end when</font>;
+<font color="blue">end </font>VSource;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ISource<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.ISourceI.png" ALT="SPICELib.src.SOURCE.ISource" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.ISource"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.ISource</H2>
+<IMG SRC="SPICELib.src.SOURCE.ISourceD.png" ALT="SPICELib.src.SOURCE.ISource">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable model TransientSpecification</TD><TD> WAVEFORMS.NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>0</TD><TD>DC value</TD></TR>
+<TR><TD>AC_MAG</TD><TD>0</TD><TD>AC magnitude value</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> ISource
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.Stimulus"
+>Stimulus</A>(<font color="blue">redeclare </font><font color="blue">type</font> SignalType = <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A>);
+<font color="blue">equation </font>
+  <font color="darkgreen">// DC constitutive relation</font>
+  0 = <font color="blue">if </font>ctrl_IS_inhibit<font color="blue"> then </font>vDC<font color="blue"> else </font>iDC - DCvalue;
+  <font color="darkgreen">// Transient constitutive relation</font>
+  iTran = signalTran;
+  <font color="darkgreen">// AC small-signal constitutive relation</font>
+  {iAC_Re,iAC_Im} = <font color="blue">if </font>ctrl_AC<font color="blue"> then </font>{AC_MAG*<font color="red">cos</font>(<font color="red">Deg2Rad</font>(AC_PHASE)),AC_MAG*<font color="red">sin</font>(<font color="red">
+    Deg2Rad</font>(AC_PHASE))}<font color="blue"> else </font><font color="red">zeros</font>(2);
+<font color="blue">end </font>ISource;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE E<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.EI.png" ALT="SPICELib.src.SOURCE.E" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.E"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.E</H2>
+<IMG SRC="SPICELib.src.SOURCE.ED.png" ALT="SPICELib.src.SOURCE.E">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> E
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPort"
+>INTERFACE.TwoPort</A>;
+  <font color="blue">parameter </font>Real Gain=1;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Static Model</font>
+  iDC1 = 0;
+  vDC2 = Gain*vDC1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//Transient Model</font>
+  iTran1 = 0;
+  vTran2 = Gain*vTran1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//AC Model  </font>
+  iAC_Re1 = 0;
+  iAC_Im1 = 0;
+  vAC_Re2 = Gain*vAC_Re1;
+  vAC_Im2 = Gain*vAC_Im1;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>E;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE F<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.FI.png" ALT="SPICELib.src.SOURCE.F" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.F"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.F</H2>
+<IMG SRC="SPICELib.src.SOURCE.FD.png" ALT="SPICELib.src.SOURCE.F">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> F
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPort"
+>INTERFACE.TwoPort</A>;
+  <font color="blue">parameter </font>Real Gain=1;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Static Model</font>
+  vDC1 = 0;
+  iDC2 = Gain*iDC1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//Transient Model</font>
+  vTran1 = 0;
+  iTran2 = Gain*iTran1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//AC Model  </font>
+  vAC_Re1 = 0;
+  vAC_Im1 = 0;
+  iAC_Re2 = Gain*iAC_Re1;
+  iAC_Im2 = Gain*iAC_Im1;
+<font color="blue">end </font>F;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE G<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.GI.png" ALT="SPICELib.src.SOURCE.G" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.G"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.G</H2>
+<IMG SRC="SPICELib.src.SOURCE.GD.png" ALT="SPICELib.src.SOURCE.G">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>[S]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> G
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPort"
+>INTERFACE.TwoPort</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> Gain=1;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Static Model</font>
+  iDC1 = 0;
+  iDC2 = Gain*vDC1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//Transient Model</font>
+  iTran1 = 0;
+  iTran2 = Gain*vTran1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//AC Model </font>
+  iAC_Re1 = 0;
+  iAC_Im1 = 0;
+  iAC_Re2 = Gain*vAC_Re1;
+  iAC_Im2 = Gain*vAC_Im1;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>G;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE H<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.HI.png" ALT="SPICELib.src.SOURCE.H" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.H"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.H</H2>
+<IMG SRC="SPICELib.src.SOURCE.HD.png" ALT="SPICELib.src.SOURCE.H">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>[Ohm]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> H
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.TwoPort"
+>INTERFACE.TwoPort</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Resistance"
+>SI.Resistance</A> Gain=1;
+<font color="blue">equation </font>
+  <font color="darkgreen">// Static Model</font>
+  vDC1 = 0;
+  vDC2 = Gain*iDC1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//Transient Model</font>
+  vTran1 = 0;
+  vTran2 = Gain*iTran1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">//AC Model  </font>
+  vAC_Re1 = 0;
+  vAC_Im1 = 0;
+  vAC_Re2 = Gain*iAC_Re1;
+  vAC_Im2 = Gain*iAC_Im1;
+<font color="blue">end </font>H;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Stimulus<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SOURCE.StimulusI.png" ALT="SPICELib.src.SOURCE.Stimulus" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SOURCE.Stimulus"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE"
+>SPICELib.src.SOURCE</A>.Stimulus</H2>
+<IMG SRC="SPICELib.src.SOURCE.StimulusD.png" ALT="SPICELib.src.SOURCE.Stimulus">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable model TransientSpecification</TD><TD> WAVEFORMS.NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>0</TD><TD>DC value</TD></TR>
+<TR><TD>AC_MAG</TD><TD>0</TD><TD>AC magnitude value</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> Stimulus
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+>INTERFACE.OnePort</A>;
+  <font color="blue">replaceable </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL"
+>WAVEFORMS.NULL</A> extends INIT.Part;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.Stimulus.TransientSpecification"
+>TransientSpecification</A>;
+  <font color="darkgreen">// DC and AC analyses parameters</font>
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL.SignalType"
+>SignalType</A> DC_VALUE=0 <font color="darkgreen">&quot;DC value&quot;</font>;
+  <font color="blue">parameter </font><A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL.SignalType"
+>SignalType</A> AC_MAG=0 <font color="darkgreen">&quot;AC magnitude value&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits_Conversions_NonSIunits.html#Modelica.SIunits.Conversions.NonSIunits.Angle_deg"
+>nonSI.Angle_deg</A> AC_PHASE=0 <font color="darkgreen">&quot;AC phase value&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL.SignalType"
+>SignalType</A> DCvalue <font color="darkgreen">&quot;DC analysis signal&quot;</font>;
+  <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL.SignalType"
+>SignalType</A> signalTran <font color="darkgreen">&quot;Tran analysis signal&quot;</font>;
+  <font color="darkgreen">// Time-related auxiliary variables</font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartRampDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartRampT;
+<font color="blue">equation </font>
+  <font color="darkgreen">// DC-model signal</font>
+  <font color="blue">when </font>ctrl_DC<font color="blue"> then</font>
+    timeStartRampDC = time;
+  <font color="blue">end when</font>;
+  DCvalue = <font color="blue">if </font>(ctrl_DC<font color="blue"> or </font>ctrl_AC)<font color="blue"> and </font>ctrl_OP_mode == 0<font color="blue"> and </font>ctrl_OP_value ==
+    0<font color="blue"> then </font>DC_VALUE<font color="blue"> else </font><font color="blue">if </font>ctrl_DC<font color="blue"> and </font>ctrl_OP_mode == 0<font color="blue"> and </font>ctrl_OP_value ==
+    1<font color="blue"> then </font>TRANS_INITIAL<font color="blue"> else </font><font color="blue">if </font>ctrl_DC<font color="blue"> and </font>ctrl_OP_mode == 1<font color="blue"> and </font>
+    ctrl_OP_value == 0<font color="blue"> then </font>DC_VALUE*(time - timeStartRampDC)/TIME_SCALE<font color="blue"> else </font><font color="blue">
+    if </font>ctrl_DC<font color="blue"> and </font>ctrl_OP_mode == 1<font color="blue"> and </font>ctrl_OP_value == 1<font color="blue"> then </font>TRANS_INITIAL*
+    (time - timeStartRampDC)/TIME_SCALE<font color="blue"> else </font>0;
+  <font color="darkgreen">// Transient-model signal</font>
+  <font color="blue">when </font>ctrl_Tran<font color="blue"> then</font>
+    timeStartRampT = time;
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+  signalTran = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>signal<font color="blue"> else </font><font color="blue">if </font>ctrl_IS_TranOP<font color="blue"> and </font>ctrl_OP_mode
+     == 0<font color="blue"> and </font>ctrl_OP_value == 0<font color="blue"> then </font>DC_VALUE<font color="blue"> else </font><font color="blue">if </font>ctrl_IS_TranOP<font color="blue"> and </font>
+    ctrl_OP_mode == 0<font color="blue"> and </font>ctrl_OP_value == 1<font color="blue"> then </font>TRANS_INITIAL<font color="blue"> else </font><font color="blue">if </font>
+    ctrl_IS_TranOP<font color="blue"> and </font>ctrl_OP_mode == 1<font color="blue"> and </font>ctrl_OP_value == 0<font color="blue"> then </font>DC_VALUE*(
+    time - timeStartRampT)/TIME_SCALE<font color="blue"> else </font><font color="blue">if </font>ctrl_IS_TranOP<font color="blue"> and </font>ctrl_OP_mode
+     == 1<font color="blue"> and </font>ctrl_OP_value == 1<font color="blue"> then </font>TRANS_INITIAL*(time - timeStartRampT)/
+    TIME_SCALE<font color="blue"> else </font>0;
+<font color="blue">end </font>Stimulus;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TransientSpecification<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.SOURCE.Stimulus.TransientSpecification"></A><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.Stimulus"
+>SPICELib.src.SOURCE.Stimulus</A>.TransientSpecification</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>replaceable type SignalType</TD><TD> Real</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">replaceable </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL"
+>WAVEFORMS.NULL</A> extends INIT.Part;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:36 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,2815 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE source<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.parts.source"></A><A HREF="SPICELib_parts.html#SPICELib.parts"
+>SPICELib.parts</A>.source</H2>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.V"
+><IMG SRC="SPICELib.parts.source.VI.png" ALT="SPICELib.parts.source.V" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VEXP"
+><IMG SRC="SPICELib.parts.source.VEXPI.png" ALT="SPICELib.parts.source.VEXP" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPULSE"
+><IMG SRC="SPICELib.parts.source.VPULSEI.png" ALT="SPICELib.parts.source.VPULSE" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPWL"
+><IMG SRC="SPICELib.parts.source.VPWLI.png" ALT="SPICELib.parts.source.VPWL" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VSIN"
+><IMG SRC="SPICELib.parts.source.VSINI.png" ALT="SPICELib.parts.source.VSIN" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VCONST"
+><IMG SRC="SPICELib.parts.source.VCONSTI.png" ALT="SPICELib.parts.source.VCONST" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.I"
+><IMG SRC="SPICELib.parts.source.II.png" ALT="SPICELib.parts.source.I" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.IEXP"
+><IMG SRC="SPICELib.parts.source.IEXPI.png" ALT="SPICELib.parts.source.IEXP" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.IPULSE"
+><IMG SRC="SPICELib.parts.source.IPULSEI.png" ALT="SPICELib.parts.source.IPULSE" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.IPWL"
+><IMG SRC="SPICELib.parts.source.IPWLI.png" ALT="SPICELib.parts.source.IPWL" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.ISIN"
+><IMG SRC="SPICELib.parts.source.ISINI.png" ALT="SPICELib.parts.source.ISIN" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.ICONST"
+><IMG SRC="SPICELib.parts.source.ICONSTI.png" ALT="SPICELib.parts.source.ICONST" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.E"
+><IMG SRC="SPICELib.parts.source.EI.png" ALT="SPICELib.parts.source.E" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.F"
+><IMG SRC="SPICELib.parts.source.FI.png" ALT="SPICELib.parts.source.F" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.G"
+><IMG SRC="SPICELib.parts.source.GI.png" ALT="SPICELib.parts.source.G" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_parts_source.html#SPICELib.parts.source.H"
+><IMG SRC="SPICELib.parts.source.HI.png" ALT="SPICELib.parts.source.H" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>source</i> package</H1><br><br>
+<p>The following summary table lists all the device types of <i>source</i> package.
+Each device type is described in detail in the model documentation.</p><br>
+<b>Table 1.</b> <i>source</i> package devices.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=5>
+<TR><TH align=center><b>Model</b></TH>
+<TH align=center><b>Device type</b></TH></TR>
+<TR><TD WIDTH=40>V</TD>
+<TD>Independent voltage source (DC and AC characteristics).</TD></TR>
+<TR><TD WIDTH=40>VEXP</TD>
+<TD>Independent voltage source & EXP stimulus.</TD></TR>
+<TR><TD WIDTH=40>VPULSE</TD>
+<TD>Independent voltage source & PULSE stimulus.</TD></TR>
+<TR><TD WIDTH=40>VPWL</TD>
+<TD>Independent voltage source & PWL stimulus.</TD></TR>
+<TR><TD WIDTH=40>VSIN</TD>
+<TD>Independent voltage source & SIN stimulus.</TD></TR>
+<TR><TD WIDTH=40>VCONST</TD>
+<TD>Independent voltage source & CONST stimulus.</TD></TR>
+<TR><TD WIDTH=40>I</TD>
+<TD>Independent current source (DC and AC characteristics).</TD></TR>
+<TR><TD WIDTH=40>IEXP</TD>
+<TD>Independent current source & EXP stimulus.</TD></TR>
+<TR><TD WIDTH=40>IPULSE</TD>
+<TD>Independent current source & PULSE stimulus.</TD></TR>
+<TR><TD WIDTH=40>IPWL</TD>
+<TD>Independent current source & PWL stimulus</TD></TR>
+<TR><TD WIDTH=40>ISIN</TD>
+<TD>Independent current source & SIN stimulus</TD></TR>
+<TR><TD WIDTH=40>ICONST</TD>
+<TD>Independent current source & CONST stimulus</TD></TR>
+<TR><TD WIDTH=40>E</TD>
+<TD>Voltage controlled voltage source</TD></TR>
+<TR><TD WIDTH=40>F</TD>
+<TD>Current controlled current source</TD></TR>
+<TR><TD WIDTH=40>G</TD>
+<TD>Voltage controlled current source</TD></TR>
+<TR><TD WIDTH=40>H</TD>
+<TD>Current controlled voltage source</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.V"
+>V</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VEXP"
+>VEXP</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPULSE"
+>VPULSE</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPWL"
+>VPWL</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VSIN"
+>VSIN</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VCONST"
+>VCONST</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.I"
+>I</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.IEXP"
+>IEXP</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.IPULSE"
+>IPULSE</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.IPWL"
+>IPWL</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.ISIN"
+>ISIN</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.ICONST"
+>ICONST</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.E"
+>E</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.F"
+>F</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.G"
+>G</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_parts_source.html#SPICELib.parts.source.H"
+>H</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE V<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.VI.png" ALT="SPICELib.parts.source.V" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.V"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.V</H2>
+<IMG SRC="SPICELib.parts.source.VD.png" ALT="SPICELib.parts.source.V">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>V</i> - Independent voltage source</H1>
+<IMG SRC=Fig.SPICELib.parts.source.VSource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - Transient specification</H2><br>
+None.
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> V
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>src.SOURCE.VSource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL"
+>src.WAVEFORMS.NULL</A>);
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>V;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE VEXP<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.VEXPI.png" ALT="SPICELib.parts.source.VEXP" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.VEXP"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.VEXP</H2>
+<IMG SRC="SPICELib.parts.source.VEXPD.png" ALT="SPICELib.parts.source.VEXP">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>VEXP</i> - Independent voltage source & EXP stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.VSource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - EXP waveform</H2><br>
+The EXP form causes the voltage to be S1 for the first TD1 seconds.
+Then the voltage decays exponentially from S1 to S2 using a time
+constant of TC1. The decay lasts TD2-TD1 seconds.
+Then, the voltage decays from S2 back to S1 using a time constant
+of TC2. See Tables 8 and 9.<br><br>
+<b>Table 8.</b> EXP waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>S1</TD>
+<TD>Initial voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>S2</TD>
+<TD>Peak voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>TD1</TD>
+<TD>Rise (fall) delay.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TC1</TD>
+<TD>Rise (fall) time constant.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TD2</TD>
+<TD>Fall (rise) delay.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TC2</TD>
+<TD>Fall (rise) time constant.</TD>
+<TD>SI.Time</TD></TR>
+</TABLE><br><br>
+<b>Table 9.</b> Exponential waveform formulas.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=8>
+<TR><TD><b>Time period</b></TD>
+<TD><b>Value</b></TD></TR>
+<TR><TD>0 to TD1</TD>
+<TD>S1</TD></TR>
+<TR><TD>TD1 to TD2</TD>
+<TD>S1+(S2-S1)*(1-e<sup>-(TIME-TD1)/TC1</sup>)</TD></TR>
+<TR><TD>TD2 to TSTOP</TD>
+<TD>S1+(S2-S1)*((1-e<sup>-(TIME-TD1)/TC1</sup>)-(1-e<sup>-(TIME-TD2)/TC2</sup>))</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>S1</TD><TD>&nbsp;</TD><TD>Initial signal [V]</TD></TR>
+<TR><TD>S2</TD><TD>&nbsp;</TD><TD>Peak signal [V]</TD></TR>
+<TR><TD>TD1</TD><TD>&nbsp;</TD><TD>Rise (fall) delay [s]</TD></TR>
+<TR><TD>TC1</TD><TD>&nbsp;</TD><TD>Rise (fall) time constant [s]</TD></TR>
+<TR><TD>TD2</TD><TD>&nbsp;</TD><TD>Fall (rise) delay [s]</TD></TR>
+<TR><TD>TC2</TD><TD>&nbsp;</TD><TD>Fall (rise) time constant [s]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> VEXP
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> S1 <font color="darkgreen">&quot;Initial signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> S2 <font color="darkgreen">&quot;Peak signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD1 <font color="darkgreen">&quot;Rise (fall) delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TC1 <font color="darkgreen">&quot;Rise (fall) time constant&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD2 <font color="darkgreen">&quot;Fall (rise) delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TC2 <font color="darkgreen">&quot;Fall (rise) time constant&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>src.SOURCE.VSource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP"
+>src.WAVEFORMS.EXP</A> (
+        S1=S1,
+        S2=S2,
+        TD1=TD1,
+        TC1=TC1,
+        TD2=TD2,
+        TC2=TC2));
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>VEXP;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE VPULSE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.VPULSEI.png" ALT="SPICELib.parts.source.VPULSE" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.VPULSE"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.VPULSE</H2>
+<IMG SRC="SPICELib.parts.source.VPULSED.png" ALT="SPICELib.parts.source.VPULSE">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>VPULSE</i> - Independent voltage source & PULSE stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.VSource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - PULSE waveform</H2><br>
+The PULSE form causes the voltage to start at S1, and stay there for TD seconds.
+Then, the voltage goes linearly from S1 to S2 during the next TR seconds, and the
+the voltage stays at S2 for PW seconds.
+Then it goes linearly from S2 back to S1 during the next TF seconds.
+It stays at S1 for PER-(TR+PW+TF) seconds, and then the cycle is repeated
+except for the initial delay of TD seconds.<br><br>
+<b>Table 10.</b> PULSE waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>S1</TD>
+<TD>Initial voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>S2</TD>
+<TD>Pulsed voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>TD</TD>
+<TD>Delay.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TF</TD>
+<TD>Fall time.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TR</TD>
+<TD>Rise time.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>PW</TD>
+<TD>Pulse width.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>PER</TD>
+<TD>Period.</TD>
+<TD>SI.Time</TD></TR>
+</TABLE><br><br>
+<b>Table 11.</b> Pulse waveform formulas.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Time period</b></TD>
+<TD><b>Value</b></TD></TR>
+<TR><TD>0</TD> <TD>S1</TD></TR>
+<TR><TD>TD</TD> <TD>S1</TD></TR>
+<TR><TD>TD+TR</TD> <TD>S2</TD></TR>
+<TR><TD>TD+TR+PW</TD> <TD>S2</TD></TR>
+<TR><TD>TD+TR+PW+TF</TD> <TD>S1</TD></TR>
+<TR><TD>TD+PER</TD> <TD>S1</TD></TR>
+<TR><TD>TD+PER+TR</TD> <TD>S2</TD></TR>
+<TR><TD>...</TD> <TD>...</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>S1</TD><TD>&nbsp;</TD><TD>Initial signal [V]</TD></TR>
+<TR><TD>S2</TD><TD>&nbsp;</TD><TD>Pulse signal [V]</TD></TR>
+<TR><TD>TD</TD><TD>&nbsp;</TD><TD>Delay [s]</TD></TR>
+<TR><TD>TF</TD><TD>&nbsp;</TD><TD>Fall time [s]</TD></TR>
+<TR><TD>TR</TD><TD>&nbsp;</TD><TD>Rise time [s]</TD></TR>
+<TR><TD>PW</TD><TD>&nbsp;</TD><TD>Pulse width [s]</TD></TR>
+<TR><TD>PER</TD><TD>&nbsp;</TD><TD>Period [s]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> VPULSE
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> S1 <font color="darkgreen">&quot;Initial signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> S2 <font color="darkgreen">&quot;Pulse signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD(min=0) <font color="darkgreen">&quot;Delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TF(min=0) <font color="darkgreen">&quot;Fall time&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TR(min=0) <font color="darkgreen">&quot;Rise time&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> PW(min=0) <font color="darkgreen">&quot;Pulse width&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> PER(min=TR + PW + TF) <font color="darkgreen">&quot;Period&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>src.SOURCE.VSource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE"
+>src.WAVEFORMS.PULSE</A> (
+        S1=S1,
+        S2=S2,
+        TD=TD,
+        TF=TF,
+        TR=TR,
+        PW=PW,
+        PER=PER));
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>VPULSE;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE VPWL<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.VPWLI.png" ALT="SPICELib.parts.source.VPWL" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.VPWL"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.VPWL</H2>
+<IMG SRC="SPICELib.parts.source.VPWLD.png" ALT="SPICELib.parts.source.VPWL">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>VPWL</i> - Independent voltage source & PWL stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.VSource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - PWL waveform</H2><br>
+The PWL form describes a piecewise linear waveform.
+Each pair of time-voltage values specifies a corner of the waveform.
+The voltage at times between corners is the linear interpolation of
+the voltages at the corners.<br><br>
+<b>Table 12.</b> PWL waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>timeCorners[:]</TD>
+<TD>Time at corners.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>signalCorners[:]</TD>
+<TD>Voltage at corners.</TD>
+<TD>SI.Voltage</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>signalCorners[:]</TD><TD>&nbsp;</TD><TD>Signal at corners [V]</TD></TR>
+<TR><TD>timeCorners[:]</TD><TD>&nbsp;</TD><TD>Time at corners [s]</TD></TR>
+<TR><TD>N</TD><TD>size(signalCorners, 1)</TD><TD>Number of corner points</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> VPWL
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> signalCorners[:] <font color="darkgreen">&quot;Signal at corners&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeCorners[:] <font color="darkgreen">&quot;Time at corners&quot;</font>;
+  <font color="blue">parameter </font>Integer N=<font color="red">size</font>(signalCorners, 1) <font color="darkgreen">&quot;Number of corner points&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>src.SOURCE.VSource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL"
+>src.WAVEFORMS.PWL</A> (
+        signalCorners=signalCorners,
+        timeCorners=timeCorners,
+        N=Nm));
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>VPWL;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE VSIN<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.VSINI.png" ALT="SPICELib.parts.source.VSIN" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.VSIN"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.VSIN</H2>
+<IMG SRC="SPICELib.parts.source.VSIND.png" ALT="SPICELib.parts.source.VSIN">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>VSIN</i> - Independent voltage source & SIN stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.VSource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - SIN waveform</H2><br>
+The SIN form causes the voltage to follow v = OFF + AMPL*sin(2*pi*FREQ*time).
+See Table 8.<br><br>
+<b>Table 8.</b> SIN waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>OFF</TD>
+<TD>Constant voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>AMPL</TD>
+<TD>Amplitude.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>FREQ</TD>
+<TD>Frequency.</TD>
+<TD>SI.Frequency</TD></TR>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>OFF</TD><TD>&nbsp;</TD><TD>Constant Voltage [V]</TD></TR>
+<TR><TD>AMPL</TD><TD>&nbsp;</TD><TD>Amplitude [V]</TD></TR>
+<TR><TD>FREQ</TD><TD>&nbsp;</TD><TD>Frequency [Hz]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> VSIN
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> OFF <font color="darkgreen">&quot;Constant Voltage&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AMPL <font color="darkgreen">&quot;Amplitude&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> FREQ <font color="darkgreen">&quot;Frequency&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>src.SOURCE.VSource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN"
+>src.WAVEFORMS.SIN</A> (
+        OFF=OFF,
+        AMPL=AMPL,
+        FREQ=FREQ));
+  <font color="darkgreen"></font>
+<font color="blue">end </font>VSIN;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE VCONST<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.VCONSTI.png" ALT="SPICELib.parts.source.VCONST" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.VCONST"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.VCONST</H2>
+<IMG SRC="SPICELib.parts.source.VCONSTD.png" ALT="SPICELib.parts.source.VCONST">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>VCONST</i> - Independent voltage source & CONST stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.VSource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - CONST waveform</H2><br>
+The CONST form causes the voltage to follow v = OFF.
+See Table 8.<br><br>
+<b>Table 8.</b> CONST waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>OFF</TD>
+<TD>Constant voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>OFF</TD><TD>&nbsp;</TD><TD>Constant Voltage [V]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD><TD>false</TD><TD>Enable or disable log</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> VCONST
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> OFF <font color="darkgreen">&quot;Constant Voltage&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.VSource"
+>src.SOURCE.VSource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.CONST"
+>src.WAVEFORMS.CONST</A> (OFF=OFF));
+  <font color="darkgreen"></font>
+<font color="blue">end </font>VCONST;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE I<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.II.png" ALT="SPICELib.parts.source.I" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.I"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.I</H2>
+<IMG SRC="SPICELib.parts.source.ID.png" ALT="SPICELib.parts.source.I">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>I</i> - Independent current source</H1>
+<IMG SRC=Fig.SPICELib.parts.source.ISource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent current source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - Transient specification</H2><br>
+None.
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> I
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>src.SOURCE.ISource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.NULL"
+>src.WAVEFORMS.NULL</A>);
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>I;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IEXP<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.IEXPI.png" ALT="SPICELib.parts.source.IEXP" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.IEXP"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.IEXP</H2>
+<IMG SRC="SPICELib.parts.source.IEXPD.png" ALT="SPICELib.parts.source.IEXP">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>IEXP</i> - Independent current source & EXP stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.ISource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent current source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - EXP waveform</H2><br>
+The EXP form causes the current to be S1 for the first TD1 seconds.
+Then the current decays exponentially from S1 to S2 using a time
+constant of TC1. The decay lasts TD2-TD1 seconds.
+Then, the current decays from S2 back to S1 using a time constant
+of TC2. See Tables 8 and 9.<br><br>
+<b>Table 8.</b> EXP waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>S1</TD>
+<TD>Initial voltage.</TD>
+<TD>SI.Current</TD></TR>
+<TR><TD>S2</TD>
+<TD>Peak voltage.</TD>
+<TD>SI.Current</TD></TR>
+<TR><TD>TD1</TD>
+<TD>Rise (fall) delay.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TC1</TD>
+<TD>Rise (fall) time constant.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TD2</TD>
+<TD>Fall (rise) delay.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TC2</TD>
+<TD>Fall (rise) time constant.</TD>
+<TD>SI.Time</TD></TR>
+</TABLE><br><br>
+<b>Table 9.</b> Exponential waveform formulas.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=8>
+<TR><TD><b>Time period</b></TD>
+<TD><b>Value</b></TD></TR>
+<TR><TD>0 to TD1</TD>
+<TD>S1</TD></TR>
+<TR><TD>TD1 to TD2</TD>
+<TD>S1+(S2-S1)*(1-e<sup>-(TIME-TD1)/TC1</sup>)</TD></TR>
+<TR><TD>TD2 to TSTOP</TD>
+<TD>S1+(S2-S1)*((1-e<sup>-(TIME-TD1)/TC1</sup>)-(1-e<sup>-(TIME-TD2)/TC2</sup>))</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>S1</TD><TD>&nbsp;</TD><TD>Initial signal [A]</TD></TR>
+<TR><TD>S2</TD><TD>&nbsp;</TD><TD>Peak signal [A]</TD></TR>
+<TR><TD>TD1</TD><TD>&nbsp;</TD><TD>Rise (fall) delay [s]</TD></TR>
+<TR><TD>TC1</TD><TD>&nbsp;</TD><TD>Rise (fall) time constant [s]</TD></TR>
+<TR><TD>TD2</TD><TD>&nbsp;</TD><TD>Fall (rise) delay [s]</TD></TR>
+<TR><TD>TC2</TD><TD>&nbsp;</TD><TD>Fall (rise) time constant [s]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IEXP
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> S1 <font color="darkgreen">&quot;Initial signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> S2 <font color="darkgreen">&quot;Peak signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD1 <font color="darkgreen">&quot;Rise (fall) delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TC1 <font color="darkgreen">&quot;Rise (fall) time constant&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD2 <font color="darkgreen">&quot;Fall (rise) delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TC2 <font color="darkgreen">&quot;Fall (rise) time constant&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>src.SOURCE.ISource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.EXP"
+>src.WAVEFORMS.EXP</A> (
+        S1=S1,
+        S2=S2,
+        TD1=TD1,
+        TC1=TC1,
+        TD2=TD2,
+        TC2=TC2));
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>IEXP;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IPULSE<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.IPULSEI.png" ALT="SPICELib.parts.source.IPULSE" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.IPULSE"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.IPULSE</H2>
+<IMG SRC="SPICELib.parts.source.IPULSED.png" ALT="SPICELib.parts.source.IPULSE">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>IPULSE</i> - Independent current source & PULSE stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.ISource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent current source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - PULSE waveform</H2><br>
+The PULSE form causes the current to start at S1, and stay there for TD seconds.
+Then, the current goes linearly from S1 to S2 during the next TR seconds, and the
+the current stays at S2 for PW seconds.
+Then it goes linearly from S2 back to S1 during the next TF seconds.
+It stays at S1 for PER-(TR+PW+TF) seconds, and then the cycle is repeated
+except for the initial delay of TD seconds.<br><br>
+<b>Table 10.</b> PULSE waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>S1</TD>
+<TD>Initial voltage.</TD>
+<TD>SI.Current</TD></TR>
+<TR><TD>S2</TD>
+<TD>Pulsed voltage.</TD>
+<TD>SI.Current</TD></TR>
+<TR><TD>TD</TD>
+<TD>Delay.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TF</TD>
+<TD>Fall time.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>TR</TD>
+<TD>Rise time.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>PW</TD>
+<TD>Pulse width.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>PER</TD>
+<TD>Period.</TD>
+<TD>SI.Time</TD></TR>
+</TABLE><br><br>
+<b>Table 11.</b> Pulse waveform formulas.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Time period</b></TD>
+<TD><b>Value</b></TD></TR>
+<TR><TD>0</TD> <TD>S1</TD></TR>
+<TR><TD>TD</TD> <TD>S1</TD></TR>
+<TR><TD>TD+TR</TD> <TD>S2</TD></TR>
+<TR><TD>TD+TR+PW</TD> <TD>S2</TD></TR>
+<TR><TD>TD+TR+PW+TF</TD> <TD>S1</TD></TR>
+<TR><TD>TD+PER</TD> <TD>S1</TD></TR>
+<TR><TD>TD+PER+TR</TD> <TD>S2</TD></TR>
+<TR><TD>...</TD> <TD>...</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>S1</TD><TD>&nbsp;</TD><TD>Initial signal [A]</TD></TR>
+<TR><TD>S2</TD><TD>&nbsp;</TD><TD>Pulse signal [A]</TD></TR>
+<TR><TD>TD</TD><TD>&nbsp;</TD><TD>Delay [s]</TD></TR>
+<TR><TD>TF</TD><TD>&nbsp;</TD><TD>Fall time [s]</TD></TR>
+<TR><TD>TR</TD><TD>&nbsp;</TD><TD>Rise time [s]</TD></TR>
+<TR><TD>PW</TD><TD>&nbsp;</TD><TD>Pulse width [s]</TD></TR>
+<TR><TD>PER</TD><TD>&nbsp;</TD><TD>Period [s]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IPULSE
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> S1 <font color="darkgreen">&quot;Initial signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> S2 <font color="darkgreen">&quot;Pulse signal&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TD(min=0) <font color="darkgreen">&quot;Delay&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TF(min=0) <font color="darkgreen">&quot;Fall time&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TR(min=0) <font color="darkgreen">&quot;Rise time&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> PW(min=0) <font color="darkgreen">&quot;Pulse width&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> PER(min=TR + PW + TF) <font color="darkgreen">&quot;Period&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>src.SOURCE.ISource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PULSE"
+>src.WAVEFORMS.PULSE</A> (
+        S1=S1,
+        S2=S2,
+        TD=TD,
+        TF=TF,
+        TR=TR,
+        PW=PW,
+        PER=PER));
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>IPULSE;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IPWL<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.IPWLI.png" ALT="SPICELib.parts.source.IPWL" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.IPWL"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.IPWL</H2>
+<IMG SRC="SPICELib.parts.source.IPWLD.png" ALT="SPICELib.parts.source.IPWL">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>IPWL</i> - Independent current source & PWL stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.ISource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent current source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - PWL waveform</H2><br>
+The PWL form describes a piecewise linear waveform.
+Each pair of time-current values specifies a corner of the waveform.
+The current at times between corners is the linear interpolation of
+the currents at the corners.<br><br>
+<b>Table 12.</b> PWL waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>timeCorners[:]</TD>
+<TD>Time at corners.</TD>
+<TD>SI.Time</TD></TR>
+<TR><TD>signalCorners[:]</TD>
+<TD>Voltage at corners.</TD>
+<TD>SI.Current</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>signalCornersm[:]</TD><TD>&nbsp;</TD><TD>Signal at corners</TD></TR>
+<TR><TD>timeCornersm[:]</TD><TD>&nbsp;</TD><TD>Time at corners [s]</TD></TR>
+<TR><TD>Nm</TD><TD>size(signalCorners, 1)</TD><TD>Number of corner points</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IPWL
+  <font color="blue">parameter </font>SI.Currrent signalCornersm[:] <font color="darkgreen">&quot;Signal at corners&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeCornersm[:] <font color="darkgreen">&quot;Time at corners&quot;</font>;
+  <font color="blue">parameter </font>Integer Nm=<font color="red">size</font>(signalCorners, 1) <font color="darkgreen">&quot;Number of corner points&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>src.SOURCE.ISource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.PWL"
+>src.WAVEFORMS.PWL</A> (
+        signalCorners=signalCorners,
+        timeCorners=timeCorners,
+        N=N));
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+<font color="blue">end </font>IPWL;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ISIN<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.ISINI.png" ALT="SPICELib.parts.source.ISIN" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.ISIN"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.ISIN</H2>
+<IMG SRC="SPICELib.parts.source.ISIND.png" ALT="SPICELib.parts.source.ISIN">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>ISIN</i> - Independent current source & SIN stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.ISource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent current source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Voltage</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Voltage</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - SIN waveform</H2><br>
+The SIN form causes the voltage to follow v = OFF + AMPL*sin(2*pi*FREQ*time).
+See Table 8.<br><br>
+<b>Table 8.</b> SIN waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>OFF</TD>
+<TD>DC voltage.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>AMPL</TD>
+<TD>Amplitude.</TD>
+<TD>SI.Voltage</TD></TR>
+<TR><TD>FREQ</TD>
+<TD>Frequency.</TD>
+<TD>SI.Frequency</TD></TR>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>OFF</TD><TD>&nbsp;</TD><TD>DC Voltage [A]</TD></TR>
+<TR><TD>AMPL</TD><TD>&nbsp;</TD><TD>Amplitude [A]</TD></TR>
+<TR><TD>FREQ</TD><TD>&nbsp;</TD><TD>Frequency [Hz]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> ISIN
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> OFF <font color="darkgreen">&quot;DC Voltage&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> AMPL <font color="darkgreen">&quot;Amplitude&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> FREQ <font color="darkgreen">&quot;Frequency&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>src.SOURCE.ISource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.SIN"
+>src.WAVEFORMS.SIN</A> (
+        OFF=OFF,
+        AMPL=AMPL,
+        FREQ=FREQ));
+  <font color="darkgreen"></font>
+<font color="blue">end </font>ISIN;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ICONST<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.ICONSTI.png" ALT="SPICELib.parts.source.ICONST" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.ICONST"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.ICONST</H2>
+<IMG SRC="SPICELib.parts.source.ICONSTD.png" ALT="SPICELib.parts.source.ICONST">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>ICONST</i> - Independent current source & CONST stimulus</H1>
+<IMG SRC=Fig.SPICELib.parts.source.ISource.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 3.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<H2>Parameters</H2><br>
+Model parameters allow defining the DC and AC characteristics of the source
+(see Table 4).<br><br>
+<b>Table 4.</b> Parameters of the independent current source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>DC_VALUE</TD>
+<TD>SI.Current</TD>
+<TD>DC value.</TD></TR>
+<TR><TD>AC_MAG</TD>
+<TD>SI.Current</TD>
+<TD>AC magnitude value.</TD></TR>
+<TR><TD>AC_PHASE</TD>
+<TD>nonSI.Angle_deg</TD>
+<TD>AC phase value.</TD></TR>
+<TR><TD>HIDDEN_COMPONENT</TD>
+<TD>Boolean</TD>
+<TD>See <i>analyses</i> package documentation.</TD></TR>
+</TABLE><br><br>
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 5.</b> Voltage across the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+<b>Table 6.</b> Current flowing through the source.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+<TR><TD>iAC_mag</TD>
+<TD>AC small-signal current. Magnitude.</TD></TR>
+<TR><TD>iAC_mag_dB</TD>
+<TD>Small-signal current. Magnitude (dB).</TD></TR>
+<TR><TD>iAC_phase</TD>
+<TD>Small-signal current. Phase (deg).</TD></TR>
+</TABLE><br><br>
+<H2>Stimulus - CONST waveform</H2><br>
+The CONST form causes the voltage to follow v = OFF.
+See Table 8.<br><br>
+<b>Table 8.</b> CONST waveform parameters.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Parameter</b></TD>
+<TD><b>Description</b></TD>
+<TD><b>Units</b></TD></TR>
+<TR><TD>OFF</TD>
+<TD>Constant current.</TD>
+<TD>SI.Current</TD></TR>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>OFF</TD><TD>&nbsp;</TD><TD>Constant Current [A]</TD></TR>
+<TR><TD>DC_VALUE</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_MAG</TD><TD>&nbsp;</TD><TD>[A]</TD></TR>
+<TR><TD>AC_PHASE</TD><TD>0</TD><TD>AC phase value [deg]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> ICONST
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> OFF <font color="darkgreen">&quot;Constant Current&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> DC_VALUE;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Current"
+>SI.Current</A> AC_MAG;
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.ISource"
+>src.SOURCE.ISource</A>(
+    DC_VALUE=DC_VALUE,
+    AC_MAG=AC_MAG,
+    <font color="blue">redeclare </font><font color="blue">model</font> TransientSpecification = <A HREF="SPICELib_src_WAVEFORMS.html#SPICELib.src.WAVEFORMS.CONST"
+>src.WAVEFORMS.CONST</A> (OFF=OFF));
+  <font color="darkgreen"></font>
+<font color="blue">end </font>ICONST;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE E<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.EI.png" ALT="SPICELib.parts.source.E" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.E"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.E</H2>
+<IMG SRC="SPICELib.parts.source.ED.png" ALT="SPICELib.parts.source.E">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>E</i> - Voltage controlled voltage source</H1>
+<IMG SRC=Fig.SPICELib.parts.source.E.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Voltage controlled voltage source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p1</TD>
+<TD>(+) controlling node</TD></TR>
+<TR><TD>n1</TD>
+<TD>(-) controlling node</TD></TR>
+<TR><TD>p2</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n2</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) controlling node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p1.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p1.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p1.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p1.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) controlling node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n1.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n1.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n1.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n1.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 4.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p2.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p2.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p2.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p2.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 5.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n2.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n2.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n2.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n2.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<H2>Parameters</H2><br>
+<b>Table 6.</b> Parameters of the voltage controlled voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>GAIN</TD>
+<TD>Real</TD>
+<TD>Voltage gain</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 7.</b> Voltage across the controlling port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC1</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran1</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re1</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im1</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 8.</b> Voltage across the source port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC2</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran2</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re2</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im2</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 9.</b> Current flowing through the controlling port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC1</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran1</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re1</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im1</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 10.</b> Current flowing through the source port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC2</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran2</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re2</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im2</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<H2>Constitutive relations</H2><br>
+<b>Table 11.</b> Model formulations.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Static</b></TD>
+<TD>iDC1 = 0<br>
+vDC2 = Gain*vDC1</TD></TR>
+<TR><TD><b>AC small-signal</b></TD>
+<TD>iAC_Re1 =  0,  iAC_Im1 = 0<br>
+ vAC_Re2 = Gain * vAC_Re1, vAC_Im2 = Gain * vAC_Re1</TD></TR>
+<TR><TD><b>Large signal</b></TD>
+<TD>iTran1 = 0<br>
+vTran2 = Gain*vTran1</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> E
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.E"
+>src.SOURCE.E</A>;
+<font color="blue">end </font>E;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE F<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.FI.png" ALT="SPICELib.parts.source.F" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.F"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.F</H2>
+<IMG SRC="SPICELib.parts.source.FD.png" ALT="SPICELib.parts.source.F">
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center><i>F</i> - Current controlled current source</H1>
+<IMG SRC=Fig.SPICELib.parts.source.F.symbol.png WIDTH=150><br>
+<b>Figure 1.</b> Current controlled current source.<br><br>
+<H2>Nodes</H2><br>
+<b>Table 1.</b> Instantiations of <i>Pin</i> class.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>p1</TD>
+<TD>(+) controlling node</TD></TR>
+<TR><TD>n1</TD>
+<TD>(-) controlling node</TD></TR>
+<TR><TD>p2</TD>
+<TD>(+) node</TD></TR>
+<TR><TD>n2</TD>
+<TD>(-) node</TD></TR>
+</TABLE><br><br>
+Positive current flows from the (+) node through the source
+to the (-) node.<br><br>
+<b>Table 2.</b> (+) controlling node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p1.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p1.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p1.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p1.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 3.</b> (-) controlling node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n1.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n1.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n1.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n1.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 4.</b> (+) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>p2.vDC</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>p2.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>p2.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>p2.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 5.</b> (-) node variables.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>n2.vDC</b></TD>
+<TD>Static model.</TD></TR>
+<TR><TD>n2.vTran</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>n2.vAC_Re</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>n2.vAC_Im</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<H2>Parameters</H2><br>
+<b>Table 6.</b> Parameters of the voltage controlled voltage source
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Type</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>GAIN</TD>
+<TD>Real</TD>
+<TD>Current gain</TD></TR>
+</TABLE><br><br>
+
+<H2>Variables of interest to the library user</H2><br>
+<b>Table 7.</b> Voltage across the controlling port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC1</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran1</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re1</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im1</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 8.</b> Voltage across the source port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</b></TD>
+<TD><b>Description<b></TD></TR>
+<TR><TD>vDC2</TD>
+<TD>Static model.</TD></TR>
+<TR><TD>vTran2</TD>
+<TD>Large-signal voltage</TD></TR>
+<TR><TD>vAC_Re2</TD>
+<TD>AC small-signal voltage. Real part.</TD></TR>
+<TR><TD>vAC_Im2</TD>
+<TD>AC small-signal voltage. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 9.</b> Current flowing through the controlling port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC1</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran1</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re1</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im1</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<b>Table 10.</b> Current flowing through the source port.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Name</TD>
+<TD><b>Description</b></TD></TR>
+<TR><TD>iDC2</TD>
+<TD>DC current.</TD></TR>
+<TR><TD>iTran2</TD>
+<TD>Large-signal current.</TD></TR>
+<TR><TD>iAC_Re2</TD>
+<TD>Small-signal current. Real part.</TD></TR>
+<TR><TD>iAC_Im2</TD>
+<TD>Small-signal current. Imaginary part.</TD></TR>
+</TABLE><br><br>
+
+<H2>Constitutive relations</H2><br>
+<b>Table 11.</b> Model formulations.
+<TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+<TR><TD><b>Static</b></TD>
+<TD>vDC1 = 0<br>
+iDC2 = Gain*iDC1</TD></TR>
+<TR><TD><b>AC small-signal</b></TD>
+<TD> vAC_Re1 = 0,  vAC_Im1 = 0<br>
+ iAC_Re2 = Gain*iAC_Re1, iAC_Im2 = Gain*iAC_Im1</TD></TR>
+<TR><TD><b>Large signal</b></TD>
+<TD>vTran1 = 0<br>
+iTran2 = Gain*iTran1</TD></TR>
+</TABLE><br><br>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> F
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.F"
+>src.SOURCE.F</A>;
+<font color="blue">end </font>F;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE G<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.GI.png" ALT="SPICELib.parts.source.G" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.G"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.G</H2>
+<IMG SRC="SPICELib.parts.source.GD.png" ALT="SPICELib.parts.source.G">
+<H3>Information</H3>
+<PRE></pre>
+  <H1 align=center><i>G</i> - Voltage controlled current source</H1>
+  <IMG SRC=Fig.SPICELib.parts.source.G.symbol.png WIDTH=150><br>
+  <b>Figure 1.</b> Voltage controlled current source.<br><br>
+  <H2>Nodes</H2><br>
+  <b>Table 1.</b> Instantiations of <i>Pin</i> class.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description</b></TD></TR>
+  <TR><TD>p1</TD>
+  <TD>(+) controlling node</TD></TR>
+  <TR><TD>n1</TD>
+  <TD>(-) controlling node</TD></TR>
+  <TR><TD>p2</TD>
+  <TD>(+) node</TD></TR>
+  <TR><TD>n2</TD>
+  <TD>(-) node</TD></TR>
+  </TABLE><br><br>
+  Positive current flows from the (+) node through the source
+  to the (-) node.<br><br>
+  <b>Table 2.</b> (+) controlling node variables.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>p1.vDC</TD>
+  <TD>Static model.</TD></TR>
+  <TR><TD>p1.vTran</TD>
+  <TD>Large-signal voltage</TD></TR>
+  <TR><TD>p1.vAC_Re</TD>
+  <TD>AC small-signal voltage. Real part.</TD></TR>
+  <TR><TD>p1.vAC_Im</TD>
+  <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <b>Table 3.</b> (-) controlling node variables.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>n1.vDC</b></TD>
+  <TD>Static model.</TD></TR>
+  <TR><TD>n1.vTran</TD>
+  <TD>Large-signal voltage</TD></TR>
+  <TR><TD>n1.vAC_Re</TD>
+  <TD>AC small-signal voltage. Real part.</TD></TR>
+  <TR><TD>n1.vAC_Im</TD>
+  <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <b>Table 4.</b> (+) node variables.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>p2.vDC</TD>
+  <TD>Static model.</TD></TR>
+  <TR><TD>p2.vTran</TD>
+  <TD>Large-signal voltage</TD></TR>
+  <TR><TD>p2.vAC_Re</TD>
+  <TD>AC small-signal voltage. Real part.</TD></TR>
+  <TR><TD>p2.vAC_Im</TD>
+  <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <b>Table 5.</b> (-) node variables.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>n2.vDC</b></TD>
+  <TD>Static model.</TD></TR>
+  <TR><TD>n2.vTran</TD>
+  <TD>Large-signal voltage</TD></TR>
+  <TR><TD>n2.vAC_Re</TD>
+  <TD>AC small-signal voltage. Real part.</TD></TR>
+  <TR><TD>n2.vAC_Im</TD>
+  <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <H2>Parameters</H2><br>
+  <b>Table 6.</b> Parameters of the voltage controlled voltage source
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Type</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>GAIN</TD>
+  <TD>SI.Conductance</TD>
+  <TD>Transconductance</TD></TR>
+  </TABLE><br><br>
+
+  <H2>Variables of interest to the library user</H2><br>
+  <b>Table 7.</b> Voltage across the controlling port.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>vDC1</TD>
+  <TD>Static model.</TD></TR>
+  <TR><TD>vTran1</TD>
+  <TD>Large-signal voltage</TD></TR>
+  <TR><TD>vAC_Re1</TD>
+  <TD>AC small-signal voltage. Real part.</TD></TR>
+  <TR><TD>vAC_Im1</TD>
+  <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <b>Table 8.</b> Voltage across the source port.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</b></TD>
+  <TD><b>Description<b></TD></TR>
+  <TR><TD>vDC2</TD>
+  <TD>Static model.</TD></TR>
+  <TR><TD>vTran2</TD>
+  <TD>Large-signal voltage</TD></TR>
+  <TR><TD>vAC_Re2</TD>
+  <TD>AC small-signal voltage. Real part.</TD></TR>
+  <TR><TD>vAC_Im2</TD>
+  <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <b>Table 9.</b> Current flowing through the controlling port.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</TD>
+  <TD><b>Description</b></TD></TR>
+  <TR><TD>iDC1</TD>
+  <TD>DC current.</TD></TR>
+  <TR><TD>iTran1</TD>
+  <TD>Large-signal current.</TD></TR>
+  <TR><TD>iAC_Re1</TD>
+  <TD>Small-signal current. Real part.</TD></TR>
+  <TR><TD>iAC_Im1</TD>
+  <TD>Small-signal current. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <b>Table 10.</b> Current flowing through the source port.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Name</TD>
+  <TD><b>Description</b></TD></TR>
+  <TR><TD>iDC2</TD>
+  <TD>DC current.</TD></TR>
+  <TR><TD>iTran2</TD>
+  <TD>Large-signal current.</TD></TR>
+  <TR><TD>iAC_Re2</TD>
+  <TD>Small-signal current. Real part.</TD></TR>
+  <TR><TD>iAC_Im2</TD>
+  <TD>Small-signal current. Imaginary part.</TD></TR>
+  </TABLE><br><br>
+
+  <H2>Constitutive relations</H2><br>
+  <b>Table 11.</b> Model formulations.
+  <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+  <TR><TD><b>Static</b></TD>
+  <TD>iDC1 = 0<br>
+  iDC2 = Gain*vDC1</TD></TR>
+  <TR><TD><b>AC small-signal</b></TD>
+  <TD> iAC_Re1 = 0,  iAC_Im1 = 0<br>
+   iAC_Re2 = Gain*vAC_Re1, iAC_Im2 = Gain*vAC_Im1</TD></TR>
+  <TR><TD><b>Large signal</b></TD>
+  <TD>iTran1 = 0<br>
+  iTran2 = Gain*vTran1</TD></TR>
+  </TABLE><br><br>
+  <pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>[S]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> G
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.G"
+>src.SOURCE.G</A>;
+<font color="blue">end </font>G;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE H<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.parts.source.HI.png" ALT="SPICELib.parts.source.H" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.parts.source.H"></A><A HREF="SPICELib_parts_source.html#SPICELib.parts.source"
+>SPICELib.parts.source</A>.H</H2>
+<IMG SRC="SPICELib.parts.source.HD.png" ALT="SPICELib.parts.source.H">
+<H3>Information</H3>
+<PRE></pre>
+   <H1 align=center><i>H</i> - Current controlled voltage source</H1>
+   <IMG SRC=Fig.SPICELib.parts.source.H.symbol.png WIDTH=150><br>
+   <b>Figure 1.</b> Current controlled voltage source.<br><br>
+   <H2>Nodes</H2><br>
+   <b>Table 1.</b> Instantiations of <i>Pin</i> class.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description</b></TD></TR>
+   <TR><TD>p1</TD>
+   <TD>(+) controlling node</TD></TR>
+   <TR><TD>n1</TD>
+   <TD>(-) controlling node</TD></TR>
+   <TR><TD>p2</TD>
+   <TD>(+) node</TD></TR>
+   <TR><TD>n2</TD>
+   <TD>(-) node</TD></TR>
+   </TABLE><br><br>
+   Positive current flows from the (+) node through the source
+   to the (-) node.<br><br>
+   <b>Table 2.</b> (+) controlling node variables.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>p1.vDC</TD>
+   <TD>Static model.</TD></TR>
+   <TR><TD>p1.vTran</TD>
+   <TD>Large-signal voltage</TD></TR>
+   <TR><TD>p1.vAC_Re</TD>
+   <TD>AC small-signal voltage. Real part.</TD></TR>
+   <TR><TD>p1.vAC_Im</TD>
+   <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <b>Table 3.</b> (-) controlling node variables.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>n1.vDC</b></TD>
+   <TD>Static model.</TD></TR>
+   <TR><TD>n1.vTran</TD>
+   <TD>Large-signal voltage</TD></TR>
+   <TR><TD>n1.vAC_Re</TD>
+   <TD>AC small-signal voltage. Real part.</TD></TR>
+   <TR><TD>n1.vAC_Im</TD>
+   <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <b>Table 4.</b> (+) node variables.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>p2.vDC</TD>
+   <TD>Static model.</TD></TR>
+   <TR><TD>p2.vTran</TD>
+   <TD>Large-signal voltage</TD></TR>
+   <TR><TD>p2.vAC_Re</TD>
+   <TD>AC small-signal voltage. Real part.</TD></TR>
+   <TR><TD>p2.vAC_Im</TD>
+   <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <b>Table 5.</b> (-) node variables.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>n2.vDC</b></TD>
+   <TD>Static model.</TD></TR>
+   <TR><TD>n2.vTran</TD>
+   <TD>Large-signal voltage</TD></TR>
+   <TR><TD>n2.vAC_Re</TD>
+   <TD>AC small-signal voltage. Real part.</TD></TR>
+   <TR><TD>n2.vAC_Im</TD>
+   <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <H2>Parameters</H2><br>
+   <b>Table 6.</b> Parameters of the voltage controlled voltage source
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Type</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>GAIN</TD>
+   <TD>SI.Resistance</TD>
+   <TD>Transresistance</TD></TR>
+   </TABLE><br><br>
+
+   <H2>Variables of interest to the library user</H2><br>
+   <b>Table 7.</b> Voltage across the controlling port.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>vDC1</TD>
+   <TD>Static model.</TD></TR>
+   <TR><TD>vTran1</TD>
+   <TD>Large-signal voltage</TD></TR>
+   <TR><TD>vAC_Re1</TD>
+   <TD>AC small-signal voltage. Real part.</TD></TR>
+   <TR><TD>vAC_Im1</TD>
+   <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <b>Table 8.</b> Voltage across the source port.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</b></TD>
+   <TD><b>Description<b></TD></TR>
+   <TR><TD>vDC2</TD>
+   <TD>Static model.</TD></TR>
+   <TR><TD>vTran2</TD>
+   <TD>Large-signal voltage</TD></TR>
+   <TR><TD>vAC_Re2</TD>
+   <TD>AC small-signal voltage. Real part.</TD></TR>
+   <TR><TD>vAC_Im2</TD>
+   <TD>AC small-signal voltage. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <b>Table 9.</b> Current flowing through the controlling port.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</TD>
+   <TD><b>Description</b></TD></TR>
+   <TR><TD>iDC1</TD>
+   <TD>DC current.</TD></TR>
+   <TR><TD>iTran1</TD>
+   <TD>Large-signal current.</TD></TR>
+   <TR><TD>iAC_Re1</TD>
+   <TD>Small-signal current. Real part.</TD></TR>
+   <TR><TD>iAC_Im1</TD>
+   <TD>Small-signal current. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <b>Table 10.</b> Current flowing through the source port.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Name</TD>
+   <TD><b>Description</b></TD></TR>
+   <TR><TD>iDC2</TD>
+   <TD>DC current.</TD></TR>
+   <TR><TD>iTran2</TD>
+   <TD>Large-signal current.</TD></TR>
+   <TR><TD>iAC_Re2</TD>
+   <TD>Small-signal current. Real part.</TD></TR>
+   <TR><TD>iAC_Im2</TD>
+   <TD>Small-signal current. Imaginary part.</TD></TR>
+   </TABLE><br><br>
+
+   <H2>Constitutive relations</H2><br>
+   <b>Table 11.</b> Model formulations.
+   <TABLE BORDER=2 CELLSPACING=0 WIDTH="100%" CELLPADDING=2>
+   <TR><TD><b>Static</b></TD>
+   <TD>vDC1 = 0<br>
+   vDC2 = Gain*iDC1</TD></TR>
+   <TR><TD><b>AC small-signal</b></TD>
+   <TD> vAC_Re1 = 0,  vAC_Im1 = 0<br>
+    vAC_Re2 = Gain*iAC_Re1, vAC_Im2 = Gain*iAC_Im1;</TD></TR>
+   <TR><TD><b>Large signal</b></TD>
+   <TD>vTran1 = 0<br>
+   vTran2 = Gain*iTran1</TD></TR>
+   </TABLE><br><br>
+   <pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>Gain</TD><TD>1</TD><TD>[Ohm]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> H
+  <font color="blue">extends </font><A HREF="SPICELib_src_SOURCE.html#SPICELib.src.SOURCE.H"
+>src.SOURCE.H</A>;
+<font color="blue">end </font>H;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:30 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,147 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE SPECIAL<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.SPECIAL"></A><A HREF="SPICELib_src.html#SPICELib.src"
+>SPICELib.src</A>.SPECIAL</H2>
+<A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL.IC1"
+><IMG SRC="SPICELib.src.SPECIAL.IC1I.png" ALT="SPICELib.src.SPECIAL.IC1" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL.IC2"
+><IMG SRC="SPICELib.src.SPECIAL.IC2I.png" ALT="SPICELib.src.SPECIAL.IC2" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL.IC1"
+>IC1</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL.IC2"
+>IC2</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IC1<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SPECIAL.IC1I.png" ALT="SPICELib.src.SPECIAL.IC1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SPECIAL.IC1"></A><A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL"
+>SPICELib.src.SPECIAL</A>.IC1</H2>
+<IMG SRC="SPICELib.src.SPECIAL.IC1D.png" ALT="SPICELib.src.SPECIAL.IC1">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IC1
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePin"
+>INTERFACE.OnePin</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> IC;
+  <font color="blue">constant </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Resistance"
+>SI.Resistance</A> R_EPS=2e-4;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vClampDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vClampTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeClampDC(start=1E100);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeClampTran(start=1E100);
+<font color="blue">equation </font>
+  <font color="darkgreen">// ------------</font>
+  <font color="darkgreen">// Static model</font>
+  <font color="darkgreen">// ------------</font>
+  p.iDC = <font color="blue">if </font>ctrl_IC_clampDC<font color="blue"> then </font>(p.vDC - vClampDC)/R_EPS<font color="blue"> else </font>0;
+  <font color="blue">when </font>ctrl_IC_clampDC<font color="blue"> then</font>
+    timeClampDC = time;
+  <font color="blue">end when</font>;
+  vClampDC = <font color="blue">if </font>ctrl_IC_clampDC<font color="blue"> and </font>ctrl_IC_mode == 0<font color="blue"> then </font>IC<font color="blue"> else </font><font color="blue">if </font>
+    ctrl_IC_clampDC<font color="blue"> and </font>ctrl_IC_mode == 1<font color="blue"> then </font>IC*(time - timeClampDC)/
+    TIME_SCALE<font color="blue"> else </font>0;
+  <font color="darkgreen">// ---------------------</font>
+  <font color="darkgreen">// AC small-signal model</font>
+  <font color="darkgreen">// ---------------------</font>
+  {p.iAC_Re,p.iAC_Im} = <font color="red">zeros</font>(2);
+  <font color="darkgreen">// ---------------</font>
+  <font color="darkgreen">// Transient model</font>
+  <font color="darkgreen">// ---------------</font>
+  p.iTran = <font color="blue">if </font>ctrl_IC_clampTran<font color="blue"> then </font>(p.vTran - vClampTran)/R_EPS<font color="blue"> else </font>0;
+  <font color="blue">when </font>ctrl_IC_clampTran<font color="blue"> then</font>
+    timeClampTran = time;
+  <font color="blue">end when</font>;
+  vClampTran = <font color="blue">if </font>ctrl_IC_clampTran<font color="blue"> and </font>ctrl_IC_mode == 0<font color="blue"> then </font>IC<font color="blue"> else </font><font color="blue">if </font>
+    ctrl_IC_clampTran<font color="blue"> and </font>ctrl_IC_mode == 1<font color="blue"> then </font>IC*(time - timeClampTran)/
+    TIME_SCALE<font color="blue"> else </font>0;
+<font color="blue">end </font>IC1;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE IC2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.SPECIAL.IC2I.png" ALT="SPICELib.src.SPECIAL.IC2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.SPECIAL.IC2"></A><A HREF="SPICELib_src_SPECIAL.html#SPICELib.src.SPECIAL"
+>SPICELib.src.SPECIAL</A>.IC2</H2>
+<IMG SRC="SPICELib.src.SPECIAL.IC2D.png" ALT="SPICELib.src.SPECIAL.IC2">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>IC</TD><TD>&nbsp;</TD><TD>[V]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> IC2
+  <font color="blue">extends </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.OnePort"
+>INTERFACE.OnePort</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>INIT.Part</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> IC;
+  <font color="blue">constant </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Resistance"
+>SI.Resistance</A> R_EPS=2e-4;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vClampDC;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Voltage"
+>SI.Voltage</A> vClampTran;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeClampDC(start=1E100);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeClampTran(start=1E100);
+<font color="blue">equation </font>
+  <font color="darkgreen">// ------------</font>
+  <font color="darkgreen">// Static model</font>
+  <font color="darkgreen">// ------------</font>
+  iDC = <font color="blue">if </font>ctrl_IC_clampDC<font color="blue"> then </font>(vDC - vClampDC)/R_EPS<font color="blue"> else </font>0;
+  <font color="blue">when </font>ctrl_IC_clampDC<font color="blue"> then</font>
+    timeClampDC = time;
+  <font color="blue">end when</font>;
+  vClampDC = <font color="blue">if </font>ctrl_IC_clampDC<font color="blue"> and </font>ctrl_IC_mode == 0<font color="blue"> then </font>IC<font color="blue"> else </font><font color="blue">if </font>
+    ctrl_IC_clampDC<font color="blue"> and </font>ctrl_IC_mode == 1<font color="blue"> then </font>IC*(time - timeClampDC)/
+    TIME_SCALE<font color="blue"> else </font>0;
+  <font color="darkgreen">// ---------------------</font>
+  <font color="darkgreen">// AC small-signal model</font>
+  <font color="darkgreen">// ---------------------</font>
+  {iAC_Re,iAC_Im} = <font color="red">zeros</font>(2);
+  <font color="darkgreen">// ---------------</font>
+  <font color="darkgreen">// Transient model</font>
+  <font color="darkgreen">// ---------------</font>
+  iTran = <font color="blue">if </font>ctrl_IC_clampTran<font color="blue"> then </font>(vTran - vClampTran)/R_EPS<font color="blue"> else </font>0;
+  <font color="blue">when </font>ctrl_IC_clampTran<font color="blue"> then</font>
+    timeClampTran = time;
+  <font color="blue">end when</font>;
+  vClampTran = <font color="blue">if </font>ctrl_IC_clampTran<font color="blue"> and </font>ctrl_IC_mode == 0<font color="blue"> then </font>IC<font color="blue"> else </font><font color="blue">if </font>
+    ctrl_IC_clampTran<font color="blue"> and </font>ctrl_IC_mode == 1<font color="blue"> then </font>IC*(time - timeClampTran)/
+    TIME_SCALE<font color="blue"> else </font>0;
+<font color="blue">end </font>IC2;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:37 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,115 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE INIT<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.INIT"></A><A HREF="SPICELib_src.html#SPICELib.src"
+>SPICELib.src</A>.INIT</H2>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Analysis"
+>Analysis</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Part"
+>Part</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Analysis<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.INIT.Analysis"></A><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT"
+>SPICELib.src.INIT</A>.Analysis</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> Analysis
+  <font color="darkgreen">// Control signals</font>
+  <font color="blue">inner </font>Boolean ctrl_AC;
+  <font color="blue">inner </font>Boolean ctrl_CBREAK_resetTran;
+  <font color="blue">inner </font>Boolean ctrl_CBREAK_Tran2DC;
+  <font color="blue">inner </font>Boolean ctrl_CBREAK_Tran2IC;
+  <font color="blue">inner </font>Boolean ctrl_DC;
+  <font color="blue">inner </font>Boolean ctrl_IC_clampDC;
+  <font color="blue">inner </font>Boolean ctrl_IC_clampTran;
+  <font color="blue">inner </font>Integer ctrl_IC_mode(min=0, max=1);
+  <font color="blue">inner </font>Boolean ctrl_IS_inhibit;
+  <font color="blue">inner </font>Boolean ctrl_IS_TranOP;
+  <font color="blue">inner </font>Boolean ctrl_log_AC;
+  <font color="blue">inner </font>Boolean ctrl_log_DC;
+  <font color="blue">inner </font>Integer ctrl_OP_mode(min=0, max=1);
+  <font color="blue">inner </font>Integer ctrl_OP_value(min=0, max=1);
+  <font color="blue">inner </font>Boolean ctrl_RBREAK_Tran2DC;
+  <font color="blue">inner </font>Boolean ctrl_Tran;
+  <font color="darkgreen">// Global variables</font>
+  <font color="blue">inner </font>Real scaleGMIN(start=1) <font color="darkgreen">&quot;Scale factor of GMIN algorithm&quot;</font>;
+  <font color="blue">inner </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> freq(start=1E-6) <font color="darkgreen">&quot;AC small-signal analysis frequency&quot;</font>;
+  <font color="blue">inner </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Temp_K"
+>SI.Temp_K</A> temp(start=300) <font color="darkgreen">&quot;Analysis temperature&quot;</font>;
+  <font color="darkgreen">// Global parameters</font>
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TimeScale <font color="darkgreen">&quot;Time scale&quot;</font>;
+  <font color="blue">parameter </font>Integer LogResults(min=0, max=2) <font color="darkgreen">&quot;Log variables mode&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> Gmin=1e-12 <font color="darkgreen">&quot;Conductance in parallel with the pn-junction&quot;</font>;
+  <font color="blue">inner </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TIME_SCALE=TimeScale;
+  <font color="blue">inner </font>Integer LOG_RESULTS=LogResults;
+  <font color="blue">inner </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> GMIN=Gmin;
+<font color="blue">end </font>Analysis;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Part<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.INIT.Part"></A><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT"
+>SPICELib.src.INIT</A>.Part</H2>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> Part
+  <font color="darkgreen">// Control signals</font>
+  <font color="blue">outer </font>Boolean ctrl_AC;
+  <font color="blue">outer </font>Boolean ctrl_CBREAK_resetTran;
+  <font color="blue">outer </font>Boolean ctrl_CBREAK_Tran2DC;
+  <font color="blue">outer </font>Boolean ctrl_CBREAK_Tran2IC;
+  <font color="blue">outer </font>Boolean ctrl_DC;
+  <font color="blue">outer </font>Boolean ctrl_IC_clampDC;
+  <font color="blue">outer </font>Boolean ctrl_IC_clampTran;
+  <font color="blue">outer </font>Integer ctrl_IC_mode(min=0, max=1);
+  <font color="blue">outer </font>Boolean ctrl_IS_inhibit;
+  <font color="blue">outer </font>Boolean ctrl_IS_TranOP;
+  <font color="blue">outer </font>Boolean ctrl_log_AC;
+  <font color="blue">outer </font>Boolean ctrl_log_DC;
+  <font color="blue">outer </font>Integer ctrl_OP_mode(min=0, max=1);
+  <font color="blue">outer </font>Integer ctrl_OP_value(min=0, max=1);
+  <font color="blue">outer </font>Boolean ctrl_RBREAK_Tran2DC;
+  <font color="blue">outer </font>Boolean ctrl_Tran;
+  <font color="darkgreen">// Global variables</font>
+  <font color="blue">outer </font>Real scaleGMIN(start=1) <font color="darkgreen">&quot;Scale factor of GMIN algorithm&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> freq(start=1E-6) <font color="darkgreen">&quot;AC small-signal analysis frequency&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Temp_K"
+>SI.Temp_K</A> temp(start=300) <font color="darkgreen">&quot;Analysis temperature&quot;</font>;
+  <font color="darkgreen">// Global parameters</font>
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TIME_SCALE <font color="darkgreen">&quot;Time scale&quot;</font>;
+  <font color="blue">outer </font>Integer LOG_RESULTS <font color="darkgreen">&quot;Log variables mode&quot;</font>;
+  <font color="blue">outer </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Conductance"
+>SI.Conductance</A> GMIN <font color="darkgreen">&quot;Conductance in parallel with the pn-junction&quot;</font>;
+<font color="blue">end </font>Part;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:36 2003
+.
+</address></BODY>
+</HTML>

@@ -1,0 +1,208 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE circ2<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.tutorial.circ2"></A><A HREF="SPICELib_tutorial.html#SPICELib.tutorial"
+>SPICELib.tutorial</A>.circ2</H2>
+<B>Example 2 of SPICELib tutorial</B>
+<P>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<H1 align=center>Example 2</H1>
+The modeling and transient analysis of the CMOS inverter shown in Figure 1 is discussed. <br>
+The transient analysis plot obtained using <i>SPICE</i>Lib is shown.<br>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.Layout.png WIDTH=400><br>
+<b>Figure 1.</b> CMOS Inverter.<br><br>
+<H2>Circuit modeling</H2>
+<ul>
+<li>Start Dymola with Modelica modeling language.
+<li>In order to open <i>SPICE</i>Lib library, select in the Dymola window File/Open
+and open the file SPICELib/package.mo
+<li>Create a new package (select in the Dymola window File/New/Package): <i>circ2</i>.<br>
+It is going to include the circuit and the analysis models.
+<li>Create the circuit model (select in the Dymola window File/New/Model) as follows:<br>
+<ul>Name of new model: <i>Schematic</i><br>
+Description: Circuit model<br>
+Partial model<br>
+Insert in package: circ2<br></ul>
+Dymola model window now contains an empty <i>Schematic</i> model.<br>
+The model circuit is built up using components from the SPICELib.parts package.
+The model components for a n-channel MOS, a p-channel MOS and a ground can be found in
+SPICELib.parts.breakout. The model component for a independent voltage source
+can be found in SPICELib.parts.source. Drag and drop the part models listed below
+as shown in Figure 2.
+<ul><li>SPICELib.parts.breakout.Ground
+<li>SPICELib.parts.breakout.Spice2MOS1
+<li>SPICELib.parts.breakout.Spice2MOS1P
+<li>SPICELib.parts.source.VPULSE
+<li>SPICELib.parts.source.VCONST</ul>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.Diagram1.png WIDTH=650><br>
+<b>Figure 2.</b> Inserting the circuit components.<br><br>
+<li>Connect the circuit parts as shown in Figure 1.
+<li>Enter the parameter values of the circuit components. See Figures 3-6.<br>
+The Boolean parameter HIDDEN_COMPONENT controls the log of the device
+variables (see <i>SPICELib.analyses</i> package documentation).
+<IMG SRC=Fig.SPICELib.tutorial.circ2.VDDparams.png WIDTH=450><br>
+<b>Figure 3.</b> VDD parameters.<br><br>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.VPULSE1params.png WIDTH=450><br>
+<b>Figure 4.</b> VPULSE1 parameters.<br><br><br>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.NMOSparams.png WIDTH=450><br>
+<b>Figure 5.</b> NMOS parameters.<br>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.PMOSparams.png WIDTH=450><br>
+<b>Figure 6.</b> PMOS parameters.<br><br><br>
+<li>Save the <i>Schematic</i> model.
+</ul>
+<H2>Transient (time) analysis (TRAN)</H2>
+<ul>
+<li>Create a new model, <i>circ2_TRAN</i>, and insert it in <i>circ2</i> package
+(see Figure 7).
+<IMG SRC=Fig.SPICELib.tutorial.circ2.createCirc2_TRAN.png WIDTH=450><br>
+<b>Figure 7.</b> Inserting <i>circ2_TRAN</i> in <i>circ2</i> package.<br><br>
+<li>Drag an <i>SPICELib.analyses.TRAN</i> model into the <i>circ2_TRAN</i> model
+(see Figure 8).
+<IMG SRC=Fig.SPICELib.tutorial.circ2.circ2TRANDiagram.png WIDTH=650><br>
+<b>Figure 8.</b> Inserting <i>circ2_TRAN</i> in <i>circ2</i> package.<br><br>
+<li>Enter the TRAN analysis parameters (see Figure 9). The meaning of the
+analysis parameters is discussed in the SPICELib.analyses.TRAN model documentation.
+The <i>SKIPBP</i> parameter determines whether skip or not the bias point calculation.
+<br>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.circ2TRANParams.png WIDTH=450><br>
+<b>Figure 9.</b> TRAN analysis parameters.<br><br>
+</ul>
+<h3>TRANSIENT ANALYSIS SIMULATED WITH <i>SPICE</i>LIB</h3>
+<u1>
+<IMG SRC=Fig.SPICELib.tutorial.circ2.circ2TRANSPICE.png WIDTH=450><br>
+<b>Figure 10.</b> Transient analysis simulated with SPICELib.<br><br>
+</ul>
+<pre>
+</PRE><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_tutorial_circ2.html#SPICELib.tutorial.circ2.schematic"
+>schematic</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_tutorial_circ2.html#SPICELib.tutorial.circ2.circ2_Tran"
+>circ2_Tran</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE schematic<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.tutorial.circ2.schematic"></A><A HREF="SPICELib_tutorial_circ2.html#SPICELib.tutorial.circ2"
+>SPICELib.tutorial.circ2</A>.schematic</H2>
+<IMG SRC="SPICELib.tutorial.circ2.schematicD.png" ALT="SPICELib.tutorial.circ2.schematic">
+<H3>Information</H3>
+<PRE>        </pre>
+	Please, see SPICELib.tutorial.circ2 documentation
+	<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> schematic
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1"
+>parts.breakout.Spice2MOS1</A> NMOS(
+    L=2e-6,
+    W=4e-6,
+    CGDO=3.227e-10,
+    CGSO=3.227e-10,
+    CJ=0.0003002,
+    CJSW=1.376e-10,
+    GAMMA=0.2844,
+    KP=5.317e-5,
+    LAMBDA=0.01302,
+    LD=1.526e-7,
+    MJ=0.5,
+    MJSW=0.5,
+    PB=0.7365,
+    PHI=0.7095,
+    TOX=1.6e-8,
+    VTO=0.8307,
+    RS=10,
+    RB=10);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground1;
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground2;
+  <A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VPULSE"
+>parts.source.VPULSE</A> VPULSE1(
+    PW=500e-9,
+    AC_MAG=0,
+    TD=500e-9,
+    PER=1020e-9,
+    DC_VALUE=5,
+    S2=0,
+    S1=5,
+    TF=70e-9,
+    TR=70e-9);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Spice2MOS1P"
+>parts.breakout.Spice2MOS1P</A> PMOS(
+    CGDO=2.248e-10,
+    CGSO=2.28e-10,
+    CJ=0.0004138,
+    CJSW=1.004e-10,
+    KP=2.239e-5,
+    L=2e-6,
+    LAMBDA=0.01525,
+    LD=1.063e-7,
+    MJSW=0.5,
+    PB=0.7485,
+    PHI=0.7054,
+    TOX=1.6e-8,
+    VTO=-0.8407,
+    W=20e-6);
+  <A HREF="SPICELib_parts_breakout.html#SPICELib.parts.breakout.Ground"
+>parts.breakout.Ground</A> Ground3;
+  <A HREF="SPICELib_parts_source.html#SPICELib.parts.source.VSIN"
+>parts.source.VSIN</A> VDD(
+    OFF=5,
+    AMPL=0,
+    FREQ=0,
+    DC_VALUE=5,
+    AC_MAG=0);
+<font color="blue">equation </font>
+  <font color="red">connect</font>(Ground1.p, NMOS.s);
+  <font color="red">connect</font>(PMOS.g, NMOS.g);
+  <font color="red">connect</font>(PMOS.d, NMOS.d);
+  <font color="red">connect</font>(VPULSE1.p, NMOS.g);
+  <font color="red">connect</font>(NMOS.b, Ground1.p);
+  <font color="red">connect</font>(VPULSE1.n, Ground3.p);
+  <font color="red">connect</font>(VDD.n, Ground2.p);
+  <font color="red">connect</font>(VDD.p, PMOS.s);
+  <font color="red">connect</font>(PMOS.s, PMOS.b);
+<font color="blue">end </font>schematic;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE circ2_Tran<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.tutorial.circ2.circ2_Tran"></A><A HREF="SPICELib_tutorial_circ2.html#SPICELib.tutorial.circ2"
+>SPICELib.tutorial.circ2</A>.circ2_Tran</H2>
+<IMG SRC="SPICELib.tutorial.circ2.circ2_TranD.png" ALT="SPICELib.tutorial.circ2.circ2_Tran">
+<H3>Information</H3>
+<PRE>        </pre>
+	Please, see SPICELib.tutorial.circ2 documentation
+	<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> circ2_Tran
+  <A HREF="SPICELib_analyses.html#SPICELib.analyses.TRAN"
+>analyses.TRAN</A> TRAN(
+    LogResults=0,
+    <font color="blue">redeclare </font><font color="blue">model</font> Circuit = <A HREF="SPICELib_tutorial_circ2.html#SPICELib.tutorial.circ2.schematic"
+>schematic</A>,
+    TSTOP=1e-6,
+    SOLVE_STATIC=0,
+    TimeScale=1e-7,
+    SKIPBP=false);
+<font color="blue">end </font>circ2_Tran;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:40 2003
+.
+</address></BODY>
+</HTML>

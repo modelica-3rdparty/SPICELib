@@ -1,0 +1,470 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>SPICELib</TITLE></HEAD>
+<BODY><P>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE ANALYSES<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES"></A><A HREF="SPICELib_src.html#SPICELib.src"
+>SPICELib.src</A>.ANALYSES</H2>
+<A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.TotalPowerDissipationCalculation"
+><IMG SRC="SPICELib.src.ANALYSES.TotalPowerDissipationCalculationI.png" ALT="SPICELib.src.ANALYSES.TotalPowerDissipationCalculation" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Description</TH></TR>
+<TR><TD><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.NULL"
+>NULL</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.TotalPowerDissipationCalculation"
+>TotalPowerDissipationCalculation</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.BiasPointCalculation"
+>BiasPointCalculation</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.OP"
+>OP</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.TRAN"
+>TRAN</A>
+</TD><TD>&nbsp;</TD></TR>
+<TR><TD><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.AC"
+>AC</A>
+</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE OP<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES.OP"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES"
+>SPICELib.src.ANALYSES</A>.OP</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> OP
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.BiasPointCalculation"
+>BiasPointCalculation</A>;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeEvent_finishOP(start=1E100);
+<font color="blue">equation </font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="darkgreen">// Control signals do not used</font>
+  <font color="darkgreen">// ---------------------------</font>
+  ctrl_Tran = false;
+  ctrl_CBREAK_Tran2IC = false;
+  ctrl_CBREAK_Tran2DC = false;
+  ctrl_AC = false;
+  ctrl_log_AC = false;
+  freq = 1E-6;
+  <font color="darkgreen">// ----------------------</font>
+  <font color="darkgreen">// Bias point calculation</font>
+  <font color="darkgreen">// ----------------------</font>
+  <font color="blue">when </font><font color="red">initial</font>()<font color="blue"> then</font>
+    biasPoint = true;
+    ctrl_OP_value = 0;
+  <font color="blue">end when</font>;
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen">// Finish OP analysis</font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="blue">when </font>biasPointCalculated<font color="blue"> then</font>
+    timeEvent_finishOP = time + CLOCK;
+  <font color="blue">end when</font>;
+  <font color="blue">when </font>time &gt; timeEvent_finishOP<font color="blue"> then</font>
+    <font color="red">terminate</font>(
+      &quot;-----------------------\nFinished OP calculation\n-----------------------&quot;);
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>OP;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE AC<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES.AC"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES"
+>SPICELib.src.ANALYSES</A>.AC</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+<TR><TD>TYPE_AC_SWEEP</TD><TD>&nbsp;</TD><TD>0: LIN; 1: DEC</TD></TR>
+<TR><TD>POINTS_NUMBER</TD><TD>&nbsp;</TD><TD>LIN: total. DEC: points/decade</TD></TR>
+<TR><TD>START_FREQUENCY</TD><TD>&nbsp;</TD><TD>[Hz]</TD></TR>
+<TR><TD>END_FREQUENCY</TD><TD>&nbsp;</TD><TD>[Hz]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> AC
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.BiasPointCalculation"
+>BiasPointCalculation</A>;
+  <font color="darkgreen">// Frequency sweep parameters</font>
+  <font color="blue">parameter </font>Integer TYPE_AC_SWEEP(
+    start=0,
+    min=0,
+    max=1) <font color="darkgreen">&quot;0: LIN; 1: DEC&quot;</font>;
+  <font color="blue">parameter </font>Integer POINTS_NUMBER(start=11) <font color="darkgreen">&quot;LIN: total. DEC: points/decade&quot;</font>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> START_FREQUENCY;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Frequency"
+>SI.Frequency</A> END_FREQUENCY;
+  <font color="darkgreen">// Time-related auxiliary variables</font>
+  Real log10Freq;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeStartAC(start=1E100);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeEndAC(start=1E100);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeAClog(start=0);
+<font color="blue">equation </font>
+  <font color="darkgreen">// log10Freq = log10 (freq)</font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="darkgreen">// Control signals do not used</font>
+  <font color="darkgreen">// ---------------------------</font>
+  ctrl_Tran = false;
+  ctrl_CBREAK_Tran2IC = false;
+  ctrl_CBREAK_Tran2DC = false;
+  <font color="darkgreen">// ----------------------</font>
+  <font color="darkgreen">// Bias point calculation</font>
+  <font color="darkgreen">// ----------------------</font>
+  <font color="blue">when </font><font color="red">initial</font>()<font color="blue"> then</font>
+    biasPoint = true;
+    ctrl_OP_value = 0;
+  <font color="blue">end when</font>;
+  <font color="darkgreen">// ---------------</font>
+  <font color="darkgreen">// Frequency sweep </font>
+  <font color="darkgreen">// ---------------</font>
+  <font color="blue">when </font>biasPointCalculated<font color="blue"> then</font>
+    ctrl_AC = true;
+    timeStartAC = time;
+  <font color="blue">end when</font>;
+  0 = <font color="blue">if </font>TYPE_AC_SWEEP == 0<font color="blue"> and </font>ctrl_AC<font color="blue"> then </font>freq - (END_FREQUENCY -
+    START_FREQUENCY)*(time - timeStartAC)/((POINTS_NUMBER - 1)*2*CLOCK) -
+    START_FREQUENCY<font color="blue"> else </font><font color="blue">if </font>TYPE_AC_SWEEP == 1<font color="blue"> and </font>ctrl_AC<font color="blue"> then </font>log10Freq - (<font color="red">ln</font>
+    (END_FREQUENCY) - <font color="red">ln</font>(START_FREQUENCY))/<font color="red">ln</font>(10)*(time - timeStartAC)/(((<font color="red">ln</font>(
+    END_FREQUENCY) - <font color="red">ln</font>(START_FREQUENCY))/<font color="red">ln</font>(10)*(POINTS_NUMBER) - 1)*2*CLOCK)
+     - <font color="red">ln</font>(START_FREQUENCY)/<font color="red">ln</font>(10)<font color="blue"> else </font>freq - 1E-6;
+  log10Freq = <font color="blue">if </font>ctrl_AC<font color="blue"> then </font><font color="red">ln</font>(freq)/<font color="red">ln</font>(10)<font color="blue"> else </font>-1E100;
+  <font color="darkgreen">// -----------</font>
+  <font color="darkgreen">// Log results</font>
+  <font color="darkgreen">// -----------</font>
+  <font color="blue">when </font>time &gt; <font color="red">pre</font>(timeAClog)<font color="blue"> and </font>ctrl_AC<font color="blue"> then</font>
+    <font color="red">LogVariable</font>(freq);
+    timeAClog = time + 2*CLOCK;
+  <font color="blue">end when</font>;
+  ctrl_log_AC = <font color="blue">not </font>time &gt; timeAClog - CLOCK<font color="blue"> and </font>ctrl_AC;
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen">// Finish AC analysis</font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="blue">when </font>freq &gt; END_FREQUENCY<font color="blue"> then</font>
+    timeEndAC = time + CLOCK;
+  <font color="blue">end when</font>;
+  <font color="blue">when </font>time &gt; timeEndAC<font color="blue"> then</font>
+    <font color="red">terminate</font>(
+      &quot;--------------------\nFinished AC analysis\n--------------------&quot;);
+  <font color="blue">end when</font>;
+<font color="blue">end </font>AC;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TRAN<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES.TRAN"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES"
+>SPICELib.src.ANALYSES</A>.TRAN</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+<TR><TD>TSTOP</TD><TD>&nbsp;</TD><TD>Transient simulation end time [s]</TD></TR>
+<TR><TD>SKIPBP</TD><TD>false</TD><TD>Skip initial transient solution</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TRAN
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.BiasPointCalculation"
+>BiasPointCalculation</A>;
+  <font color="blue">parameter </font><A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TSTOP <font color="darkgreen">&quot;Transient simulation end time&quot;</font>;
+  <font color="blue">parameter </font>Boolean SKIPBP=false <font color="darkgreen">&quot;Skip initial transient solution&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> TIME(start=-1) <font color="darkgreen">&quot;Transient simulation time variable&quot;</font>;
+<font color="blue">protected </font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeEvent_startTran(start=1E100);
+<font color="blue">equation </font>
+  <font color="darkgreen">// ---------------------------</font>
+  <font color="darkgreen">// Control signals do not used</font>
+  <font color="darkgreen">// ---------------------------</font>
+  ctrl_AC = false;
+  ctrl_log_AC = false;
+  freq = 1E-6;
+  <font color="darkgreen">// --------------------------</font>
+  <font color="darkgreen">// Initial transient solution</font>
+  <font color="darkgreen">// -------------------------- </font>
+  <font color="blue">when </font><font color="red">initial</font>()<font color="blue"> and </font><font color="blue">not </font>SKIPBP<font color="blue"> then</font>
+    biasPoint = true;
+  <font color="blue">end when</font>;
+  ctrl_OP_value = <font color="blue">if </font><font color="blue">not </font>(time &gt; timeEvent_startTran + CLOCK<font color="blue"> and </font><font color="blue">not </font>time &gt;
+    timeEvent_startTran + TSTOP + CLOCK)<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  <font color="darkgreen">// ------------------</font>
+  <font color="darkgreen">// Transient analysis</font>
+  <font color="darkgreen">// ------------------</font>
+  <font color="blue">when </font>biasPointCalculated<font color="blue"> and </font><font color="blue">not </font>SKIPBP<font color="blue"> or </font><font color="red">initial</font>()<font color="blue"> and </font>SKIPBP<font color="blue"> then</font>
+    timeEvent_startTran = time;
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+  ctrl_Tran = time &gt; timeEvent_startTran<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startTran +
+    TSTOP + CLOCK;
+  TIME = <font color="blue">if </font>ctrl_Tran<font color="blue"> then </font>time - timeEvent_startTran<font color="blue"> else </font>-1;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// ----------------------------</font>
+  <font color="darkgreen">// Dynamic model initialization</font>
+  <font color="darkgreen">// ----------------------------</font>
+  ctrl_CBREAK_Tran2IC = SKIPBP<font color="blue"> and </font>time &gt; timeEvent_startTran<font color="blue"> and </font><font color="blue">not </font>time &gt;
+    timeEvent_startTran + CLOCK;
+  <font color="darkgreen"></font>
+  ctrl_CBREAK_Tran2DC = <font color="blue">not </font>SKIPBP<font color="blue"> and </font>time &gt; timeEvent_startTran<font color="blue"> and </font><font color="blue">not </font>time
+     &gt; timeEvent_startTran + CLOCK;
+  <font color="darkgreen">// -------------------------</font>
+  <font color="darkgreen">// Finish transient analysis</font>
+  <font color="darkgreen">// -------------------------</font>
+  <font color="blue">when </font>time &gt; timeEvent_startTran + TSTOP<font color="blue"> then</font>
+    <font color="red">terminate</font>(
+      &quot;------------------------\nFinished TRAN simulation\n------------------------&quot;);
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>TRAN;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE NULL<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES.NULL"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES"
+>SPICELib.src.ANALYSES</A>.NULL</H2>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> NULL
+  <font color="darkgreen"></font>
+<font color="blue">end </font>NULL;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE TotalPowerDissipationCalculation<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><IMG SRC="SPICELib.src.ANALYSES.TotalPowerDissipationCalculationI.png" ALT="SPICELib.src.ANALYSES.TotalPowerDissipationCalculation" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="SPICELib.src.ANALYSES.TotalPowerDissipationCalculation"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES"
+>SPICELib.src.ANALYSES</A>.TotalPowerDissipationCalculation</H2>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TotalPowerDissipationCalculation
+  <font color="blue">outer </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+>INTERFACE.PowerDissipation</A> TotalPowerDissipation;
+  <A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+>INTERFACE.PowerDissipation</A> powerDissipation;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(powerDissipation, TotalPowerDissipation);
+<font color="blue">end </font>TotalPowerDissipationCalculation;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE BiasPointCalculation<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES.BiasPointCalculation"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES"
+>SPICELib.src.ANALYSES</A>.BiasPointCalculation</H2>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>TimeScale</TD><TD>&nbsp;</TD><TD>Time scale [s]</TD></TR>
+<TR><TD>LogResults</TD><TD>&nbsp;</TD><TD>Log variables mode</TD></TR>
+<TR><TD>Gmin</TD><TD>1e-12</TD><TD>Conductance in parallel with the pn-junction [S]</TD></TR>
+<TR><TD>replaceable model Circuit</TD><TD> NULL</TD><TD>&nbsp;</TD></TR>
+<TR><TD>SOLVE_STATIC</TD><TD>0</TD><TD>OP calculation algorithm: 0, 1, 2 or 3</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">model</font> BiasPointCalculation
+  <font color="blue">extends </font><A HREF="SPICELib_src_INIT.html#SPICELib.src.INIT.Analysis"
+>INIT.Analysis</A>;
+  <font color="blue">replaceable </font><font color="blue">model</font> Circuit = <A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.NULL"
+>NULL</A>;
+  <font color="blue">extends </font><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.BiasPointCalculation.Circuit"
+>Circuit</A>;
+  <font color="darkgreen">// Total power dissipation</font>
+  <font color="blue">inner </font><A HREF="SPICELib_src_INTERFACE.html#SPICELib.src.INTERFACE.PowerDissipation"
+>INTERFACE.PowerDissipation</A> TotalPowerDissipation;
+  <A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.TotalPowerDissipationCalculation"
+>TotalPowerDissipationCalculation</A> TPDcal;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Power"
+>SI.Power</A> totalPowerDissipation;
+  <font color="darkgreen">// Time-related parameters</font>
+  <font color="blue">constant </font>Real TIME_SLOT=100 <font color="darkgreen">&quot;Percentage of TIME_SCALE&quot;</font>;
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> CLOCK=TIME_SLOT*TIME_SCALE/100;
+  <font color="darkgreen">// Bias point calculation algorithm</font>
+  <font color="blue">parameter </font>Real SOLVE_STATIC=0 <font color="darkgreen">&quot;OP calculation algorithm: 0, 1, 2 or 3&quot;</font>;
+  <font color="darkgreen">// Local control signals</font>
+<font color="blue">protected </font>
+  Boolean biasPoint;
+  Boolean biasPointCalculated;
+  <font color="darkgreen">// Time-event variables</font>
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeEvent_startBPC(start=1E100);
+  <A HREF="file:///D:/Programas/Dymola51b/Modelica/Library/Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> timeGMIN(start=0);
+  <font color="darkgreen">// Buses of control auxiliary variables</font>
+  Boolean ctrlDC_Bus[4];
+  Boolean ctrlLogDC_Bus[4];
+  Boolean ctrlClampDC_Bus[4];
+  Boolean biasPointCalc_Bus[4];
+  Integer ctrlOPmode_Bus[4];
+  Integer ctrlICmode_Bus[4];
+<font color="blue">equation </font>
+  <font color="darkgreen">// --------------------</font>
+  <font color="darkgreen">// Analysis temperature</font>
+  <font color="darkgreen">// --------------------</font>
+  temp = 300;
+  <font color="darkgreen">// ----------------------------</font>
+  <font color="darkgreen">// Start bias point calculation</font>
+  <font color="darkgreen">// ----------------------------</font>
+  <font color="blue">when </font>biasPoint<font color="blue"> then</font>
+    timeEvent_startBPC = time;
+  <font color="blue">end when</font>;
+  <font color="darkgreen">// ------------------------------------------</font>
+  <font color="darkgreen">// SOLVE_STATIC == 0 - Static model iteration</font>
+  <font color="darkgreen">// ------------------------------------------</font>
+  ctrlDC_Bus[1] = SOLVE_STATIC == 0<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>time
+     &gt; timeEvent_startBPC + CLOCK;
+  ctrlLogDC_Bus[1] = SOLVE_STATIC == 0<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>
+    time &gt; timeEvent_startBPC + CLOCK;
+  ctrlClampDC_Bus[1] = SOLVE_STATIC == 0<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>
+    time &gt; timeEvent_startBPC + CLOCK;
+  biasPointCalc_Bus[1] = SOLVE_STATIC == 0<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">
+    not </font>time &gt; timeEvent_startBPC + CLOCK;
+  ctrlOPmode_Bus[1] = 0;
+  ctrlICmode_Bus[1] = 0;
+  <font color="darkgreen">// -------------------------------------------</font>
+  <font color="darkgreen">// SOLVE_STATIC == 1 - Static model simulation</font>
+  <font color="darkgreen">// -------------------------------------------</font>
+  ctrlDC_Bus[2] = SOLVE_STATIC == 1<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>time
+     &gt; timeEvent_startBPC + TIME_SCALE + CLOCK;
+  ctrlLogDC_Bus[2] = SOLVE_STATIC == 1<font color="blue"> and </font>time &gt; timeEvent_startBPC +
+    TIME_SCALE<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + TIME_SCALE + CLOCK;
+  ctrlClampDC_Bus[2] = SOLVE_STATIC == 1<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>
+    time &gt; timeEvent_startBPC + TIME_SCALE + CLOCK;
+  biasPointCalc_Bus[2] = SOLVE_STATIC == 1<font color="blue"> and </font>time &gt; timeEvent_startBPC +
+    TIME_SCALE<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + TIME_SCALE + CLOCK;
+  ctrlOPmode_Bus[2] = <font color="blue">if </font>SOLVE_STATIC == 1<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">
+    not </font>time &gt; timeEvent_startBPC + TIME_SCALE<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  ctrlICmode_Bus[2] = <font color="blue">if </font>SOLVE_STATIC == 1<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">
+    not </font>time &gt; timeEvent_startBPC + TIME_SCALE<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  <font color="darkgreen">// ----------------------------------</font>
+  <font color="darkgreen">// SOLVE_STATIC == 2 - GMIN algorithm</font>
+  <font color="darkgreen">// ----------------------------------</font>
+  ctrlDC_Bus[3] = SOLVE_STATIC == 2<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>time
+     &gt; timeEvent_startBPC + 12*CLOCK;
+  ctrlLogDC_Bus[3] = SOLVE_STATIC == 2<font color="blue"> and </font>time &gt; timeEvent_startBPC + 11*CLOCK<font color="blue">
+     and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 12*CLOCK;
+  ctrlClampDC_Bus[3] = SOLVE_STATIC == 2<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>
+    time &gt; timeEvent_startBPC + 12*CLOCK;
+  biasPointCalc_Bus[3] = SOLVE_STATIC == 2<font color="blue"> and </font>time &gt; timeEvent_startBPC + 11*
+    CLOCK<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 12*CLOCK;
+  ctrlOPmode_Bus[3] = 0;
+  ctrlICmode_Bus[3] = 0;
+  <font color="blue">when </font>time &gt; timeEvent_startBPC + <font color="red">pre</font>(timeGMIN)<font color="blue"> and </font>SOLVE_STATIC == 2<font color="blue"> then</font>
+    timeGMIN = <font color="red">pre</font>(timeGMIN) + CLOCK;
+    scaleGMIN = <font color="blue">if </font>time &lt; timeEvent_startBPC + CLOCK/2<font color="blue"> then </font>1E10<font color="blue"> else </font><font color="blue">if </font><font color="red">pre</font>(
+      scaleGMIN) &gt; 2<font color="blue"> then </font><font color="red">pre</font>(scaleGMIN)/10<font color="blue"> else </font>1;
+  <font color="blue">end when</font>;
+  <font color="darkgreen">// --------------------------------------------</font>
+  <font color="darkgreen">// SOLVE_STATIC == 3 - Dynamic model simulation</font>
+  <font color="darkgreen">// --------------------------------------------</font>
+  ctrl_IS_TranOP = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>time
+     &gt; timeEvent_startBPC + 2*TIME_SCALE + CLOCK;
+  <font color="darkgreen"></font>
+  ctrlOPmode_Bus[4] = <font color="blue">if </font>SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">
+    not </font>time &gt; timeEvent_startBPC + TIME_SCALE<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  <font color="darkgreen"></font>
+  ctrl_IS_inhibit = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + CLOCK;
+  <font color="darkgreen"></font>
+  ctrl_RBREAK_Tran2DC = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + CLOCK;
+  <font color="darkgreen"></font>
+  ctrlDC_Bus[4] = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + 3*CLOCK;
+  <font color="darkgreen"></font>
+  ctrlLogDC_Bus[4] = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE + 2*CLOCK<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + 3*
+    CLOCK;
+  <font color="darkgreen"></font>
+  ctrl_CBREAK_resetTran = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE + CLOCK<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + 2*
+    CLOCK;
+  <font color="darkgreen"></font>
+  biasPointCalc_Bus[4] = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE + 2*CLOCK<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + 3*
+    CLOCK;
+  <font color="darkgreen"></font>
+  ctrl_IC_clampTran = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">not </font>
+    time &gt; timeEvent_startBPC + CLOCK + 2*TIME_SCALE;
+  <font color="darkgreen"></font>
+  ctrlICmode_Bus[4] = <font color="blue">if </font>SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC<font color="blue"> and </font><font color="blue">
+    not </font>time &gt; timeEvent_startBPC + TIME_SCALE<font color="blue"> then </font>1<font color="blue"> else </font>0;
+  <font color="darkgreen"></font>
+  ctrlClampDC_Bus[4] = SOLVE_STATIC == 3<font color="blue"> and </font>time &gt; timeEvent_startBPC + 2*
+    TIME_SCALE + CLOCK<font color="blue"> and </font><font color="blue">not </font>time &gt; timeEvent_startBPC + 2*TIME_SCALE + 3*
+    CLOCK;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">// --------------------------------</font>
+  <font color="darkgreen">// Logic-OR of control signal buses</font>
+  <font color="darkgreen">// --------------------------------</font>
+  ctrl_log_DC = ctrlLogDC_Bus[1]<font color="blue"> or </font>ctrlLogDC_Bus[2]<font color="blue"> or </font>ctrlLogDC_Bus[3]<font color="blue"> or </font>
+    ctrlLogDC_Bus[4];
+  biasPointCalculated = biasPointCalc_Bus[1]<font color="blue"> or </font>biasPointCalc_Bus[2]<font color="blue"> or </font>
+    biasPointCalc_Bus[3]<font color="blue"> or </font>biasPointCalc_Bus[4];
+  ctrl_DC = ctrlDC_Bus[1]<font color="blue"> or </font>ctrlDC_Bus[2]<font color="blue"> or </font>ctrlDC_Bus[3]<font color="blue"> or </font>ctrlDC_Bus[4];
+  ctrl_IC_clampDC = ctrlClampDC_Bus[1]<font color="blue"> or </font>ctrlClampDC_Bus[2]<font color="blue"> or </font>ctrlClampDC_Bus[
+    3]<font color="blue"> or </font>ctrlClampDC_Bus[4];
+  ctrl_OP_mode = <font color="red">max</font>(ctrlOPmode_Bus);
+  ctrl_IC_mode = <font color="red">max</font>(ctrlICmode_Bus);
+  <font color="darkgreen">// --------------</font>
+  <font color="darkgreen">// OP results log</font>
+  <font color="darkgreen">// --------------</font>
+  <font color="blue">when </font>ctrl_log_DC<font color="blue"> then</font>
+    <font color="red">LogVariable</font>(ctrl_log_DC);
+    totalPowerDissipation = -TPDcal.powerDissipation.dissipatedPower;
+    <font color="red">LogVariable</font>(totalPowerDissipation);
+  <font color="blue">end when</font>;
+  <font color="darkgreen"></font>
+<font color="blue">end </font>BiasPointCalculation;
+</PRE>
+<HR>
+<!--[if supportFields]><span style='mso-element:field-begin'></span>
+<span style='mso-spacerun:yes'></span>XE Circuit<![endif]-->
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+<H2><A NAME="SPICELib.src.ANALYSES.BiasPointCalculation.Circuit"></A><A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.BiasPointCalculation"
+>SPICELib.src.ANALYSES.BiasPointCalculation</A>.Circuit</H2>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">replaceable </font><font color="blue">model</font> Circuit = <A HREF="SPICELib_src_ANALYSES.html#SPICELib.src.ANALYSES.NULL"
+>NULL</A>;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Oct 14 18:26:24 2003
+.
+</address></BODY>
+</HTML>
